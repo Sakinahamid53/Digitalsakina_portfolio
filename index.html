@@ -88,6 +88,7 @@
       align-items: center;
       z-index: 9999;
       padding: 20px;
+      overflow-y: auto;
     }
 
     .modal-card {
@@ -95,12 +96,13 @@
       width: 100%;
       max-width: 700px;
       border-radius: 24px;
-      overflow: hidden;
+      overflow: visible;
       position: relative;
       animation: pop 0.25s ease;
       display: flex;
       flex-direction: column;
-      max-height: 90vh;
+      max-height: none;
+      margin: auto;
     }
 
     .modal-img { 
@@ -108,12 +110,13 @@
       height: auto;
       aspect-ratio: 1 / 1;
       object-fit: cover;
+      border-radius: 24px 24px 0 0;
     }
 
     .modal-body { 
       padding: 24px;
       overflow-y: auto;
-      flex: 1;
+      max-height: 300px;
     }
 
     .modal-close {
@@ -132,6 +135,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      z-index: 10000;
     }
 
     .modal-close:hover { transform: scale(1.1); }
@@ -192,6 +196,7 @@
 
       .modal-body {
         padding: 20px;
+        max-height: 250px;
       }
 
       .filter-btn {
@@ -544,10 +549,14 @@
     document.getElementById("modalTitle").innerText = el.dataset.title;
     document.getElementById("modalImg").src = el.dataset.img;
     document.getElementById("modalDesc").innerText = el.dataset.desc;
+    // Prevent body scrolling when modal is open
+    document.body.style.overflow = "hidden";
   }
 
   function closeModal() {
     document.getElementById("modal").style.display = "none";
+    // Re-enable body scrolling
+    document.body.style.overflow = "auto";
   }
 
   function closeModalOutside(e) {
