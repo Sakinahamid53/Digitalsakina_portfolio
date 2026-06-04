@@ -71,16 +71,28 @@
     .modal-card {
       background: white;
       width: 100%;
-      max-width: 650px;
+      max-width: 700px;
       border-radius: 24px;
       overflow: hidden;
       position: relative;
       animation: pop 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      max-height: 90vh;
     }
 
-    .modal-img { width: 100%; height: 320px; object-fit: cover; }
+    .modal-img { 
+      width: 100%; 
+      height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
 
-    .modal-body { padding: 20px; }
+    .modal-body { 
+      padding: 24px;
+      overflow-y: auto;
+      flex: 1;
+    }
 
     .modal-close {
       position: absolute;
@@ -94,6 +106,10 @@
       cursor: pointer;
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
       transition: transform 0.2s ease;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .modal-close:hover { transform: scale(1.1); }
@@ -108,31 +124,53 @@
       position: fixed;
       bottom: 22px;
       right: 22px;
-      width: 62px;
-      height: 62px;
       background: #25D366;
-      border-radius: 50%;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 50px;
       display: flex;
+      gap: 10px;
       align-items: center;
-      justify-content: center;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      text-decoration: none;
+      font-weight: 600;
       z-index: 9999;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
       transition: all 0.3s ease;
       animation: pulse 2s infinite;
-      text-decoration: none;
+      font-size: 16px;
     }
 
-    .whatsapp-icon { width: 30px; height: 30px; display: block; }
+    .whatsapp-icon { width: 24px; height: 24px; flex-shrink: 0; }
+
+    .whatsapp-text { display: block; }
 
     .whatsapp-float:hover {
       transform: scale(1.1);
       box-shadow: 0 18px 40px rgba(0,0,0,0.3);
+      padding: 12px 20px;
     }
 
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.07); }
       100% { transform: scale(1); }
+    }
+
+    @media (max-width: 640px) {
+      .whatsapp-float {
+        padding: 12px 16px;
+        font-size: 14px;
+      }
+      
+      .whatsapp-icon { width: 20px; height: 20px; }
+
+      .modal-card {
+        max-width: 95vw;
+      }
+
+      .modal-body {
+        padding: 20px;
+      }
     }
   </style>
 </head>
@@ -337,12 +375,18 @@
   </div>
 </div>
 
-<!-- WHATSAPP FLOATING BUTTON -->
-<a href="https://wa.me/255686210125?text=Hi%20I%20found%20your%20portfolio%20and%20want%20to%20hire%20you" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+<!-- WHATSAPP FLOATING BUTTON (TEXT + ICON) -->
+<a href="https://wa.me/255686210125?text=Hi%20I%20found%20your%20portfolio%20and%20want%20to%20hire%20you"
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Chat on WhatsApp">
+
   <svg class="whatsapp-icon" viewBox="0 0 32 32">
-    <path fill="white" d="M19.11 17.53c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.32-1.57-1.48-1.84-.16-.27-.02-.42.12-.56.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.46h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.12 2.82c.14.18 1.92 2.93 4.66 4.11.65.28 1.16.45 1.56.58.65.21 1.24.18 1.71.11.52-.08 1.6-.65 1.83-1.28.23-.63.23-1.18.16-1.28-.07-.09-.25-.14-.52-.27z"/>
     <path fill="white" d="M16 3C9.37 3 4 8.37 4 15c0 2.61.85 5.02 2.29 6.97L4 29l7.28-2.25C13.1 27.54 14.52 28 16 28c6.63 0 12-5.37 12-12S22.63 3 16 3zm0 22c-1.35 0-2.65-.27-3.85-.8l-.28-.12-4.32 1.33 1.41-4.21-.18-.3C7.8 19.5 7 17.31 7 15 7 9.48 11.48 5 16 5s9 4.48 9 10-4.48 10-9 10z"/>
   </svg>
+
+  <span class="whatsapp-text">WhatsApp Me</span>
+
 </a>
 
 <script>
