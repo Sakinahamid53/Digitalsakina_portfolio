@@ -1,405 +1,142 @@
 <!doctype html>
-<html lang="en"><head>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sakina | Digital Designer</title>
+
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Fraunces:wght@600;700;900&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@600;700;900&display=swap" rel="stylesheet">
+
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+
   <style>
     body { font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
     h1, h2, h3 { font-family: 'Fraunces', serif; }
 
-    @keyframes float1 {
-      0%, 100% { transform: translate(0, 0) rotate(0deg); }
-      33% { transform: translate(30px, -20px) rotate(5deg); }
-      66% { transform: translate(-20px, 15px) rotate(-3deg); }
-    }
-    @keyframes float2 {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(-40px, 30px) scale(1.1); }
-    }
-    @keyframes float3 {
-      0%, 100% { transform: translate(0, 0) rotate(0deg); }
-      50% { transform: translate(25px, -35px) rotate(8deg); }
-    }
-
-    .blob-1 { animation: float1 12s ease-in-out infinite; }
-    .blob-2 { animation: float2 15s ease-in-out infinite; }
-    .blob-3 { animation: float3 10s ease-in-out infinite; }
-
-    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    .project-card { transition: transform 0.4s ease, box-shadow 0.4s ease; }
-    .project-card:hover { transform: rotate(-1deg) scale(1.03); box-shadow: 0 25px 50px rgba(107,83,68,0.2); }
-    .project-card:nth-child(even):hover { transform: rotate(1deg) scale(1.03); }
-    .project-card:nth-child(odd) { transform: rotate(-1deg); }
-    .project-card:nth-child(even) { transform: rotate(1deg); }
+    .project-card { transition: transform 0.4s ease, box-shadow 0.4s ease; cursor:pointer; }
+    .project-card:hover { transform: scale(1.03); }
 
-    .hero-text { animation: slideUp 1s ease forwards; opacity: 0; }
-    .hero-text-d1 { animation-delay: 0.2s; }
-    .hero-text-d2 { animation-delay: 0.4s; }
-    .hero-text-d3 { animation-delay: 0.6s; }
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* MODAL */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(8px);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 20px;
     }
 
-    .skill-pill { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .skill-pill:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+    .modal-card {
+      background: white;
+      width: 100%;
+      max-width: 650px;
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      animation: pop 0.25s ease;
+    }
+
+    .modal-img { width: 100%; height: 320px; object-fit: cover; }
+
+    .modal-body { padding: 20px; }
+
+    .modal-close {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      background: white;
+      border: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    @keyframes pop {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      background: #25D366;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 50px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      text-decoration: none;
+      font-weight: 600;
+      z-index: 9999;
+    }
+
+    .whatsapp-icon { width: 22px; height: 22px; }
   </style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-  <script src="/_sdk/resizing_sdk.js" type="text/javascript"></script>
- <script src="/_sdk/telemetry_sdk.js"></script></head>
- <body data-template-id="__page-root" class="w-full min-h-screen relative" style="background: linear-gradient(135deg, rgb(250, 245, 243), rgb(245, 230, 240));"><!-- Floating blobs -->
-  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-   <div class="blob-1 absolute top-[10%] left-[5%] w-72 h-72 rounded-full bg-gradient-to-br from-pink-200/40 to-orange-200/40 blur-3xl"></div>
-   <div class="blob-2 absolute top-[50%] right-[10%] w-96 h-96 rounded-full bg-gradient-to-br from-purple-200/30 to-rose-200/30 blur-3xl"></div>
-   <div class="blob-3 absolute bottom-[10%] left-[30%] w-64 h-64 rounded-full bg-gradient-to-br from-amber-200/40 to-pink-200/40 blur-3xl"></div>
-  </div>
-  <header class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/70 border-b border-gray-100/50">
-   <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"><span data-template-id="nav-name" class="canva-text font-bold text-lg" style="color: rgb(107, 83, 68); font-weight: 700; font-style: normal; font-size: 18px;">Sakina Kaderbhai</span>
-    <div class="hidden md:flex gap-8"><a href="#about" class="text-gray-600 hover:text-gray-900 transition" onclick="smoothScroll(event)">About</a> <a href="#projects" class="text-gray-600 hover:text-gray-900 transition" onclick="smoothScroll(event)">Projects</a> <a href="#contact" class="text-gray-600 hover:text-gray-900 transition" onclick="smoothScroll(event)">Contact</a>
-    </div>
-   </nav>
-  </header>
-  <main class="relative z-10"><!-- Hero Landing -->
-   <section data-template-id="hero-section" class="canva-section w-full pt-32 pb-20 px-6 relative overflow-hidden" style="min-height: calc(100 * min(var(--vh, 1vh), 1vh)); background: rgba(255, 255, 255, 0);">
-    <div class="absolute inset-0 z-0"><img data-template-id="hero-bg-image" class="canva-image w-full h-full object-cover" loading="lazy" src="https://images.pexels.com/photos/29765807/pexels-photo-29765807.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920" alt="Minimalist pink desk flat lay featuring stationery, keyboard, and coffee for a creative workspace vibe.">
-     <div class="absolute inset-0 bg-gradient-to-r from-white/85 via-white/70 to-white/40"></div>
-    </div>
-    <div class="max-w-7xl mx-auto relative z-10 h-full flex items-center justify-center">
-     <div class="flex flex-col justify-center items-center text-center">
-      <p data-template-id="hero-smallname" class="canva-text uppercase tracking-[0.3em] mb-4 hero-text" style="color: rgb(208, 138, 154); font-weight: 500; font-style: normal; font-size: 13px;"></p>
-      <h1 data-template-id="hero-title" class="canva-text mb-6 hero-text hero-text-d1 leading-tight" style="color: rgb(61, 43, 34); font-weight: 900; font-style: normal; font-size: 64px;">Digital Designer</h1>
-      <p data-template-id="hero-subtitle" class="canva-text mb-8 hero-text hero-text-d2 max-w-2xl" style="color: rgb(93, 74, 64); font-weight: 400; font-style: normal; font-size: 18px;">Crafting beautiful, strategic designs that help brands connect, communicate, and convert. From social media graphics to branding and advertising creatives.</p><a href="#projects" data-template-id="hero-cta" class="canva-button inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg w-fit hero-text hero-text-d3 cursor-pointer" onclick="smoothScroll(event)" style="background: rgb(212, 138, 154); color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">View Portfolio →</a>
-     </div>
-    </div>
-   </section><!-- About -->
-   <section id="about" data-template-id="about-section" class="canva-section py-24 px-6 relative" style="background: rgb(255, 252, 250);">
-    <div class="max-w-4xl mx-auto reveal">
-     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <div class="flex items-center justify-center lg:order-1">
-       <div class="relative w-full max-w-xs">
-        <div class="absolute -inset-4 bg-gradient-to-br from-pink-300/40 to-purple-300/20 rounded-full blur-2xl"></div>
-        <div class="relative aspect-square rounded-full overflow-hidden shadow-xl border-4 border-white/60"><img data-template-id="about-photo" class="canva-image w-full h-full object-cover" loading="lazy" src="images/sakina.jpg" alt="Professional portrait of Sakina Kaderbhai">
-        </div>
-       </div>
-      </div>
-      <div class="flex flex-col justify-center lg:order-2">
-       <h2 data-template-id="about-title" class="canva-text mb-6" style="color: rgb(107, 83, 68); font-weight: 700; font-style: normal; font-size: 27px;">About Me</h2>
-       <p data-template-id="about-text" class="canva-text leading-relaxed" style="color: rgb(93, 74, 64); font-weight: 400; font-style: normal; font-size: 20px;">I'm a digital designer who brings brands to life through compelling visual design. From social media graphics and motion animations to complete brand identities, I craft work that connects, inspires, and drives real results across every platform.</p>
-      </div>
-     </div>
-    </div>
-   </section><!-- Skills -->
-   <section data-template-id="skills-section" class="canva-section py-20 px-6 relative" style="background: rgb(253, 243, 240);">
-    <div class="max-w-5xl mx-auto reveal">
-     <h2 data-template-id="skills-title" class="canva-text text-center mb-12" style="color: rgb(107, 83, 68); font-weight: 700; font-style: normal; font-size: 27px;">What I Create</h2>
-     <div class="flex flex-wrap justify-center gap-4">
-      <div data-template-id="skill-1" class="canva-card skill-pill px-8 py-4 rounded-full" style="background: rgb(252, 232, 224);">
-       <p data-template-id="skill-1-text" class="canva-text font-medium" style="color: rgb(107, 83, 68); font-weight: 500; font-style: normal; font-size: 18px;">Social Media Graphics</p>
-      </div>
-      <div data-template-id="skill-2" class="canva-card skill-pill px-8 py-4 rounded-full" style="background: rgb(232, 229, 245);">
-       <p data-template-id="skill-2-text" class="canva-text font-medium" style="color: rgb(107, 83, 68); font-weight: 500; font-style: normal; font-size: 18px;">Ad Campaign Design</p>
-      </div>
-      <div data-template-id="skill-3" class="canva-card skill-pill px-8 py-4 rounded-full" style="background: rgb(243, 217, 232);">
-       <p data-template-id="skill-3-text" class="canva-text font-medium" style="color: rgb(107, 83, 68); font-weight: 500; font-style: normal; font-size: 18px;">Brand Strategy</p>
-      </div>
-      <div data-template-id="skill-4" class="canva-card skill-pill px-8 py-4 rounded-full" style="background: rgb(253, 233, 228);">
-       <p data-template-id="skill-4-text" class="canva-text font-medium" style="color: rgb(107, 83, 68); font-weight: 500; font-style: normal; font-size: 18px;">Copywriting</p>
-      </div>
-      <div data-template-id="skill-5" class="canva-card skill-pill px-8 py-4 rounded-full" style="background: rgb(252, 232, 224);">
-       <p data-template-id="skill-5-text" class="canva-text font-medium" style="color: rgb(107, 83, 68); font-weight: 500; font-style: normal; font-size: 18px;">Motion Graphics</p>
-      </div>
-      <div data-template-id="skill-6" class="canva-card skill-pill px-8 py-4 rounded-full" style="background: rgb(232, 229, 245);">
-       <p data-template-id="skill-6-text" class="canva-text font-medium" style="color: rgb(107, 83, 68); font-weight: 500; font-style: normal; font-size: 18px;">Digital Illustration</p>
-      </div>
-      <div data-template-id="skill-7" class="canva-card skill-pill px-8 py-4 rounded-full" style="background: rgb(243, 217, 232);">
-       <p data-template-id="skill-7-text" class="canva-text font-medium" style="color: rgb(107, 83, 68); font-weight: 500; font-style: normal; font-size: 18px;">Infographics</p>
-      </div>
-      <div data-template-id="skill-8" class="canva-card skill-pill px-8 py-4 rounded-full" style="background: rgb(253, 233, 228);">
-       <p data-template-id="skill-8-text" class="canva-text font-medium" style="color: rgb(107, 83, 68); font-weight: 500; font-style: normal; font-size: 18px;">UI Design</p>
-      </div>
-      <div data-template-id="skill-9" class="canva-card skill-pill px-8 py-4 rounded-full" style="background: rgb(252, 232, 224);">
-       <p data-template-id="skill-9-text" class="canva-text font-medium" style="color: rgb(107, 83, 68); font-weight: 500; font-style: normal; font-size: 18px;">SEO Design</p>
-      </div>
-      <div data-template-id="skill-10" class="canva-card skill-pill px-8 py-4 rounded-full" style="background: rgb(243, 217, 232);">
-       <p data-template-id="skill-10-text" class="canva-text font-medium" style="color: rgb(107, 83, 68); font-weight: 500; font-style: normal; font-size: 18px;">Thumbnail Design</p>
-      </div>
-      <div data-template-id="skill-11" class="canva-card skill-pill px-8 py-4 rounded-full" style="background: rgb(232, 229, 245);">
-       <p data-template-id="skill-11-text" class="canva-text font-medium" style="color: rgb(107, 83, 68); font-weight: 500; font-style: normal; font-size: 18px;">Poster Design</p>
-      </div>
-      <div data-template-id="skill-12" class="canva-card skill-pill px-8 py-4 rounded-full" style="background: rgb(252, 232, 224);">
-       <p data-template-id="skill-12-text" class="canva-text font-medium" style="color: rgb(107, 83, 68); font-weight: 500; font-style: normal; font-size: 18px;">Logo Design</p>
-      </div>
-      <div data-template-id="skill-13" class="canva-card skill-pill px-8 py-4 rounded-full" style="background: rgb(232, 229, 245);">
-       <p data-template-id="skill-13-text" class="canva-text font-medium" style="color: rgb(107, 83, 68); font-weight: 500; font-style: normal; font-size: 18px;">Banner Ads</p>
-      </div>
-      <div data-template-id="skill-14" class="canva-card skill-pill px-8 py-4 rounded-full" style="background: rgb(243, 217, 232);">
-       <p data-template-id="skill-14-text" class="canva-text font-medium" style="color: rgb(107, 83, 68); font-weight: 500; font-style: normal; font-size: 18px;">Packaging Design</p>
-      </div>
-      <div data-template-id="skill-15" class="canva-card skill-pill px-8 py-4 rounded-full" style="background: rgb(253, 233, 228);">
-       <p data-template-id="skill-15-text" class="canva-text font-medium" style="color: rgb(107, 83, 68); font-weight: 500; font-style: normal; font-size: 18px;">3D Mockups</p>
-      </div>
-      <div data-template-id="skill-16" class="canva-card skill-pill px-8 py-4 rounded-full" style="background: rgb(252, 232, 224);">
-       <p data-template-id="skill-16-text" class="canva-text font-medium" style="color: rgb(107, 83, 68); font-weight: 500; font-style: normal; font-size: 18px;">Pitch Decks</p>
-      </div>
-      <div data-template-id="skill-17" class="canva-card skill-pill px-8 py-4 rounded-full" style="background: rgb(232, 229, 245);">
-       <p data-template-id="skill-17-text" class="canva-text font-medium" style="color: rgb(107, 83, 68); font-weight: 500; font-style: normal; font-size: 18px;">Sticker Design</p>
-      </div>
-      <div data-template-id="skill-18" class="canva-card skill-pill px-8 py-4 rounded-full" style="background: rgb(243, 217, 232);">
-       <p data-template-id="skill-18-text" class="canva-text font-medium" style="color: rgb(107, 83, 68); font-weight: 500; font-style: normal; font-size: 18px;">Animation</p>
-      </div>
-     </div>
-    </div>
-   </section><!-- Projects -->
-   <section id="projects" data-template-id="projects-section" class="canva-section py-24 px-6" style="background: rgb(255, 252, 250);">
-    <div class="max-w-6xl mx-auto">
-     <h2 data-template-id="projects-title" class="canva-text text-center mb-16 reveal" style="color: rgb(107, 83, 68); font-weight: 700; font-style: normal; font-size: 27px;">Featured Projects</h2>
-     <div class="grid md:grid-cols-3 gap-10">
-      <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal">
-       <div class="overflow-hidden" style="aspect-ratio:1/1;">
-        <img data-template-id="project-1-img" class="canva-image w-full h-full object-cover" loading="lazy" src="images/skin1004.png" alt="SKIN1004 Madagascar Centella skincare product with water splash and floral styling">
-       </div>
-       <div data-template-id="project-1-body" class="canva-card p-6" style="background: rgb(253, 243, 240);">
-        <p data-template-id="project-1-desc" class="canva-text text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-style: normal; font-size: 18px;">Skin1004 Madagascar Centella poster featuring award-winning sun serum with Hyalu-Cica Water-Fit technology and zero white cast, delivering lightweight hydration and daily UV protection.</p>
-       </div>
-      </div>
-      <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal">
-       <div class="overflow-hidden" style="aspect-ratio:1/1;">
-        <img data-template-id="project-2-img" class="canva-image w-full h-full object-cover" loading="lazy" src="images/celimax.png" alt="Celimax Retinal Shot skincare product with retinol and peptides, featuring close-up application and floral styling">
-       </div>
-       <div data-template-id="project-2-body" class="canva-card p-6" style="background: rgb(253, 243, 240);">
-        <p data-template-id="project-2-desc" class="canva-text text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-style: normal; font-size: 18px;">Celimax Retinal Shot skincare featuring 0.1% retinol and peptides tightening booster with proven anti-aging benefits and fan-favorite status for smoother, revitalized complexion.</p>
-       </div>
-      </div>
-      <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal">
-       <div class="overflow-hidden" style="aspect-ratio:1/1;">
-        <img data-template-id="project-3-img" class="canva-image w-full h-full object-cover" loading="lazy" src="images/mixsoon.png" alt="Mixsoon Bean Essence hydrating skincare with fermented soybean, barley, pomegranate and Korean pear, styled with flowers and botanical elements">
-       </div>
-       <div data-template-id="project-3-body" class="canva-card p-6" style="background: rgb(253, 243, 240);">
-        <p data-template-id="project-3-desc" class="canva-text text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-style: normal; font-size: 18px;">Mixsoon Bean Essence skincare featuring hydrating and exfoliating essence with fermented soybean, barley, pomegranate and Korean pear for dewy, radiant skin for silky, luminous, pore-smooth complexion.</p>
-       </div>
-      </div>
-      <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal">
-       <div class="overflow-hidden" style="aspect-ratio:1/1;">
-        <img data-template-id="project-4-img" class="canva-image w-full h-full object-cover" loading="lazy" src="images/anua.png" alt="Anua Azelaic Acid 10 Hyaluron Redness Relief Serum product campaign with botanical elements and green aesthetic">
-       </div>
-       <div data-template-id="project-4-body" class="canva-card p-6" style="background: rgb(253, 243, 240);">
-        <p data-template-id="project-4-desc" class="canva-text text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-style: normal; font-size: 18px;">Anua Azelaic Acid 10 Hyaluron Redness Relief Serum campaign featuring 10% azelaic acid with hyaluronic acid, niacinamide, and centella asiatica for calming sensitive skin.</p>
-       </div>
-      </div>
-      <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal">
-       <div class="overflow-hidden" style="aspect-ratio:1/1;">
-        <img data-template-id="project-5-img" class="canva-image w-full h-full object-cover" loading="lazy" src="images/joseon.png" alt="Beauty of Joseon Relief Sun Rice + Probiotics SPF 50+ PA++++ sunscreen product with botanical and floral styling">
-       </div>
-       <div data-template-id="project-5-body" class="canva-card p-6" style="background: rgb(253, 243, 240);">
-        <p data-template-id="project-5-desc" class="canva-text text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-style: normal; font-size: 18px;">Beauty of Joseon Relief Sun Rice + Probiotics SPF 50+ PA++++ campaign featuring lightweight, non-whitening sunscreen with rice and probiotic ferments for everyday skin protection.</p>
-       </div>
-      </div>
-      <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal">
-       <div class="overflow-hidden" style="aspect-ratio:1/1;">
-        <img data-template-id="project-6-img" class="canva-image w-full h-full object-cover" loading="lazy" src="images/cosrx.png" alt="COSRX Advanced Snail 96 Mucin Essence anti-aging power essence product campaign with snail serum and botanical elements">
-       </div>
-       <div data-template-id="project-6-body" class="canva-card p-6" style="background: rgb(253, 243, 240);">
-        <p data-template-id="project-6-desc" class="canva-text text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-style: normal; font-size: 18px;">COSRX Advanced Snail 96 Mucin Essence anti-aging power essence with 96% snail mucin, sodium hyaluronate, panthenol, and allantoin for hydration and glow repair for smooth radiant skin.</p>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section><!-- Contact -->
-   <section id="contact" data-template-id="contact-section" class="canva-section py-24 px-6 relative overflow-hidden" style="background: linear-gradient(135deg, rgb(216, 168, 154), rgb(201, 123, 138));">
-    <div class="absolute -top-10 -right-10 w-40 h-40 border-4 border-white/20 rounded-full blob-1"></div>
-    <div class="absolute bottom-5 left-5 w-24 h-24 bg-white/10 rotate-12 rounded-2xl blob-3"></div>
-    <div class="max-w-2xl mx-auto text-center relative z-10 reveal">
-     <h2 data-template-id="contact-title" class="canva-text mb-4" style="color: rgb(255, 251, 249); font-weight: 700; font-style: normal; font-size: 27px;">Let's create something together.</h2>
-     <p data-template-id="contact-text" class="canva-text mb-8" style="color: rgb(245, 230, 224); font-weight: 400; font-style: normal; font-size: 18px;">Open for freelance projects, collaborations, and creative partnerships.
-</p><a href="mailto:sakinahamid53@hotmail.com" data-template-id="contact-button" class="canva-button inline-block px-10 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg" style="background: rgb(255, 251, 249); color: rgb(107, 83, 68); font-weight: 600; font-style: normal; font-size: 18px;">Get In Touch</a>
-    </div>
-   </section>
-  </main>
-  <footer class="relative z-10 py-6 text-center border-t border-gray-200/50">
-   <p data-template-id="footer-text" class="canva-text text-sm" style="color: rgb(154, 128, 120); font-weight: 400; font-style: normal; font-size: 18px;">© 2026 Sakina Kaderbhai. All rights reserved.</p>
-  </footer>
-  <script src="/_sdk/editing_sdk.js"></script>
-  <script>
-    lucide.createIcons();
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.15 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    
-    function smoothScroll(event) {
-      event.preventDefault();
-      const href = event.currentTarget.getAttribute('href');
-      const target = document.querySelector(href);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-  </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0652d90eb869918',t:'MTc4MDU1NzY1Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
-</body></html>
-<!-- MODAL OVERLAY (FIXED) -->
+</head>
+
+<body>
+
+<!-- PROJECT CARD -->
+<div class="project-card" onclick="openModal(this)"
+     data-title="COSRX Snail Essence"
+     data-img="https://via.placeholder.com/600"
+     data-desc="COSRX Advanced Snail 96 Mucin Essence deeply hydrates and repairs skin barrier.">
+
+  <img src="https://via.placeholder.com/400" style="width:100%">
+</div>
+
+<!-- MODAL -->
 <div id="modal" class="modal-overlay" onclick="closeModalOutside(event)">
   <div class="modal-card">
     <img id="modalImg" class="modal-img">
-    
     <div class="modal-body">
       <h2 id="modalTitle"></h2>
       <p id="modalDesc"></p>
     </div>
-
     <button class="modal-close" onclick="closeModal()">✕</button>
   </div>
 </div>
-/* ===== MODAL OVERLAY FIX ===== */
-.modal-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
-  backdrop-filter: blur(8px);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  padding: 20px;
-}
 
-/* popup card */
-.modal-card {
-  background: white;
-  width: 100%;
-  max-width: 650px;
-  border-radius: 24px;
-  overflow: hidden;
-  position: relative;
-  animation: pop 0.25s ease;
-}
-
-/* image */
-.modal-img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-}
-
-/* text area */
-.modal-body {
-  padding: 20px;
-}
-
-.modal-body h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
-  color: #3d2b22;
-}
-
-.modal-body p {
-  color: #6b5344;
-  line-height: 1.6;
-}
-
-/* close button */
-.modal-close {
-  position: absolute;
-  top: 12px;
-  right: 14px;
-  background: white;
-  border: none;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 18px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-@keyframes pop {
-  from { transform: scale(0.9); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-function openModal(el){
-  document.getElementById("modal").style.display = "flex";
-  document.getElementById("modalTitle").innerText = el.dataset.title;
-  document.getElementById("modalImg").src = el.dataset.img;
-  document.getElementById("modalDesc").innerText = el.dataset.desc;
-}
-
-function closeModal(){
-  document.getElementById("modal").style.display = "none";
-}
-
-function closeModalOutside(e){
-  if(e.target.id === "modal") closeModal();
-}
-
-document.addEventListener("keydown", function(e){
-  if(e.key === "Escape") closeModal();
-});
-<!-- WHATSAPP FLOATING BUTTON (TEXT + ICON) -->
-<a href="https://wa.me/255686210125?text=Hi%20I%20found%20your%20portfolio%20and%20want%20to%20hire%20you"
-   class="whatsapp-float"
-   target="_blank"
-   aria-label="Chat on WhatsApp">
-
+<!-- WHATSAPP -->
+<a class="whatsapp-float" href="https://wa.me/255686210125" target="_blank">
   <svg class="whatsapp-icon" viewBox="0 0 32 32">
-    <path fill="white" d="M16 3C9.3 3 4 8.3 4 15c0 2.6.8 5 2.3 7L4 29l7.3-2.3C13 27.5 14.5 28 16 28c6.7 0 12-5.3 12-12S22.7 3 16 3zm0 22c-1.4 0-2.7-.3-3.9-.8l-.3-.1-4.3 1.3 1.4-4.2-.2-.3C7.8 19.5 7 17.3 7 15 7 9.5 11.5 5 16 5s9 4.5 9 10-4.5 10-9 10z"/>
+    <path fill="white" d="M16 3C9.3 3 4 8.3 4 15c0 2.6.8 5 2.3 7L4 29l7.3-2.3C13 27.5 14.5 28 16 28c6.7 0 12-5.3 12-12S22.7 3 16 3z"/>
   </svg>
-
-  <span class="whatsapp-text">WhatsApp Me</span>
-
+  WhatsApp Me
 </a>
 
-.whatsapp-float {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
+<script>
+  function openModal(el){
+    document.getElementById("modal").style.display = "flex";
+    document.getElementById("modalTitle").innerText = el.dataset.title;
+    document.getElementById("modalImg").src = el.dataset.img;
+    document.getElementById("modalDesc").innerText = el.dataset.desc;
+  }
 
-  background: #25D366;
-  color: white;
+  function closeModal(){
+    document.getElementById("modal").style.display = "none";
+  }
 
-  padding: 12px 16px;
-  border-radius: 50px;
+  function closeModalOutside(e){
+    if(e.target.id === "modal") closeModal();
+  }
 
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  document.addEventListener("keydown", (e)=>{
+    if(e.key === "Escape") closeModal();
+  });
+</script>
 
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 14px;
-
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-  z-index: 9999;
-
-  transition: all 0.3s ease;
-  animation: pulse 2s infinite;
-}
-
-/* ICON */
-.whatsapp-icon {
-  width: 22px;
-  height: 22px;
-  display: block;
-}
-
-/* TEXT */
-.whatsapp-text {
-  white-space: nowrap;
-}
-
-/* HOVER EFFECT */
-.whatsapp-float:hover {
-  transform: scale(1.08);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.3);
-}
-
-/* PULSE ANIMATION */
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
+</body>
+</html>
