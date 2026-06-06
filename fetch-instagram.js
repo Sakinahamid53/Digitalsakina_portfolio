@@ -1,4 +1,3 @@
-```javascript
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
@@ -8,7 +7,7 @@ const OUTPUT_FILE = path.join(__dirname, 'instagram-posts.json');
 
 async function fetchInstagramPosts() {
   try {
-    console.log(`🔄 Fetching Instagram posts from @${INSTAGRAM_USERNAME}...`);
+    console.log(`Fetching Instagram posts from @${INSTAGRAM_USERNAME}...`);
     
     const url = `https://www.instagram.com/${INSTAGRAM_USERNAME}/?__a=1`;
     
@@ -51,10 +50,10 @@ async function fetchInstagramPosts() {
     const jsonData = { posts, lastUpdated: new Date().toISOString() };
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(jsonData, null, 2));
     
-    console.log(`✅ Successfully fetched ${posts.length} posts`);
+    console.log(`Successfully fetched ${posts.length} posts`);
     return posts;
   } catch (error) {
-    console.error('❌ Error:', error.message);
+    console.error('Error:', error.message);
     throw error;
   }
 }
