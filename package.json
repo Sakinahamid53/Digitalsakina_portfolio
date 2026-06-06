@@ -1,0 +1,12 @@
+{
+  "name": "sakina-portfolio",
+  "version": "1.0.0",
+  "description": "Sakina Kaderbhai Digital Designer Portfolio",
+  "main": "fetch-instagram.js",
+  "scripts": {
+    "fetch-instagram": "node fetch-instagram.js"
+  },
+  "keywords": ["portfolio", "instagram", "designer"],
+  "author": "Sakina Kaderbhai",
+  "license": "MIT"
+}
