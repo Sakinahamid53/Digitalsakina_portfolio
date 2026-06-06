@@ -43,6 +43,22 @@
     .project-card:nth-child(odd) { transform: rotate(-1deg); }
     .project-card:nth-child(even) { transform: rotate(1deg); }
 
+    .instagram-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: white;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgb(107, 83, 68);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      z-index: 10;
+    }
+
     .hero-text { animation: slideUp 1s ease forwards; opacity: 0; }
     .hero-text-d1 { animation-delay: 0.2s; }
     .hero-text-d2 { animation-delay: 0.4s; }
@@ -182,6 +198,32 @@
       100% { transform: scale(1); }
     }
 
+    .instagram-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin-top: 8px;
+    }
+
+    .instagram-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .post-date {
+      font-size: 13px;
+      color: rgb(154, 128, 120);
+      margin-top: 8px;
+    }
+
     @media (max-width: 640px) {
       .whatsapp-float {
         padding: 12px 16px;
@@ -233,15 +275,21 @@
   <!-- Hero Landing -->
   <section class="w-full pt-32 pb-20 px-6 relative overflow-hidden" style="min-height: 100vh; background: rgba(255, 255, 255, 0);">
     <div class="absolute inset-0 z-0">
-      <img class="w-full h-full object-cover" loading="lazy" src="https://images.pexels.com/photos/29765807/pexels-photo-29765807.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Minimalist pink desk flat lay featuring stationery, keyboard, and coffee for a creative workspace vibe.">
+      <img class="w-full h-full object-cover" loading="lazy" src="https://images.pexels.com/photos/29765807/pexels-photo-29765807.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Minimalist pink desk workspace with creative design tools">
       <div class="absolute inset-0 bg-gradient-to-r from-white/85 via-white/70 to-white/40"></div>
     </div>
     <div class="max-w-7xl mx-auto relative z-10 h-full flex items-center justify-center">
       <div class="flex flex-col justify-center items-center text-center">
         <p class="uppercase tracking-[0.3em] mb-4 hero-text" style="color: rgb(208, 138, 154); font-weight: 500; font-size: 13px;">Digital Designer & Creative Strategist</p>
         <h1 class="mb-6 hero-text hero-text-d1 leading-tight" style="color: rgb(61, 43, 34); font-weight: 900; font-size: 64px;">Digital Designer</h1>
-        <p class="mb-8 hero-text hero-text-d2 max-w-2xl" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Crafting beautiful, strategic designs that help brands connect, communicate, and convert. From social media graphics to branding and advertising creatives.</p>
-        <a href="#projects" class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg w-fit hero-text hero-text-d3 cursor-pointer" onclick="smoothScroll(event)" style="background: rgb(212, 138, 154); color: rgb(255, 255, 255); font-weight: 600; font-size: 16px;">View Portfolio →</a>
+        <p class="mb-8 hero-text hero-text-d2 max-w-2xl" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Crafting beautiful, strategic designs that help brands connect, communicate, and convert.</p>
+        <a href="#projects" class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg w-fit hero-text hero-text-d3 cursor-pointer" onclick="smoothScroll(event)" style="background: rgb(212, 138, 154); color: white;">
+          View My Work
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
       </div>
     </div>
   </section>
@@ -260,7 +308,7 @@
         </div>
         <div class="flex flex-col justify-center lg:order-2">
           <h2 class="mb-6" style="color: rgb(107, 83, 68); font-weight: 700; font-size: 27px;">About Me</h2>
-          <p class="leading-relaxed" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 20px;">I'm a digital designer who brings brands to life through compelling visual design. From social media graphics and motion animations to complete brand identities, I craft work that connects, inspires, and drives real results across every platform.</p>
+          <p class="leading-relaxed" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 20px;">I'm a digital designer who brings brands to life through compelling visual design. From social media campaigns to comprehensive brand identities, I create work that resonates with audiences and drives results. I specialize in translating complex ideas into beautiful, strategic designs that tell your brand story.</p>
         </div>
       </div>
     </div>
@@ -390,88 +438,12 @@
     </div>
   </section>
 
-  <!-- Projects -->
+  <!-- Projects + Instagram Feed -->
   <section id="projects" class="py-24 px-6" style="background: rgb(255, 252, 250);">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-center mb-16 reveal" style="color: rgb(107, 83, 68); font-weight: 700; font-size: 27px;">Featured Projects</h2>
-      <div class="grid md:grid-cols-3 gap-10">
-        <!-- Project 1 -->
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)"
-             data-title="Skin1004 Madagascar Centella"
-             data-img="images/skin1004.png"
-             data-desc="Skin1004 Madagascar Centella poster featuring award-winning sun serum with Hyalu-Cica Water-Fit technology and zero white cast, delivering lightweight hydration and daily UV protection.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;">
-            <img class="w-full h-full object-cover" loading="lazy" src="images/skin1004.png" alt="SKIN1004 Madagascar Centella skincare product with water splash and floral styling">
-          </div>
-          <div class="p-6" style="background: rgb(253, 243, 240);">
-            <p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Skin1004 Madagascar Centella poster featuring award-winning sun serum with Hyalu-Cica Water-Fit technology.</p>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)"
-             data-title="Celimax Retinal Shot"
-             data-img="images/celimax.png"
-             data-desc="Celimax Retinal Shot skincare featuring 0.1% retinol and peptides tightening booster with proven anti-aging benefits and fan-favorite status for smoother, revitalized complexion.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;">
-            <img class="w-full h-full object-cover" loading="lazy" src="images/celimax.png" alt="Celimax Retinal Shot skincare product with retinol and peptides, featuring close-up application and floral styling">
-          </div>
-          <div class="p-6" style="background: rgb(253, 243, 240);">
-            <p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Celimax Retinal Shot skincare featuring 0.1% retinol and peptides tightening booster with proven anti-aging benefits.</p>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)"
-             data-title="Mixsoon Bean Essence"
-             data-img="images/mixsoon.png"
-             data-desc="Mixsoon Bean Essence skincare featuring hydrating and exfoliating essence with fermented soybean, barley, pomegranate and Korean pear for dewy, radiant skin for silky, luminous, pore-smooth complexion.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;">
-            <img class="w-full h-full object-cover" loading="lazy" src="images/mixsoon.png" alt="Mixsoon Bean Essence hydrating skincare with fermented soybean, barley, pomegranate and Korean pear, styled with flowers and botanical elements">
-          </div>
-          <div class="p-6" style="background: rgb(253, 243, 240);">
-            <p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Mixsoon Bean Essence skincare featuring hydrating and exfoliating essence with fermented botanicals.</p>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)"
-             data-title="Anua Azelaic Acid 10"
-             data-img="images/anua.png"
-             data-desc="Anua Azelaic Acid 10 Hyaluron Redness Relief Serum campaign featuring 10% azelaic acid with hyaluronic acid, niacinamide, and centella asiatica for calming sensitive skin.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;">
-            <img class="w-full h-full object-cover" loading="lazy" src="images/anua.png" alt="Anua Azelaic Acid 10 Hyaluron Redness Relief Serum product campaign with botanical elements and green aesthetic">
-          </div>
-          <div class="p-6" style="background: rgb(253, 243, 240);">
-            <p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Anua Azelaic Acid 10 Hyaluron Redness Relief Serum campaign featuring 10% azelaic acid with soothing ingredients.</p>
-          </div>
-        </div>
-
-        <!-- Project 5 -->
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)"
-             data-title="Beauty of Joseon Relief Sun"
-             data-img="images/joseon.png"
-             data-desc="Beauty of Joseon Relief Sun Rice + Probiotics SPF 50+ PA++++ campaign featuring lightweight, non-whitening sunscreen with rice and probiotic ferments for everyday skin protection.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;">
-            <img class="w-full h-full object-cover" loading="lazy" src="images/joseon.png" alt="Beauty of Joseon Relief Sun Rice + Probiotics SPF 50+ PA++++ sunscreen product with botanical and floral styling">
-          </div>
-          <div class="p-6" style="background: rgb(253, 243, 240);">
-            <p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Beauty of Joseon Relief Sun Rice + Probiotics SPF 50+ campaign featuring lightweight sunscreen with rice and probiotics.</p>
-          </div>
-        </div>
-
-        <!-- Project 6 -->
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)"
-             data-title="COSRX Advanced Snail 96"
-             data-img="images/cosrx.png"
-             data-desc="COSRX Advanced Snail 96 Mucin Essence anti-aging power essence with 96% snail mucin, sodium hyaluronate, panthenol, and allantoin for hydration and glow repair for smooth radiant skin.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;">
-            <img class="w-full h-full object-cover" loading="lazy" src="images/cosrx.png" alt="COSRX Advanced Snail 96 Mucin Essence anti-aging power essence product campaign with snail serum and botanical elements">
-          </div>
-          <div class="p-6" style="background: rgb(253, 243, 240);">
-            <p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">COSRX Advanced Snail 96 Mucin Essence anti-aging power essence with 96% snail mucin for hydration and repair.</p>
-          </div>
-        </div>
+      <div id="gallery" class="grid md:grid-cols-3 gap-10">
+        <!-- Projects and Instagram posts will be dynamically inserted here -->
       </div>
     </div>
   </section>
@@ -483,7 +455,7 @@
     <div class="max-w-2xl mx-auto text-center relative z-10 reveal">
       <h2 class="mb-4" style="color: rgb(255, 251, 249); font-weight: 700; font-size: 27px;">Let's create something together.</h2>
       <p class="mb-8" style="color: rgb(245, 230, 224); font-weight: 400; font-size: 18px;">Open for freelance projects, collaborations, and creative partnerships.</p>
-      <a href="mailto:sakinahamid53@hotmail.com" class="inline-block px-10 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg" style="background: rgb(255, 251, 249); color: rgb(107, 83, 68); font-weight: 600; font-size: 18px;">Get In Touch</a>
+      <a href="mailto:sakinahamid53@hotmail.com" class="inline-block px-10 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg" style="background: rgb(255, 251, 249); color: rgb(212, 138, 154);">Get In Touch</a>
     </div>
   </section>
 
@@ -500,6 +472,7 @@
     <div class="modal-body">
       <h2 id="modalTitle" style="color: rgb(61, 43, 34); font-weight: 700; font-size: 24px; margin-bottom: 12px;"></h2>
       <p id="modalDesc" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 16px; line-height: 1.6;"></p>
+      <div id="modalExtra"></div>
     </div>
     <button class="modal-close" onclick="closeModal()" aria-label="Close modal">✕</button>
   </div>
@@ -512,7 +485,7 @@
    aria-label="Chat on WhatsApp">
 
   <svg class="whatsapp-icon" viewBox="0 0 32 32">
-    <path fill="white" d="M16 3C9.37 3 4 8.37 4 15c0 2.61.85 5.02 2.29 6.97L4 29l7.28-2.25C13.1 27.54 14.52 28 16 28c6.63 0 12-5.37 12-12S22.63 3 16 3zm0 22c-1.35 0-2.65-.27-3.85-.8l-.28-.12-4.32 1.33 1.41-4.21-.18-.3C7.8 19.5 7 17.31 7 15 7 9.48 11.48 5 16 5s9 4.48 9 10-4.48 10-9 10z"/>
+    <path fill="white" d="M16 3C9.37 3 4 8.37 4 15c0 2.61.85 5.02 2.29 6.97L4 29l7.28-2.25C13.1 27.54 14.52 28 16 28c6.63 0 12-5.37 12-12S22.63 3 16 3zm0 22c-1.35 0-2.65-.27-3.85-.8l-.28-.12-4.32 1.35 1.35-4.32-.15-.28c-.53-1.2-.8-2.5-.8-3.85 0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10z"/>
   </svg>
 
   <span class="whatsapp-text">WhatsApp Me</span>
@@ -521,6 +494,52 @@
 
 <script>
   lucide.createIcons();
+
+  // Define static projects
+  const staticProjects = [
+    {
+      title: "Skin1004 Madagascar Centella",
+      img: "images/skin1004.png",
+      desc: "Skin1004 Madagascar Centella poster featuring award-winning sun serum with Hyalu-Cica Water-Fit technology and zero white cast, delivering lightweight hydration and daily protection.",
+      type: "project",
+      date: new Date(2026, 5, 4)
+    },
+    {
+      title: "Celimax Retinal Shot",
+      img: "images/celimax.png",
+      desc: "Celimax Retinal Shot skincare featuring 0.1% retinol and peptides tightening booster with proven anti-aging benefits and fan-favorite status for smoother, revitalized complexion.",
+      type: "project",
+      date: new Date(2026, 5, 3)
+    },
+    {
+      title: "Mixsoon Bean Essence",
+      img: "images/mixsoon.png",
+      desc: "Mixsoon Bean Essence skincare featuring hydrating and exfoliating essence with fermented soybean, barley, pomegranate and Korean pear for dewy, radiant skin for silky, luminous skin.",
+      type: "project",
+      date: new Date(2026, 5, 2)
+    },
+    {
+      title: "Anua Azelaic Acid 10",
+      img: "images/anua.png",
+      desc: "Anua Azelaic Acid 10 Hyaluron Redness Relief Serum campaign featuring 10% azelaic acid with hyaluronic acid, niacinamide, and centella asiatica for calming sensitive skin.",
+      type: "project",
+      date: new Date(2026, 5, 1)
+    },
+    {
+      title: "Beauty of Joseon Relief Sun",
+      img: "images/joseon.png",
+      desc: "Beauty of Joseon Relief Sun Rice + Probiotics SPF 50+ PA++++ campaign featuring lightweight, non-whitening sunscreen with rice and probiotic ferments for everyday skin protection.",
+      type: "project",
+      date: new Date(2026, 4, 31)
+    },
+    {
+      title: "COSRX Advanced Snail 96",
+      img: "images/cosrx.png",
+      desc: "COSRX Advanced Snail 96 Mucin Essence anti-aging power essence with 96% snail mucin, sodium hyaluronate, panthenol, and allantoin for hydration and glow repair for smooth skin.",
+      type: "project",
+      date: new Date(2026, 4, 30)
+    }
+  ];
 
   // Intersection Observer for reveal animations
   const observer = new IntersectionObserver((entries) => {
@@ -531,7 +550,76 @@
     });
   }, { threshold: 0.15 });
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  // Merge projects and Instagram posts, sort by date
+  async function loadGallery() {
+    try {
+      const response = await fetch('instagram-posts.json');
+      const data = await response.json();
+      const instagramPosts = data.posts || [];
+
+      // Convert Instagram posts to gallery format
+      const galleryPosts = instagramPosts.map(post => ({
+        title: post.caption || "Instagram Post",
+        img: post.media_url,
+        desc: post.caption || "",
+        type: "instagram",
+        date: new Date(post.timestamp),
+        url: post.permalink,
+        instagramId: post.id
+      }));
+
+      // Merge and sort by date (newest first)
+      const allItems = [...staticProjects, ...galleryPosts].sort((a, b) => b.date - a.date);
+
+      // Render gallery
+      const gallery = document.getElementById('gallery');
+      gallery.innerHTML = '';
+
+      allItems.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = 'project-card rounded-3xl overflow-hidden shadow-xl reveal';
+        card.style.position = 'relative';
+
+        const extraContent = item.type === 'instagram' 
+          ? `<a href="${item.url}" target="_blank" class="instagram-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.322a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
+              </svg>
+              View on Instagram
+            </a>`
+          : '';
+
+        const dateStr = item.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+
+        card.innerHTML = `
+          <div class="overflow-hidden" style="aspect-ratio:1/1;">
+            <img class="w-full h-full object-cover" loading="lazy" src="${item.img}" alt="${item.title}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22400%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2220%22 fill=%22%23999%22%3EImage not available%3C/text%3E%3C/svg%3E'">
+          </div>
+          ${item.type === 'instagram' ? '<div class="instagram-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg> Instagram</div>' : ''}
+          <div class="p-6 cursor-pointer" style="background: rgb(253, 243, 240);" onclick="openModal(this)">
+            <p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">${item.title}</p>
+            <p class="post-date">${dateStr}</p>
+          </div>
+        `;
+
+        card.dataset.title = item.title;
+        card.dataset.img = item.img;
+        card.dataset.desc = item.desc;
+        card.dataset.type = item.type;
+        if (item.type === 'instagram') {
+          card.dataset.url = item.url;
+        }
+
+        gallery.appendChild(card);
+        observer.observe(card);
+      });
+    } catch (error) {
+      console.error('Error loading gallery:', error);
+    }
+  }
+
+  // Load gallery on page load
+  document.addEventListener('DOMContentLoaded', loadGallery);
 
   // Smooth scroll for navigation
   function smoothScroll(event) {
@@ -549,13 +637,24 @@
     document.getElementById("modalTitle").innerText = el.dataset.title;
     document.getElementById("modalImg").src = el.dataset.img;
     document.getElementById("modalDesc").innerText = el.dataset.desc;
-    // Prevent body scrolling when modal is open
+    
+    const extraDiv = document.getElementById("modalExtra");
+    if (el.dataset.type === 'instagram' && el.dataset.url) {
+      extraDiv.innerHTML = `<a href="${el.dataset.url}" target="_blank" class="instagram-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
+        </svg>
+        View on Instagram
+      </a>`;
+    } else {
+      extraDiv.innerHTML = '';
+    }
+    
     document.body.style.overflow = "hidden";
   }
 
   function closeModal() {
     document.getElementById("modal").style.display = "none";
-    // Re-enable body scrolling
     document.body.style.overflow = "auto";
   }
 
@@ -574,16 +673,9 @@
 
   filterButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      // Remove active class from all buttons
       filterButtons.forEach(b => b.classList.remove("active"));
-      
-      // Add active class to clicked button
       btn.classList.add("active");
-      
-      // Get the filter value
       const filter = btn.dataset.filter;
-      
-      // Show/hide skills based on category
       skillPills.forEach(skill => {
         if (skill.dataset.category === filter) {
           skill.style.display = "inline-block";
