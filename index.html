@@ -9,7 +9,6 @@
 
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@600;700;900&display=swap" rel="stylesheet">
-
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
 
   <style>
@@ -43,18 +42,6 @@
     .project-card:nth-child(odd) { transform: rotate(-1deg); }
     .project-card:nth-child(even) { transform: rotate(1deg); }
 
-    .hero-text { animation: slideUp 1s ease forwards; opacity: 0; }
-    .hero-text-d1 { animation-delay: 0.2s; }
-    .hero-text-d2 { animation-delay: 0.4s; }
-    .hero-text-d3 { animation-delay: 0.6s; }
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .skill-pill { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .skill-pill:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-
     /* FILTER BUTTONS */
     .filter-btn {
       padding: 8px 20px;
@@ -66,15 +53,145 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-
-    .filter-btn:hover {
-      transform: translateY(-2px);
-    }
-
+    .filter-btn:hover { transform: translateY(-2px); }
     .filter-btn.active {
       background: rgb(212, 138, 154);
       color: white;
       box-shadow: 0 8px 20px rgba(212, 138, 154, 0.3);
+    }
+
+    .skill-pill { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .skill-pill:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+
+    /* HERO */
+    .hero-text { animation: slideUp 1s ease forwards; opacity: 0; }
+    .hero-text-d1 { animation-delay: 0.2s; }
+    .hero-text-d2 { animation-delay: 0.4s; }
+    .hero-text-d3 { animation-delay: 0.6s; }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===================== SERVICES ===================== */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 900px) { .service-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .service-grid { grid-template-columns: 1fr; } }
+
+    .service-card {
+      background: white;
+      border-radius: 20px;
+      /* IMPORTANT: no overflow:hidden so expanding card doesn't push siblings */
+      box-shadow: 0 4px 16px rgba(107, 83, 68, 0.07);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      /* Each card is independently sized - align-self prevents stretching */
+      align-self: start;
+    }
+    .service-card:hover {
+      box-shadow: 0 10px 32px rgba(212, 138, 154, 0.22);
+      transform: translateY(-3px);
+    }
+    .service-card.special-card {
+      background: linear-gradient(135deg, rgb(212, 138, 154), rgb(225, 100, 130));
+    }
+    .service-card.special-card .card-header { color: white; }
+    .service-card.special-card .card-icon { background: rgba(255,255,255,0.22); }
+    .service-card.special-card .chevron { color: rgba(255,255,255,0.8); }
+    .service-card.special-card .service-list li { color: rgba(255,255,255,0.92); border-bottom-color: rgba(255,255,255,0.15); }
+    .service-card.special-card .service-list li::before { background: rgba(255,255,255,0.3); color: white; }
+    .service-card.special-card .card-divider { border-color: rgba(255,255,255,0.2); }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 20px;
+      color: rgb(107, 83, 68);
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      user-select: none;
+      gap: 8px;
+    }
+    .card-left { display: flex; align-items: center; gap: 10px; }
+
+    .card-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgb(253, 235, 228);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover .card-icon { transform: scale(1.12) rotate(-5deg); }
+
+    .chevron {
+      font-size: 11px;
+      color: rgb(180, 140, 130);
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      flex-shrink: 0;
+    }
+    .service-card.open .chevron { transform: rotate(180deg); }
+
+    /* The body wraps a measurable inner div so max-height animates correctly */
+    .card-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-body-inner {
+      padding: 0 20px 16px;
+      opacity: 0;
+      transform: translateY(-6px);
+      transition: opacity 0.3s ease 0.05s, transform 0.3s ease 0.05s;
+    }
+    .service-card.open .card-body-inner {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card-divider {
+      border: none;
+      border-top: 1px solid rgba(107, 83, 68, 0.08);
+      margin-bottom: 12px;
+    }
+
+    .service-list { list-style: none; }
+    .service-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 0;
+      font-size: 13px;
+      color: rgb(93, 74, 64);
+      border-bottom: 1px solid rgba(107, 83, 68, 0.06);
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity 0.22s ease, transform 0.22s ease;
+    }
+    .service-card.open .service-list li { opacity: 1; transform: translateX(0); }
+    .service-list li:last-child { border-bottom: none; }
+    .service-list li::before {
+      content: "✓";
+      width: 16px;
+      height: 16px;
+      background: rgb(212, 138, 154);
+      color: white;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 700;
+      flex-shrink: 0;
     }
 
     /* MODAL */
@@ -90,7 +207,6 @@
       padding: 20px;
       overflow-y: auto;
     }
-
     .modal-card {
       background: white;
       width: 100%;
@@ -104,21 +220,18 @@
       max-height: none;
       margin: auto;
     }
-
-    .modal-img { 
-      width: 100%; 
+    .modal-img {
+      width: 100%;
       height: auto;
       aspect-ratio: 1 / 1;
       object-fit: cover;
       border-radius: 24px 24px 0 0;
     }
-
-    .modal-body { 
+    .modal-body {
       padding: 24px;
       overflow-y: auto;
       max-height: 300px;
     }
-
     .modal-close {
       position: absolute;
       top: 12px;
@@ -137,9 +250,7 @@
       justify-content: center;
       z-index: 10000;
     }
-
     .modal-close:hover { transform: scale(1.1); }
-
     @keyframes pop {
       from { transform: scale(0.9); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
@@ -165,44 +276,30 @@
       animation: pulse 2s infinite;
       font-size: 16px;
     }
-
     .whatsapp-icon { width: 24px; height: 24px; flex-shrink: 0; }
-
-    .whatsapp-text { display: block; }
-
     .whatsapp-float:hover {
       transform: scale(1.1);
       box-shadow: 0 18px 40px rgba(0,0,0,0.3);
-      padding: 12px 20px;
     }
-
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.07); }
       100% { transform: scale(1); }
     }
 
+    .glass-card {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.35);
+    }
+
     @media (max-width: 640px) {
-      .whatsapp-float {
-        padding: 12px 16px;
-        font-size: 14px;
-      }
-      
+      .whatsapp-float { padding: 12px 16px; font-size: 14px; }
       .whatsapp-icon { width: 20px; height: 20px; }
-
-      .modal-card {
-        max-width: 95vw;
-      }
-
-      .modal-body {
-        padding: 20px;
-        max-height: 250px;
-      }
-
-      .filter-btn {
-        padding: 6px 16px;
-        font-size: 14px;
-      }
+      .modal-card { max-width: 95vw; }
+      .modal-body { padding: 20px; max-height: 250px; }
+      .filter-btn { padding: 6px 16px; font-size: 14px; }
     }
   </style>
 </head>
@@ -223,6 +320,7 @@
       <a href="#about" class="text-gray-600 hover:text-gray-900 transition" onclick="smoothScroll(event)">About</a>
       <a href="#skills" class="text-gray-600 hover:text-gray-900 transition" onclick="smoothScroll(event)">Skills</a>
       <a href="#projects" class="text-gray-600 hover:text-gray-900 transition" onclick="smoothScroll(event)">Projects</a>
+      <a href="#services" class="text-gray-600 hover:text-gray-900 transition" onclick="smoothScroll(event)">Services</a>
       <a href="#contact" class="text-gray-600 hover:text-gray-900 transition" onclick="smoothScroll(event)">Contact</a>
     </div>
   </nav>
@@ -230,18 +328,18 @@
 
 <main class="relative z-10">
 
-  <!-- Hero Landing -->
-  <section class="w-full pt-32 pb-20 px-6 relative overflow-hidden" style="min-height: 100vh; background: rgba(255, 255, 255, 0);">
+  <!-- Hero -->
+  <section class="w-full pt-32 pb-20 px-6 relative overflow-hidden" style="min-height: 100vh; background: rgba(255,255,255,0);">
     <div class="absolute inset-0 z-0">
-      <img class="w-full h-full object-cover" loading="lazy" src="https://images.pexels.com/photos/29765807/pexels-photo-29765807.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Minimalist pink desk flat lay featuring stationery, keyboard, and coffee for a creative workspace vibe.">
+      <img class="w-full h-full object-cover" loading="lazy" src="https://images.pexels.com/photos/29765807/pexels-photo-29765807.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Minimalist pink desk setup">
       <div class="absolute inset-0 bg-gradient-to-r from-white/85 via-white/70 to-white/40"></div>
     </div>
     <div class="max-w-7xl mx-auto relative z-10 h-full flex items-center justify-center">
       <div class="flex flex-col justify-center items-center text-center">
         <p class="uppercase tracking-[0.3em] mb-4 hero-text" style="color: rgb(208, 138, 154); font-weight: 500; font-size: 13px;">Digital Designer & Creative Strategist</p>
         <h1 class="mb-6 hero-text hero-text-d1 leading-tight" style="color: rgb(61, 43, 34); font-weight: 900; font-size: 64px;">Digital Designer</h1>
-        <p class="mb-8 hero-text hero-text-d2 max-w-2xl" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Crafting beautiful, strategic designs that help brands connect, communicate, and convert. From social media graphics to branding and advertising creatives.</p>
-        <a href="#projects" class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg w-fit hero-text hero-text-d3 cursor-pointer" onclick="smoothScroll(event)" style="background: rgb(212, 138, 154); color: rgb(255, 255, 255); font-weight: 600; font-size: 16px;">View Portfolio →</a>
+        <p class="mb-8 hero-text hero-text-d2 max-w-2xl" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Crafting beautiful, strategic designs that help brands connect, communicate, and stand out in a crowded marketplace.</p>
+        <a href="#projects" class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg w-fit hero-text hero-text-d3 cursor-pointer" onclick="smoothScroll(event)" style="background: rgb(212, 138, 154); color: white;">View My Work →</a>
       </div>
     </div>
   </section>
@@ -260,132 +358,60 @@
         </div>
         <div class="flex flex-col justify-center lg:order-2">
           <h2 class="mb-6" style="color: rgb(107, 83, 68); font-weight: 700; font-size: 27px;">About Me</h2>
-          <p class="leading-relaxed" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 20px;">I'm a digital designer who brings brands to life through compelling visual design. From social media graphics and motion animations to complete brand identities, I craft work that connects, inspires, and drives real results across every platform.</p>
+          <p class="leading-relaxed" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 20px;">I'm a digital designer who brings brands to life through compelling visual design. From social media graphics to complete branding solutions, I create designs that don't just look good—they deliver results. With expertise in design trends, color psychology, and user engagement, I help brands build meaningful connections with their audience.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills with Filters -->
+  <!-- Skills -->
   <section id="skills" class="py-20 px-6 relative" style="background: rgb(253, 243, 240);">
     <div class="max-w-5xl mx-auto reveal">
       <h2 class="text-center mb-12" style="color: rgb(107, 83, 68); font-weight: 700; font-size: 27px;">My Expertise</h2>
-      
-      <!-- Filter Buttons -->
       <div class="flex flex-wrap justify-center gap-3 mb-10">
         <button class="filter-btn active" data-filter="design">🎨 Design</button>
+        <button class="filter-btn" data-filter="services">📦 Services</button>
         <button class="filter-btn" data-filter="marketing">📱 Marketing</button>
         <button class="filter-btn" data-filter="tools">🛠️ Tools</button>
         <button class="filter-btn" data-filter="web">🌐 Web</button>
       </div>
-
-      <!-- Skills Grid -->
       <div class="flex flex-wrap justify-center gap-4">
-        
-        <!-- DESIGN SKILLS (8) -->
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(252, 232, 224);">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Product Advertising</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(232, 229, 245);">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Brand Identity</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(243, 217, 232);">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Typography</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(253, 233, 228);">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Social Media Design</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(252, 232, 224);">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Logo Design</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(232, 229, 245);">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Color Theory</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(243, 217, 232);">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Layout & Composition</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(253, 233, 228);">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Visual Hierarchy</p>
-        </div>
-
-        <!-- MARKETING SKILLS (8) -->
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(252, 232, 224); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Content Strategy</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(232, 229, 245); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Audience Engagement</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(243, 217, 232); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Social Media Marketing</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(253, 233, 228); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Campaign Planning</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(252, 232, 224); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Brand Positioning</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(232, 229, 245); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Market Research</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(243, 217, 232); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Copywriting</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(253, 233, 228); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Analytics & Metrics</p>
-        </div>
-
-        <!-- TOOLS SKILLS (8) -->
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(252, 232, 224); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Canva</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(232, 229, 245); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Photoshop</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(243, 217, 232); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Illustrator</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(253, 233, 228); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Figma</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(252, 232, 224); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Adobe XD</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(232, 229, 245); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">InDesign</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(243, 217, 232); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">CorelDRAW</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(253, 233, 228); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Procreate</p>
-        </div>
-
-        <!-- WEB SKILLS (8) -->
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(252, 232, 224); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">HTML/CSS</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(232, 229, 245); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Landing Pages</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(243, 217, 232); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Responsive Design</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(253, 233, 228); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">UI/UX Design</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(252, 232, 224); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">JavaScript</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(232, 229, 245); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Web Prototyping</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(243, 217, 232); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Wireframing</p>
-        </div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(253, 233, 228); display: none;">
-          <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">User Experience</p>
-        </div>
-
+        <!-- DESIGN -->
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(252, 232, 224);"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Product Advertising</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(232, 229, 245);"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Brand Identity</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(243, 217, 232);"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Typography</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(253, 233, 228);"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Social Media Design</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(252, 232, 224);"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Logo Design</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(232, 229, 245);"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Color Theory</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(243, 217, 232);"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Layout & Composition</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(253, 233, 228);"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Visual Hierarchy</p></div>
+        <!-- MARKETING -->
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(252, 232, 224); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Content Strategy</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(232, 229, 245); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Audience Engagement</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(243, 217, 232); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Social Media Marketing</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(253, 233, 228); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Campaign Planning</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(252, 232, 224); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Brand Positioning</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(232, 229, 245); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Market Research</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(243, 217, 232); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Copywriting</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(253, 233, 228); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Analytics & Metrics</p></div>
+        <!-- TOOLS -->
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(252, 232, 224); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Canva</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(232, 229, 245); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Photoshop</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(243, 217, 232); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Illustrator</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(253, 233, 228); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Figma</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(252, 232, 224); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Adobe XD</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(232, 229, 245); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">InDesign</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(243, 217, 232); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">CorelDRAW</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(253, 233, 228); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Procreate</p></div>
+        <!-- WEB -->
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(252, 232, 224); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">HTML/CSS</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(232, 229, 245); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Responsive Design</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(243, 217, 232); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">UI/UX Design</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(253, 233, 228); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">JavaScript</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(252, 232, 224); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Web Prototyping</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(232, 229, 245); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Wireframing</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(243, 217, 232); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">User Experience</p></div>
+        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(253, 233, 228); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Interactive Design</p></div>
       </div>
     </div>
   </section>
@@ -395,120 +421,52 @@
     <div class="max-w-6xl mx-auto">
       <h2 class="text-center mb-16 reveal" style="color: rgb(107, 83, 68); font-weight: 700; font-size: 27px;">Featured Projects</h2>
       <div class="grid md:grid-cols-3 gap-10">
-        <!-- Project 1 -->
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)"
-             data-title="Skin1004 Madagascar Centella"
-             data-img="images/skin1004.png"
-             data-desc="Skin1004 Madagascar Centella poster featuring award-winning sun serum with Hyalu-Cica Water-Fit technology and zero white cast, delivering lightweight hydration and daily UV protection.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;">
-            <img class="w-full h-full object-cover" loading="lazy" src="images/skin1004.png" alt="SKIN1004 Madagascar Centella skincare product with water splash and floral styling">
-          </div>
-          <div class="p-6" style="background: rgb(253, 243, 240);">
-            <p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Skin1004 Madagascar Centella poster featuring award-winning sun serum with Hyalu-Cica Water-Fit technology.</p>
-          </div>
+        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)" data-title="Skin1004 Madagascar Centella" data-img="images/skin1004.png" data-desc="Skin1004 Madagascar Centella poster featuring award-winning sun serum with Hyalu-Cica Water-Fit technology and zero white cast, delivering lightweight hydration and daily sun protection.">
+          <div class="overflow-hidden" style="aspect-ratio:1/1;"><img class="w-full h-full object-cover" loading="lazy" src="images/skin1004.png" alt="SKIN1004 Madagascar Centella skincare product"></div>
+          <div class="p-6" style="background: rgb(253, 243, 240);"><p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Skin1004 Madagascar Centella poster featuring award-winning sun serum with Hyalu-Cica Water-Fit technology...</p></div>
         </div>
-
-        <!-- Project 2 -->
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)"
-             data-title="Celimax Retinal Shot"
-             data-img="images/celimax.png"
-             data-desc="Celimax Retinal Shot skincare featuring 0.1% retinol and peptides tightening booster with proven anti-aging benefits and fan-favorite status for smoother, revitalized complexion.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;">
-            <img class="w-full h-full object-cover" loading="lazy" src="images/celimax.png" alt="Celimax Retinal Shot skincare product with retinol and peptides, featuring close-up application and floral styling">
-          </div>
-          <div class="p-6" style="background: rgb(253, 243, 240);">
-            <p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Celimax Retinal Shot skincare featuring 0.1% retinol and peptides tightening booster with proven anti-aging benefits.</p>
-          </div>
+        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)" data-title="Celimax Retinal Shot" data-img="images/celimax.png" data-desc="Celimax Retinal Shot skincare featuring 0.1% retinol and peptides tightening booster with proven anti-aging benefits and fan-favorite status for smoother, revitalized complexion.">
+          <div class="overflow-hidden" style="aspect-ratio:1/1;"><img class="w-full h-full object-cover" loading="lazy" src="images/celimax.png" alt="Celimax Retinal Shot skincare product"></div>
+          <div class="p-6" style="background: rgb(253, 243, 240);"><p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Celimax Retinal Shot skincare featuring 0.1% retinol and peptides tightening booster with proven anti-aging benefits...</p></div>
         </div>
-
-        <!-- Project 3 -->
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)"
-             data-title="Mixsoon Bean Essence"
-             data-img="images/mixsoon.png"
-             data-desc="Meet your shortcut to smooth, hydrated, glass skin. This Essence nourishes, gently exfoliates, and boosts your skin's natural radiance.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;">
-            <img class="w-full h-full object-cover" loading="lazy" src="images/mixsoon.png" alt="Mixsoon Bean Essence hydrating skincare with fermented soybean, barley, pomegranate and Korean pear, styled with flowers and botanical elements">
-          </div>
-          <div class="p-6" style="background: rgb(253, 243, 240);">
-            <p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Meet your shortcut to smooth, hydrated, glass skin. This Essence nourishes, gently exfoliates, and boosts your skin's natural radiance.</p>
-          </div>
+        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)" data-title="Mixsoon Bean Essence" data-img="images/mixsoon.png" data-desc="Meet your shortcut to smooth, hydrated, glass skin. This Essence nourishes, gently exfoliates, and boosts your skin's natural radiance.">
+          <div class="overflow-hidden" style="aspect-ratio:1/1;"><img class="w-full h-full object-cover" loading="lazy" src="images/mixsoon.png" alt="Mixsoon Bean Essence hydrating skincare"></div>
+          <div class="p-6" style="background: rgb(253, 243, 240);"><p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Meet your shortcut to smooth, hydrated, glass skin. This Essence nourishes, gently exfoliates, and boosts your skin's natural radiance...</p></div>
         </div>
-
-        <!-- Project 4 -->
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)"
-             data-title="Anua Azelaic Acid 10"
-             data-img="images/anua.png"
-             data-desc="Anua Azelaic Acid 10 Hyaluron Redness Relief Serum campaign featuring 10% azelaic acid with hyaluronic acid, niacinamide, and centella asiatica for calming sensitive skin.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;">
-            <img class="w-full h-full object-cover" loading="lazy" src="images/anua.png" alt="Anua Azelaic Acid 10 Hyaluron Redness Relief Serum product campaign with botanical elements and green aesthetic">
-          </div>
-          <div class="p-6" style="background: rgb(253, 243, 240);">
-            <p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Anua Azelaic Acid 10 Hyaluron Redness Relief Serum campaign featuring 10% azelaic acid with soothing ingredients.</p>
-          </div>
+        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)" data-title="Anua Azelaic Acid 10" data-img="images/anua.png" data-desc="Anua Azelaic Acid 10 Hyaluron Redness Relief Serum campaign featuring 10% azelaic acid with hyaluronic acid, niacinamide, and centella asiatica for calming sensitive skin.">
+          <div class="overflow-hidden" style="aspect-ratio:1/1;"><img class="w-full h-full object-cover" loading="lazy" src="images/anua.png" alt="Anua Azelaic Acid 10 Hyaluron Redness Relief Serum"></div>
+          <div class="p-6" style="background: rgb(253, 243, 240);"><p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Anua Azelaic Acid 10 Hyaluron Redness Relief Serum campaign featuring 10% azelaic acid with soothing botanicals...</p></div>
         </div>
-
-        <!-- Project 5 -->
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)"
-             data-title="Beauty of Joseon Relief Sun"
-             data-img="images/joseon.png"
-             data-desc="Beauty of Joseon Relief Sun Rice + Probiotics SPF 50+ PA++++ campaign featuring lightweight, non-whitening sunscreen with rice and probiotic ferments for everyday skin protection.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;">
-            <img class="w-full h-full object-cover" loading="lazy" src="images/joseon.png" alt="Beauty of Joseon Relief Sun Rice + Probiotics SPF 50+ PA++++ sunscreen product with botanical and floral styling">
-          </div>
-          <div class="p-6" style="background: rgb(253, 243, 240);">
-            <p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Beauty of Joseon Relief Sun Rice + Probiotics SPF 50+ campaign featuring lightweight sunscreen with rice and probiotics.</p>
-          </div>
+        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)" data-title="Beauty of Joseon Relief Sun" data-img="images/joseon.png" data-desc="Beauty of Joseon Relief Sun Rice + Probiotics SPF 50+ PA++++ campaign featuring lightweight, non-whitening sunscreen with rice and probiotic ferments for everyday skin protection.">
+          <div class="overflow-hidden" style="aspect-ratio:1/1;"><img class="w-full h-full object-cover" loading="lazy" src="images/joseon.png" alt="Beauty of Joseon Relief Sun Rice + Probiotics SPF 50+"></div>
+          <div class="p-6" style="background: rgb(253, 243, 240);"><p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Beauty of Joseon Relief Sun Rice + Probiotics SPF 50+ campaign featuring lightweight sunscreen with rice and probiotics...</p></div>
         </div>
-
-        <!-- Project 6 -->
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)"
-             data-title="COSRX Advanced Snail 96"
-             data-img="images/cosrx.png"
-             data-desc="COSRX Advanced Snail 96 Mucin Essence anti-aging power essence with 96% snail mucin, sodium hyaluronate, panthenol, and allantoin for hydration and glow repair for smooth radiant skin.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;">
-            <img class="w-full h-full object-cover" loading="lazy" src="images/cosrx.png" alt="COSRX Advanced Snail 96 Mucin Essence anti-aging power essence product campaign with snail serum and botanical elements">
-          </div>
-          <div class="p-6" style="background: rgb(253, 243, 240);">
-            <p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">COSRX Advanced Snail 96 Mucin Essence anti-aging power essence with 96% snail mucin for hydration and repair.</p>
-          </div>
+        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)" data-title="COSRX Advanced Snail 96" data-img="images/cosrx.png" data-desc="COSRX Advanced Snail 96 Mucin Essence anti-aging power essence with 96% snail mucin, sodium hyaluronate, panthenol, and allantoin for hydration and glow repair for smooth complexion.">
+          <div class="overflow-hidden" style="aspect-ratio:1/1;"><img class="w-full h-full object-cover" loading="lazy" src="images/cosrx.png" alt="COSRX Advanced Snail 96 Mucin Essence"></div>
+          <div class="p-6" style="background: rgb(253, 243, 240);"><p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">COSRX Advanced Snail 96 Mucin Essence anti-aging power essence with 96% snail mucin for hydration and glow...</p></div>
         </div>
-                <!-- Project 7 -->
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)"
-             data-title="SKIN1004 Centella Poremizing Gel Cream"
-             data-img="images/poremizing.png"
-             data-desc="Infused with Himalayan Salt and 50% Centella Asiatica Extract, this gel cream tightens, refines, and smooths your skin texture, without stripping moisture.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;">
-            <img class="w-full h-full object-cover" loading="lazy" src="images/poremizing.png" alt="SKIN1004 Centella Poremizing Clear Up Gel Cream">
-          </div>
-          <div class="p-7" style="background: rgb(253, 243, 240);">
-            <p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Infused with Himalayan Salt and Centella Asiatica Extract, this cream tightens, refines, and smooths your skin texture, without stripping moisture.</p>
-          </div>
+        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)" data-title="SKIN1004 Centella Poremizing Gel Cream" data-img="images/poremizing.png" data-desc="Infused with Himalayan Salt and 50% Centella Asiatica Extract, this gel cream tightens, refines, and smooths your skin texture, without stripping moisture.">
+          <div class="overflow-hidden" style="aspect-ratio:1/1;"><img class="w-full h-full object-cover" loading="lazy" src="images/poremizing.png" alt="SKIN1004 Centella Poremizing Clear Up Gel Cream"></div>
+          <div class="p-7" style="background: rgb(253, 243, 240);"><p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Infused with Himalayan Salt and Centella Asiatica Extract, this cream tightens, refines, and smooths skin texture...</p></div>
         </div>
-          <!-- Project 8 -->
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)"
-             data-title="COSRX The Retinol 0.5 Oil"
-             data-img="images/cosrx retinol.png"
-             data-desc="This nighttime lightweight facial oil works while you dream: 0.5% pure retinol smooths fine lines, fades breakouts, and firms skin.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;">
-            <img class="w-full h-full object-cover" loading="lazy" src="images/cosrx retinol.png" alt="COSRX The Retinol 0.5 Oil">
-          </div>
-          <div class="p-8" style="background: rgb(253, 243, 240);">
-            <p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">This nighttime lightweight facial oil works while you dream: 0.5% pure retinol smooths fine lines, fades breakouts, and firms skin.</p>
-          </div>
+        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)" data-title="COSRX The Retinol 0.5 Oil" data-img="images/cosrx retinol.png" data-desc="This nighttime lightweight facial oil works while you dream: 0.5% pure retinol smooths fine lines, fades breakouts, and firms skin.">
+          <div class="overflow-hidden" style="aspect-ratio:1/1;"><img class="w-full h-full object-cover" loading="lazy" src="images/cosrx retinol.png" alt="COSRX The Retinol 0.5 Oil"></div>
+          <div class="p-8" style="background: rgb(253, 243, 240);"><p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">This nighttime lightweight facial oil works while you dream: 0.5% pure retinol smooths fine lines and firms skin...</p></div>
         </div>
-        <!-- Project 9 -->
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)"
-             data-title="Anua - 8 Hyaluronic Acid Moisturizing Gentle Gel Cleanser"
-             data-img="images/anua cleanser.png"
-             data-desc="Formulated with 8 types of Hyaluronic Acid, Squalane, and Glycerin to lock in hydration while deeply cleansing pores.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;">
-            <img class="w-full h-full object-cover" loading="lazy" src="images/anua cleanser.png" alt="Anua - 8 Hyaluronic Acid Moisturizing Gentle Gel Cleanser">
-          </div>
-          <div class="p-9" style="background: rgb(253, 243, 240);">
-            <p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Formulated with 8 types of Hyaluronic Acid, Squalane, and Glycerin to lock in hydration while deeply cleansing pores.</p>
-          </div>
+        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)" data-title="Anua - 8 Hyaluronic Acid Moisturizing Gentle Gel Cleanser" data-img="images/anua cleanser.png" data-desc="Formulated with 8 types of Hyaluronic Acid, Squalane, and Glycerin to lock in hydration while deeply cleansing pores.">
+          <div class="overflow-hidden" style="aspect-ratio:1/1;"><img class="w-full h-full object-cover" loading="lazy" src="images/anua cleanser.png" alt="Anua 8 Hyaluronic Acid Moisturizing Gentle Gel Cleanser"></div>
+          <div class="p-9" style="background: rgb(253, 243, 240);"><p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Formulated with 8 types of Hyaluronic Acid, Squalane, and Glycerin to lock in hydration while deeply cleansing...</p></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-24 px-6 relative" style="background: rgb(253, 243, 240);">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-center mb-4 reveal" style="color: rgb(107, 83, 68); font-weight: 700; font-size: 27px;">My Services</h2>
+      <p class="text-center mb-16 reveal" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Comprehensive design solutions for creative design & digital marketing</p>
+      <div class="service-grid reveal" id="serviceGrid"></div>
     </div>
   </section>
 
@@ -519,7 +477,7 @@
     <div class="max-w-2xl mx-auto text-center relative z-10 reveal">
       <h2 class="mb-4" style="color: rgb(255, 251, 249); font-weight: 700; font-size: 27px;">Let's create something together.</h2>
       <p class="mb-8" style="color: rgb(245, 230, 224); font-weight: 400; font-size: 18px;">Open for freelance projects, collaborations, and creative partnerships.</p>
-      <a href="mailto:sakinahamid53@hotmail.com" class="inline-block px-10 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg" style="background: rgb(255, 251, 249); color: rgb(107, 83, 68); font-weight: 600; font-size: 18px;">Get In Touch</a>
+      <a href="mailto:sakinahamid53@hotmail.com" class="inline-block px-10 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg" style="background: rgb(255, 251, 249); color: rgb(212, 138, 154);">Get in Touch →</a>
     </div>
   </section>
 
@@ -541,93 +499,120 @@
   </div>
 </div>
 
-<!-- WHATSAPP FLOATING BUTTON (TEXT + ICON) -->
+<!-- WHATSAPP -->
 <a href="https://wa.me/255686210125?text=Hi%20I%20found%20your%20portfolio%20and%20want%20to%20hire%20you"
-   class="whatsapp-float"
-   target="_blank"
-   aria-label="Chat on WhatsApp">
-
+   class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
   <svg class="whatsapp-icon" viewBox="0 0 32 32">
-    <path fill="white" d="M16 3C9.37 3 4 8.37 4 15c0 2.61.85 5.02 2.29 6.97L4 29l7.28-2.25C13.1 27.54 14.52 28 16 28c6.63 0 12-5.37 12-12S22.63 3 16 3zm0 22c-1.35 0-2.65-.27-3.85-.8l-.28-.12-4.32 1.33 1.41-4.21-.18-.3C7.8 19.5 7 17.31 7 15 7 9.48 11.48 5 16 5s9 4.48 9 10-4.48 10-9 10z"/>
+    <path fill="white" d="M16 3C9.37 3 4 8.37 4 15c0 2.61.85 5.02 2.29 6.97L4 29l7.28-2.25C13.1 27.54 14.52 28 16 28c6.63 0 12-5.37 12-12S22.63 3 16 3zm0 22c-1.35 0-2.65-.27-3.85-.8l-.28-.12-4.32 1.34.95-3.46-.24-.38C6.14 19.65 5.5 17.41 5.5 15c0-5.79 4.71-10.5 10.5-10.5S26.5 9.21 26.5 15 21.79 25 16 25z"/>
+    <path fill="white" d="M20.5 17.5c-.27 0-.55-.08-.82-.25-.5-.32-1.3-.7-2.7-1.5-1.4-.8-2.1-1.2-2.37-1.5-.27-.3-.27-.7 0-1.06.54-.72 1.08-1.44 1.08-1.44l.18-.27c.36-.54.18-1.08-.18-1.44-.36-.36-.9-.72-1.26-.9-.36-.18-.72-.09-1.08.09-.36.18-.72.72-.9 1.26-.18.54-.27 1.26-.09 1.98.18.72.9 1.62 1.62 2.34.72.72 1.62 1.44 2.34 1.62.72.18 1.44.09 1.98-.09.54-.18 1.08-.54 1.26-.9.18-.36.09-.72-.09-1.08-.18-.36-.54-.72-.9-.9-.27-.17-.55-.25-.82-.25z"/>
   </svg>
-
-  <span class="whatsapp-text">WhatsApp Me</span>
-
+  <span>WhatsApp Me</span>
 </a>
 
 <script>
   lucide.createIcons();
 
-  // Intersection Observer for reveal animations
+  // Reveal on scroll
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
   }, { threshold: 0.15 });
-
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // Smooth scroll for navigation
+  // Smooth scroll
   function smoothScroll(event) {
     event.preventDefault();
-    const href = event.currentTarget.getAttribute('href');
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    const target = document.querySelector(event.currentTarget.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  // Modal functionality
+  // Modal
   function openModal(el) {
-    document.getElementById("modal").style.display = "flex";
-    document.getElementById("modalTitle").innerText = el.dataset.title;
-    document.getElementById("modalImg").src = el.dataset.img;
-    document.getElementById("modalDesc").innerText = el.dataset.desc;
-    // Prevent body scrolling when modal is open
-    document.body.style.overflow = "hidden";
+    document.getElementById('modal').style.display = 'flex';
+    document.getElementById('modalTitle').innerText = el.dataset.title;
+    document.getElementById('modalImg').src = el.dataset.img;
+    document.getElementById('modalDesc').innerText = el.dataset.desc;
+    document.body.style.overflow = 'hidden';
   }
-
   function closeModal() {
-    document.getElementById("modal").style.display = "none";
-    // Re-enable body scrolling
-    document.body.style.overflow = "auto";
+    document.getElementById('modal').style.display = 'none';
+    document.body.style.overflow = 'auto';
   }
+  function closeModalOutside(e) { if (e.target.id === 'modal') closeModal(); }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-  function closeModalOutside(e) {
-    if (e.target.id === "modal") closeModal();
-  }
-
-  // Close modal on Escape key
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeModal();
-  });
-
-  // Filter Skills Functionality
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const skillPills = document.querySelectorAll(".skill-pill");
-
-  filterButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      // Remove active class from all buttons
-      filterButtons.forEach(b => b.classList.remove("active"));
-      
-      // Add active class to clicked button
-      btn.classList.add("active");
-      
-      // Get the filter value
+  // Skill filter
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
       const filter = btn.dataset.filter;
-      
-      // Show/hide skills based on category
-      skillPills.forEach(skill => {
-        if (skill.dataset.category === filter) {
-          skill.style.display = "inline-block";
-        } else {
-          skill.style.display = "none";
-        }
+      document.querySelectorAll('.skill-pill').forEach(skill => {
+        skill.style.display = skill.dataset.category === filter ? 'inline-block' : 'none';
       });
     });
+  });
+
+  // ===================== SERVICES =====================
+  const servicesData = [
+    { icon: '🎨', title: 'Graphic Design & Branding', items: ['Logo Design','Brand Identity Design','Brand Style Guides','Rebranding Projects','Business Cards & Stationery','Packaging & Label Design','Marketing Materials','Corporate Branding Assets'] },
+    { icon: '📱', title: 'Social Media & Content', items: ['Social Media Posts & Stories','Carousel Posts','Social Media Campaigns','Content Creation & Planning','Instagram Highlight Covers','YouTube Thumbnails','Social Media Templates','Digital Content Graphics'] },
+    { icon: '📢', title: 'Advertising & Marketing', items: ['Product Advertisements','Promotional Campaign Graphics','Event Marketing Materials','Email Marketing Designs','Digital Ads & Banners','Sales & Launch Campaign Creatives','E-commerce Marketing Assets'] },
+    { icon: '🛍️', title: 'Product & E-commerce', items: ['Product Mockups','Product Listing Images','Beauty & Skincare Creatives','Amazon & Online Store Graphics','Product Launch Visuals','Before & After Graphics','Product Catalog Design'] },
+    { icon: '💻', title: 'Web & Digital Design', items: ['Landing Page Design','Portfolio Websites','Canva Website Design','Website Graphics & Banners','UI Mockups','Digital Asset Design','Website Content Visuals'] },
+    { icon: '🎮', title: 'Interactive & Educational', items: ['Interactive Games','Educational Learning Games','Baby Shower & Party Games','Bridal Shower Games','Interactive Presentations','Quizzes & Assessments','Learning Activities & Worksheets'] },
+    { icon: '📄', title: 'Print & Publication', items: ['Flyers & Posters','Brochures & Booklets','Menus','Invitations','Certificates','Workbooks & Planners','Magazines & Catalogs'] },
+    { icon: '📊', title: 'Business & Professional', items: ['Presentation Design','Pitch Decks','Company Profiles','Resume/CV Design','Portfolio Design','Proposal Design','Reports & Business Documents'] },
+    { icon: '✨', title: 'Custom Creative Solutions', items: ['Canva Templates','Digital Products','Printable Designs','Custom Client Requests','Creative Consultation','Design Support for Small Businesses & Startups'], special: true }
+  ];
+
+  const grid = document.getElementById('serviceGrid');
+
+  servicesData.forEach(s => {
+    const card = document.createElement('div');
+    card.className = 'service-card' + (s.special ? ' special-card' : '');
+
+    card.innerHTML = `
+      <div class="card-header">
+        <div class="card-left">
+          <div class="card-icon">${s.icon}</div>
+          <span>${s.title}</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="card-body">
+        <div class="card-body-inner">
+          <hr class="card-divider">
+          <ul class="service-list">
+            ${s.items.map(item => `<li>${item}</li>`).join('')}
+          </ul>
+        </div>
+      </div>
+    `;
+
+    card.querySelector('.card-header').addEventListener('click', () => {
+      const isOpen = card.classList.contains('open');
+
+      // Close all cards first (no layout jump: we just collapse max-height)
+      document.querySelectorAll('.service-card.open').forEach(c => {
+        c.classList.remove('open');
+        c.querySelector('.card-body').style.maxHeight = '0';
+      });
+
+      if (!isOpen) {
+        card.classList.add('open');
+        const body = card.querySelector('.card-body');
+        const inner = card.querySelector('.card-body-inner');
+        // Use scrollHeight of inner so the expansion is exact, no layout shift on siblings
+        body.style.maxHeight = inner.scrollHeight + 32 + 'px';
+
+        // Stagger list items
+        card.querySelectorAll('.service-list li').forEach((li, i) => {
+          li.style.transitionDelay = (i * 35) + 'ms';
+        });
+      }
+    });
+
+    grid.appendChild(card);
   });
 </script>
 
