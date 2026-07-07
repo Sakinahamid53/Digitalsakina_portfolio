@@ -558,7 +558,7 @@
       btn.classList.add('active');
       const filter = btn.dataset.filter;
       document.querySelectorAll('.skill-pill').forEach(skill => {
-        skill.style.display = skill.dataset.category === filter ? 'inline-block' : 'none';
+        skill.style.display = skill.dataset.category === filter ? 'inline-flex' : 'none';
       });
     });
   });
