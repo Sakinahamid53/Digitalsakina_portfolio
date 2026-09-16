@@ -3,46 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sakina Kaderbhai - Digital Designer specializing in social media graphics, ad campaigns, branding, and motion graphics.">
-  <meta name="keywords" content="digital designer, graphic design, social media, branding, motion graphics">
-  <title>Sakina | Digital Designer</title>
+
+  <meta
+    name="description"
+    content="Sakina Kaderbhai - Digital Designer specializing in social media graphics, video editing, ad campaigns, branding, 3D product visualization, and motion graphics."
+  >
+
+  <meta
+    name="keywords"
+    content="digital designer, graphic design, video editor, short form video editor, social media, branding, motion graphics, product advertising, 3D design"
+  >
+
+  <title>Sakina | Digital Designer & Video Editor</title>
+
   <link rel="icon" href="images/favicon.png">
+
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@600;700;900&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@600;700;900&display=swap"
+    rel="stylesheet"
+  >
+
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
 
   <style>
-    body { font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
-    h1, h2, h3 { font-family: 'Fraunces', serif; }
+
+    /* =========================================================
+       GLOBAL
+    ========================================================= */
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Fraunces', serif;
+    }
+
+
+    /* =========================================================
+       FLOATING BLOBS
+    ========================================================= */
 
     @keyframes float1 {
-      0%, 100% { transform: translate(0, 0) rotate(0deg); }
-      33% { transform: translate(30px, -20px) rotate(5deg); }
-      66% { transform: translate(-20px, 15px) rotate(-3deg); }
+      0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+
+      33% {
+        transform: translate(30px, -20px) rotate(5deg);
+      }
+
+      66% {
+        transform: translate(-20px, 15px) rotate(-3deg);
+      }
     }
+
     @keyframes float2 {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(-40px, 30px) scale(1.1); }
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(-40px, 30px) scale(1.1);
+      }
     }
+
     @keyframes float3 {
-      0%, 100% { transform: translate(0, 0) rotate(0deg); }
-      50% { transform: translate(25px, -35px) rotate(8deg); }
+      0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+
+      50% {
+        transform: translate(25px, -35px) rotate(8deg);
+      }
     }
 
-    .blob-1 { animation: float1 12s ease-in-out infinite; }
-    .blob-2 { animation: float2 15s ease-in-out infinite; }
-    .blob-3 { animation: float3 10s ease-in-out infinite; }
+    .blob-1 {
+      animation: float1 12s ease-in-out infinite;
+    }
 
-    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .blob-2 {
+      animation: float2 15s ease-in-out infinite;
+    }
 
-    .project-card { transition: transform 0.4s ease, box-shadow 0.4s ease; cursor: pointer; }
-    .project-card:hover { transform: rotate(-1deg) scale(1.03); box-shadow: 0 25px 50px rgba(107,83,68,0.2); }
-    .project-card:nth-child(even):hover { transform: rotate(1deg) scale(1.03); }
-    .project-card:nth-child(odd) { transform: rotate(-1deg); }
-    .project-card:nth-child(even) { transform: rotate(1deg); }
+    .blob-3 {
+      animation: float3 10s ease-in-out infinite;
+    }
 
-    /* FILTER BUTTONS */
+
+    /* =========================================================
+       REVEAL
+    ========================================================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* =========================================================
+       PROJECT CARDS
+    ========================================================= */
+
+    .project-card {
+      transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        opacity 0.3s ease;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      transform: rotate(-1deg) scale(1.03);
+      box-shadow: 0 25px 50px rgba(107, 83, 68, 0.2);
+    }
+
+    .project-card:nth-child(even):hover {
+      transform: rotate(1deg) scale(1.03);
+    }
+
+    .project-card:nth-child(odd) {
+      transform: rotate(-1deg);
+    }
+
+    .project-card:nth-child(even) {
+      transform: rotate(1deg);
+    }
+
+
+    /* =========================================================
+       SKILL FILTER BUTTONS
+    ========================================================= */
+
     .filter-btn {
       padding: 8px 20px;
       border-radius: 50px;
@@ -53,57 +158,164 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-    .filter-btn:hover { transform: translateY(-2px); }
+
+    .filter-btn:hover {
+      transform: translateY(-2px);
+    }
+
     .filter-btn.active {
       background: rgb(212, 138, 154);
       color: white;
       box-shadow: 0 8px 20px rgba(212, 138, 154, 0.3);
     }
 
-    .skill-pill { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .skill-pill:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
 
-    /* HERO */
-    .hero-text { animation: slideUp 1s ease forwards; opacity: 0; }
-    .hero-text-d1 { animation-delay: 0.2s; }
-    .hero-text-d2 { animation-delay: 0.4s; }
-    .hero-text-d3 { animation-delay: 0.6s; }
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* =========================================================
+       PROJECT FILTER BUTTONS
+    ========================================================= */
+
+    .project-filter {
+      padding: 9px 22px;
+      border-radius: 50px;
+      border: 2px solid transparent;
+      background: white;
+      color: rgb(107, 83, 68);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
 
-    /* ===================== SERVICES ===================== */
+    .project-filter:hover {
+      transform: translateY(-2px);
+    }
+
+    .project-filter.active {
+      background: rgb(212, 138, 154);
+      color: white;
+      box-shadow: 0 8px 20px rgba(212, 138, 154, 0.3);
+    }
+
+
+    /* =========================================================
+       SKILLS
+    ========================================================= */
+
+    .skill-pill {
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .skill-pill:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero-text {
+      animation: slideUp 1s ease forwards;
+      opacity: 0;
+    }
+
+    .hero-text-d1 {
+      animation-delay: 0.2s;
+    }
+
+    .hero-text-d2 {
+      animation-delay: 0.4s;
+    }
+
+    .hero-text-d3 {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+    /* =========================================================
+       SERVICES
+    ========================================================= */
+
     .service-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
     }
-    @media (max-width: 900px) { .service-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 560px) { .service-grid { grid-template-columns: 1fr; } }
+
+    @media (max-width: 900px) {
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
     .service-card {
       background: white;
       border-radius: 20px;
-      /* IMPORTANT: no overflow:hidden so expanding card doesn't push siblings */
       box-shadow: 0 4px 16px rgba(107, 83, 68, 0.07);
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
-      /* Each card is independently sized - align-self prevents stretching */
+      transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
       align-self: start;
     }
+
     .service-card:hover {
       box-shadow: 0 10px 32px rgba(212, 138, 154, 0.22);
       transform: translateY(-3px);
     }
+
     .service-card.special-card {
-      background: linear-gradient(135deg, rgb(212, 138, 154), rgb(225, 100, 130));
+      background: linear-gradient(
+        135deg,
+        rgb(212, 138, 154),
+        rgb(225, 100, 130)
+      );
     }
-    .service-card.special-card .card-header { color: white; }
-    .service-card.special-card .card-icon { background: rgba(255,255,255,0.22); }
-    .service-card.special-card .chevron { color: rgba(255,255,255,0.8); }
-    .service-card.special-card .service-list li { color: rgba(255,255,255,0.92); border-bottom-color: rgba(255,255,255,0.15); }
-    .service-card.special-card .service-list li::before { background: rgba(255,255,255,0.3); color: white; }
-    .service-card.special-card .card-divider { border-color: rgba(255,255,255,0.2); }
+
+    .service-card.special-card .card-header {
+      color: white;
+    }
+
+    .service-card.special-card .card-icon {
+      background: rgba(255,255,255,0.22);
+    }
+
+    .service-card.special-card .chevron {
+      color: rgba(255,255,255,0.8);
+    }
+
+    .service-card.special-card .service-list li {
+      color: rgba(255,255,255,0.92);
+      border-bottom-color: rgba(255,255,255,0.15);
+    }
+
+    .service-card.special-card .service-list li::before {
+      background: rgba(255,255,255,0.3);
+      color: white;
+    }
+
+    .service-card.special-card .card-divider {
+      border-color: rgba(255,255,255,0.2);
+    }
 
     .card-header {
       display: flex;
@@ -117,7 +329,12 @@
       user-select: none;
       gap: 8px;
     }
-    .card-left { display: flex; align-items: center; gap: 10px; }
+
+    .card-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
     .card-icon {
       width: 36px;
@@ -131,28 +348,39 @@
       flex-shrink: 0;
       transition: transform 0.3s ease;
     }
-    .service-card:hover .card-icon { transform: scale(1.12) rotate(-5deg); }
+
+    .service-card:hover .card-icon {
+      transform: scale(1.12) rotate(-5deg);
+    }
 
     .chevron {
       font-size: 11px;
       color: rgb(180, 140, 130);
-      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition:
+        transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
       flex-shrink: 0;
     }
-    .service-card.open .chevron { transform: rotate(180deg); }
 
-    /* The body wraps a measurable inner div so max-height animates correctly */
+    .service-card.open .chevron {
+      transform: rotate(180deg);
+    }
+
     .card-body {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+      transition:
+        max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
     }
+
     .card-body-inner {
       padding: 0 20px 16px;
       opacity: 0;
       transform: translateY(-6px);
-      transition: opacity 0.3s ease 0.05s, transform 0.3s ease 0.05s;
+      transition:
+        opacity 0.3s ease 0.05s,
+        transform 0.3s ease 0.05s;
     }
+
     .service-card.open .card-body-inner {
       opacity: 1;
       transform: translateY(0);
@@ -164,7 +392,10 @@
       margin-bottom: 12px;
     }
 
-    .service-list { list-style: none; }
+    .service-list {
+      list-style: none;
+    }
+
     .service-list li {
       display: flex;
       align-items: center;
@@ -175,10 +406,20 @@
       border-bottom: 1px solid rgba(107, 83, 68, 0.06);
       opacity: 0;
       transform: translateX(-6px);
-      transition: opacity 0.22s ease, transform 0.22s ease;
+      transition:
+        opacity 0.22s ease,
+        transform 0.22s ease;
     }
-    .service-card.open .service-list li { opacity: 1; transform: translateX(0); }
-    .service-list li:last-child { border-bottom: none; }
+
+    .service-card.open .service-list li {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .service-list li:last-child {
+      border-bottom: none;
+    }
+
     .service-list li::before {
       content: "✓";
       width: 16px;
@@ -194,7 +435,56 @@
       flex-shrink: 0;
     }
 
-    /* MODAL */
+
+    /* =========================================================
+       PROJECT VIDEO
+    ========================================================= */
+
+    .project-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-card-preview {
+      position: relative;
+      overflow: hidden;
+      background: #f3e8eb;
+    }
+
+    .video-play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .video-play-button {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.92);
+      color: rgb(212, 138, 154);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover .video-play-button {
+      transform: scale(1.12);
+    }
+
+
+    /* =========================================================
+       MODAL
+    ========================================================= */
+
     .modal-overlay {
       display: none;
       position: fixed;
@@ -207,6 +497,7 @@
       padding: 20px;
       overflow-y: auto;
     }
+
     .modal-card {
       background: white;
       width: 100%;
@@ -220,6 +511,7 @@
       max-height: none;
       margin: auto;
     }
+
     .modal-img {
       width: 100%;
       height: auto;
@@ -227,11 +519,30 @@
       object-fit: cover;
       border-radius: 24px 24px 0 0;
     }
+
+    .modal-video-container {
+      width: 100%;
+      max-height: 75vh;
+      background: #111;
+      border-radius: 24px 24px 0 0;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .modal-video {
+      width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      display: block;
+    }
+
     .modal-body {
       padding: 24px;
       overflow-y: auto;
       max-height: 300px;
     }
+
     .modal-close {
       position: absolute;
       top: 12px;
@@ -250,13 +561,28 @@
       justify-content: center;
       z-index: 10000;
     }
-    .modal-close:hover { transform: scale(1.1); }
-    @keyframes pop {
-      from { transform: scale(0.9); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+
+    .modal-close:hover {
+      transform: scale(1.1);
     }
 
-    /* WHATSAPP */
+    @keyframes pop {
+      from {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+
+    /* =========================================================
+       WHATSAPP
+    ========================================================= */
+
     .whatsapp-float {
       position: fixed;
       bottom: 22px;
@@ -276,16 +602,36 @@
       animation: pulse 2s infinite;
       font-size: 16px;
     }
-    .whatsapp-icon { width: 24px; height: 24px; flex-shrink: 0; }
+
+    .whatsapp-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
     .whatsapp-float:hover {
       transform: scale(1.1);
       box-shadow: 0 18px 40px rgba(0,0,0,0.3);
     }
+
     @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.07); }
-      100% { transform: scale(1); }
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.07);
+      }
+
+      100% {
+        transform: scale(1);
+      }
     }
+
+
+    /* =========================================================
+       GLASS
+    ========================================================= */
 
     .glass-card {
       background: rgba(255,255,255,0.55);
@@ -294,339 +640,2639 @@
       border: 1px solid rgba(255,255,255,0.35);
     }
 
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
     @media (max-width: 640px) {
-      .whatsapp-float { padding: 12px 16px; font-size: 14px; }
-      .whatsapp-icon { width: 20px; height: 20px; }
-      .modal-card { max-width: 95vw; }
-      .modal-body { padding: 20px; max-height: 250px; }
-      .filter-btn { padding: 6px 16px; font-size: 14px; }
+
+      .whatsapp-float {
+        padding: 12px 16px;
+        font-size: 14px;
+      }
+
+      .whatsapp-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      .modal-card {
+        max-width: 95vw;
+      }
+
+      .modal-body {
+        padding: 20px;
+        max-height: 250px;
+      }
+
+      .filter-btn,
+      .project-filter {
+        padding: 6px 16px;
+        font-size: 14px;
+      }
+
+      .video-play-button {
+        width: 54px;
+        height: 54px;
+      }
     }
+
   </style>
 </head>
 
-<body style="background: linear-gradient(135deg, rgb(250, 245, 243), rgb(245, 230, 240));">
 
-<!-- Floating blobs -->
+<body
+  style="
+    background:
+      linear-gradient(
+        135deg,
+        rgb(250, 245, 243),
+        rgb(245, 230, 240)
+      );
+  "
+>
+
+
+<!-- =========================================================
+     FLOATING BACKGROUND BLOBS
+========================================================= -->
+
 <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-  <div class="blob-1 absolute top-[10%] left-[5%] w-72 h-72 rounded-full bg-gradient-to-br from-pink-200/40 to-orange-200/40 blur-3xl"></div>
-  <div class="blob-2 absolute top-[50%] right-[10%] w-96 h-96 rounded-full bg-gradient-to-br from-purple-200/30 to-rose-200/30 blur-3xl"></div>
-  <div class="blob-3 absolute bottom-[10%] left-[30%] w-64 h-64 rounded-full bg-gradient-to-br from-amber-200/40 to-pink-200/40 blur-3xl"></div>
+
+  <div
+    class="blob-1 absolute top-[10%] left-[5%] w-72 h-72 rounded-full bg-gradient-to-br from-pink-200/40 to-orange-200/40 blur-3xl">
+  </div>
+
+  <div
+    class="blob-2 absolute top-[50%] right-[10%] w-96 h-96 rounded-full bg-gradient-to-br from-purple-200/30 to-rose-200/30 blur-3xl">
+  </div>
+
+  <div
+    class="blob-3 absolute bottom-[10%] left-[30%] w-64 h-64 rounded-full bg-gradient-to-br from-amber-200/40 to-pink-200/40 blur-3xl">
+  </div>
+
 </div>
 
-<header class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/70 border-b border-gray-100/50">
-  <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <span class="font-bold text-lg" style="color: rgb(107, 83, 68);">Sakina Kaderbhai</span>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header
+  class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/70 border-b border-gray-100/50"
+>
+
+  <nav
+    class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"
+  >
+
+    <span
+      class="font-bold text-lg"
+      style="color: rgb(107, 83, 68);"
+    >
+      Sakina Kaderbhai
+    </span>
+
     <div class="hidden md:flex gap-8">
-      <a href="#about" class="text-gray-600 hover:text-gray-900 transition" onclick="smoothScroll(event)">About</a>
-      <a href="#skills" class="text-gray-600 hover:text-gray-900 transition" onclick="smoothScroll(event)">Skills</a>
-      <a href="#projects" class="text-gray-600 hover:text-gray-900 transition" onclick="smoothScroll(event)">Projects</a>
-      <a href="#services" class="text-gray-600 hover:text-gray-900 transition" onclick="smoothScroll(event)">Services</a>
-      <a href="#contact" class="text-gray-600 hover:text-gray-900 transition" onclick="smoothScroll(event)">Contact</a>
+
+      <a
+        href="#about"
+        class="text-gray-600 hover:text-gray-900 transition"
+        onclick="smoothScroll(event)"
+      >
+        About
+      </a>
+
+      <a
+        href="#skills"
+        class="text-gray-600 hover:text-gray-900 transition"
+        onclick="smoothScroll(event)"
+      >
+        Skills
+      </a>
+
+      <a
+        href="#projects"
+        class="text-gray-600 hover:text-gray-900 transition"
+        onclick="smoothScroll(event)"
+      >
+        Projects
+      </a>
+
+      <a
+        href="#services"
+        class="text-gray-600 hover:text-gray-900 transition"
+        onclick="smoothScroll(event)"
+      >
+        Services
+      </a>
+
+      <a
+        href="#contact"
+        class="text-gray-600 hover:text-gray-900 transition"
+        onclick="smoothScroll(event)"
+      >
+        Contact
+      </a>
+
     </div>
+
   </nav>
+
 </header>
+
 
 <main class="relative z-10">
 
-  <!-- Hero -->
-  <section class="w-full pt-32 pb-20 px-6 relative overflow-hidden" style="min-height: 100vh; background: rgba(255,255,255,0);">
-    <div class="absolute inset-0 z-0">
-      <img class="w-full h-full object-cover" loading="lazy" src="https://images.pexels.com/photos/29765807/pexels-photo-29765807.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Minimalist pink desk setup">
-      <div class="absolute inset-0 bg-gradient-to-r from-white/85 via-white/70 to-white/40"></div>
-    </div>
-    <div class="max-w-7xl mx-auto relative z-10 h-full flex items-center justify-center">
-      <div class="flex flex-col justify-center items-center text-center">
-        <p class="uppercase tracking-[0.3em] mb-4 hero-text" style="color: rgb(208, 138, 154); font-weight: 500; font-size: 13px;">Digital Designer • 3D Product Artist • Creative Strategist</p>
-        <h1 class="mb-6 hero-text hero-text-d1 leading-tight" style="color: rgb(61, 43, 34); font-weight: 900; font-size: 64px;">Digital Designer</h1>
-        <p class="mb-8 hero-text hero-text-d2 max-w-2xl" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Crafting innovative digital experiences, immersive 3D visuals, and strategic design solutions that empower brands to connect with their audience and create a lasting impression.</p>
-        <a href="#projects" class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg w-fit hero-text hero-text-d3 cursor-pointer" onclick="smoothScroll(event)" style="background: rgb(212, 138, 154); color: white;">View My Work →</a>
-      </div>
-    </div>
-  </section>
 
-  <!-- About -->
-  <section id="about" class="py-24 px-6 relative" style="background: rgb(255, 252, 250);">
-    <div class="max-w-4xl mx-auto reveal">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <div class="flex items-center justify-center lg:order-1">
-          <div class="relative w-full max-w-xs">
-            <div class="absolute -inset-4 bg-gradient-to-br from-pink-300/40 to-purple-300/20 rounded-full blur-2xl"></div>
-            <div class="relative aspect-square rounded-full overflow-hidden shadow-xl border-4 border-white/60">
-              <img class="w-full h-full object-cover" loading="lazy" src="images/sakina.jpg" alt="Professional portrait of Sakina Kaderbhai">
-            </div>
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section
+  class="w-full pt-32 pb-20 px-6 relative overflow-hidden"
+  style="
+    min-height: 100vh;
+    background: rgba(255,255,255,0);
+  "
+>
+
+  <div class="absolute inset-0 z-0">
+
+    <img
+      class="w-full h-full object-cover"
+      loading="lazy"
+      src="https://images.pexels.com/photos/29765807/pexels-photo-29765807.jpeg?auto=compress&cs=tinysrgb&w=1920"
+      alt="Minimalist pink desk setup"
+    >
+
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-white/85 via-white/70 to-white/40">
+    </div>
+
+  </div>
+
+
+  <div
+    class="max-w-7xl mx-auto relative z-10 h-full flex items-center justify-center"
+  >
+
+    <div
+      class="flex flex-col justify-center items-center text-center"
+    >
+
+      <p
+        class="uppercase tracking-[0.3em] mb-4 hero-text"
+        style="
+          color: rgb(208, 138, 154);
+          font-weight: 500;
+          font-size: 13px;
+        "
+      >
+        Digital Designer • Video Editor • 3D Product Artist
+      </p>
+
+
+      <h1
+        class="mb-6 hero-text hero-text-d1 leading-tight"
+        style="
+          color: rgb(61, 43, 34);
+          font-weight: 900;
+          font-size: 64px;
+        "
+      >
+        Digital Designer
+      </h1>
+
+
+      <p
+        class="mb-8 hero-text hero-text-d2 max-w-2xl"
+        style="
+          color: rgb(93, 74, 64);
+          font-weight: 400;
+          font-size: 18px;
+        "
+      >
+        Crafting innovative digital experiences, engaging short-form videos,
+        immersive 3D visuals, and strategic design solutions that help brands
+        connect with their audience and stand out.
+      </p>
+
+
+      <a
+        href="#projects"
+        class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg w-fit hero-text hero-text-d3 cursor-pointer"
+        onclick="smoothScroll(event)"
+        style="
+          background: rgb(212, 138, 154);
+          color: white;
+        "
+      >
+        View My Work →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section
+  id="about"
+  class="py-24 px-6 relative"
+  style="background: rgb(255, 252, 250);"
+>
+
+  <div class="max-w-4xl mx-auto reveal">
+
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+    >
+
+      <div class="flex items-center justify-center lg:order-1">
+
+        <div class="relative w-full max-w-xs">
+
+          <div
+            class="absolute -inset-4 bg-gradient-to-br from-pink-300/40 to-purple-300/20 rounded-full blur-2xl">
           </div>
-        </div>
-        <div class="flex flex-col justify-center lg:order-2">
-          <h2 class="mb-6" style="color: rgb(107, 83, 68); font-weight: 700; font-size: 27px;">About Me</h2>
-          <p class="leading-relaxed" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 20px;">I'm a digital designer who brings brands to life through compelling visual design.From social media graphics and branding to photorealistic 3D product visualization and animation, I create visuals that don't just look beautiful, they help brands stand out and convert customers. With expertise in design trends, color psychology, and user engagement, I help brands build meaningful connections with their audience.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Skills -->
-  <section id="skills" class="py-20 px-6 relative" style="background: rgb(253, 243, 240);">
-    <div class="max-w-5xl mx-auto reveal">
-      <h2 class="text-center mb-12" style="color: rgb(107, 83, 68); font-weight: 700; font-size: 27px;">My Expertise</h2>
-      <div class="flex flex-wrap justify-center gap-3 mb-10">
-        <button class="filter-btn active" data-filter="design">🎨 Design</button>
-        <button class="filter-btn" data-filter="marketing">📱 Marketing</button>
-        <button class="filter-btn" data-filter="3d">🧊 3D Design</button>
-        <button class="filter-btn" data-filter="tools">🛠️ Tools</button>
-        <button class="filter-btn" data-filter="web">🌐 Web</button>
-      </div>
-      <div class="flex flex-wrap justify-center gap-4">
-        <!-- DESIGN -->
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(252, 232, 224);"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Product Advertising</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(232, 229, 245);"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Brand Identity</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(243, 217, 232);"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Typography</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(253, 233, 228);"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Social Media Design</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(252, 232, 224);"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Logo Design</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(232, 229, 245);"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Color Theory</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(243, 217, 232);"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Layout & Composition</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="design" style="background: rgb(253, 233, 228);"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Visual Hierarchy</p></div>
-        <!-- MARKETING -->
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(252, 232, 224); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Content Strategy</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(232, 229, 245); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Audience Engagement</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(243, 217, 232); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Social Media Marketing</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(253, 233, 228); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Campaign Planning</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(252, 232, 224); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Brand Positioning</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(232, 229, 245); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Market Research</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(243, 217, 232); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Copywriting</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="marketing" style="background: rgb(253, 233, 228); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Analytics & Metrics</p></div>
-        <!-- 3D DESIGN -->
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="3d" style="background: rgb(252, 232, 224); display:none;"><p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">3D Product Modeling</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="3d" style="background: rgb(232, 229, 245); display:none;"><p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">Product Visualization</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="3d" style="background: rgb(243, 217, 232); display:none;"><p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">Photorealistic Rendering</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="3d" style="background: rgb(253, 233, 228); display:none;"><p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">CGI Product Advertising</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="3d" style="background: rgb(252, 232, 224); display:none;"><p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">3D Product Animation</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="3d" style="background: rgb(232, 229, 245); display:none;"><p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">Material & Shader Creation</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="3d" style="background: rgb(243, 217, 232); display:none;"><p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">Cinematic Lighting & Studio Setup</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="3d" style="background: rgb(253, 233, 228); display:none;"><p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">PBR Texturing & UV Mapping</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="3d" style="background: rgb(252, 232, 224); display:none;"><p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">Camera Animation</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="3d" style="background: rgb(232, 229, 245); display:none;"><p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">Motion Graphics & Visual Effects</p></div>
-        <!-- TOOLS -->
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(252, 232, 224); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Blender</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(252, 232, 224); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Canva</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(232, 229, 245); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Photoshop</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(243, 217, 232); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Illustrator</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(253, 233, 228); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Figma</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(252, 232, 224); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Adobe XD</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(232, 229, 245); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">InDesign</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(243, 217, 232); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Capcut</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="tools" style="background: rgb(253, 233, 228); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Procreate</p></div>
-        <!-- WEB -->
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(252, 232, 224); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">HTML/CSS</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(232, 229, 245); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Responsive Design</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(243, 217, 232); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">UI/UX Design</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(253, 233, 228); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">JavaScript</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(252, 232, 224); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Web Prototyping</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(232, 229, 245); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Wireframing</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(243, 217, 232); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">User Experience</p></div>
-        <div class="skill-pill px-8 py-4 rounded-full" data-category="web" style="background: rgb(253, 233, 228); display:none;"><p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">Interactive Design</p></div>
-      </div>
-    </div>
-  </section>
+          <div
+            class="relative aspect-square rounded-full overflow-hidden shadow-xl border-4 border-white/60"
+          >
 
-  <!-- Projects -->
-  <section id="projects" class="py-24 px-6" style="background: rgb(255, 252, 250);">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-center mb-16 reveal" style="color: rgb(107, 83, 68); font-weight: 700; font-size: 27px;">Featured Projects</h2>
-      <div class="grid md:grid-cols-3 gap-10">
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)" data-title="Skin1004 Madagascar Centella" data-img="images/skin1004.png" data-desc="Skin1004 Madagascar Centella sun serum with Hyalu-Cica Water-Fit technology and zero white cast, delivering lightweight hydration and daily sun protection.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;"><img class="w-full h-full object-cover" loading="lazy" src="images/skin1004.png" alt="SKIN1004 Madagascar Centella skincare product"></div>
-          <div class="p-6" style="background: rgb(253, 243, 240);"><p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Skin1004 Madagascar Centella sun serum with Hyalu-Cica Water-Fit technology, delivering lightweight hydration and daily sun protection.</p></div>
+            <img
+              class="w-full h-full object-cover"
+              loading="lazy"
+              src="images/sakina.jpg"
+              alt="Professional portrait of Sakina Kaderbhai"
+            >
+
+          </div>
+
         </div>
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)" data-title="JUMISO - Niacinamide 20 Serum" data-img="images/jumiso.png" data-desc="A brightening serum with 20% Niacinamide, Tranexamic Acid, and Glutathione that fades dark spots, evens skin tone, refines pores, soothe irritation and strengthen the skin barrier, and deeply hydrate.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;"><img class="w-full h-full object-cover" loading="lazy" src="images/jumiso.png" alt="JUMISO - Niacinamide 20 Serum skincare product"></div>
-          <div class="p-6" style="background: rgb(253, 243, 240);"><p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">A brightening serum with that fades dark spots, evens skin tone, refines pores, soothe irritation and strengthens the skin barrier.</p></div>
-        </div>
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)" data-title="Mixsoon Bean Essence" data-img="images/mixsoon.png" data-desc="Meet your shortcut to smooth, hydrated, glass skin. This Essence nourishes, gently exfoliates, and boosts your skin's natural radiance.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;"><img class="w-full h-full object-cover" loading="lazy" src="images/mixsoon.png" alt="Mixsoon Bean Essence hydrating skincare"></div>
-          <div class="p-6" style="background: rgb(253, 243, 240);"><p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Meet your shortcut to smooth, hydrated, glass skin. This Mixsoon Bean Essence nourishes, gently exfoliates, and boosts your skin's natural radiance.</p></div>
-        </div>
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)" data-title="COSRX Vitamin C 13 Serum" data-img="images/vitamin.png" data-desc="The COSRX 13% pure Vitamin C targets dark spots, blemishes & uneven tone while Super Vitamin E smooths fine lines. Lightweight, fast-absorbing & powerful.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;"><img class="w-full h-full object-cover" loading="lazy" src="images/vitamin.png" alt="COSRX Vitamin C 13 Serum"></div>
-          <div class="p-6" style="background: rgb(253, 243, 240);"><p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">13% pure Vitamin C targets dark spots, blemishes & uneven tone while Super Vitamin E smooths fine lines. Lightweight, fast-absorbing & powerful.</p></div>
-        </div>
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)" data-title="The AXIS-Y Daily Purifying Treatment Toner" data-img="images/axis.png" data-desc="This toner is infused with centella asiatica + tea tree to soothe irritation, and sugar cane + lotus to gently exfoliate for a brighter complexion.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;"><img class="w-full h-full object-cover" loading="lazy" src="images/axis.png" alt="The AXIS-Y Daily Purifying Treatment Toner"></div>
-          <div class="p-6" style="background: rgb(253, 243, 240);"><p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">This toner is infused with centella asiatica + tea tree to soothe irritation, and sugar cane + lotus to gently exfoliate for a brighter complexion.</p></div>
-        </div>
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)" data-title="COSRX Advanced Snail 96" data-img="images/cosrx.png" data-desc="COSRX Advanced Snail 96 Mucin Essence anti-aging power essence with 96% snail mucin, sodium hyaluronate, panthenol, and allantoin for hydration and glow repair for smooth complexion.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;"><img class="w-full h-full object-cover" loading="lazy" src="images/cosrx.png" alt="COSRX Advanced Snail 96 Mucin Essence"></div>
-          <div class="p-6" style="background: rgb(253, 243, 240);"><p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">COSRX Advanced Snail 96 Mucin Essence anti-aging power essence with 96% snail mucin and panthenol for hydration and glow repair for smooth complexion.</p></div>
-        </div>
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)" data-title="SKIN1004 Centella Poremizing Gel Cream" data-img="images/poremizing.png" data-desc="Infused with Himalayan Salt and 50% Centella Asiatica Extract, this lightweight gel gel cream tightens, refines, and smooths your skin texture, without stripping moisture.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;"><img class="w-full h-full object-cover" loading="lazy" src="images/poremizing.png" alt="SKIN1004 Centella Poremizing Clear Up Gel Cream"></div>
-          <div class="p-7" style="background: rgb(253, 243, 240);"><p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Infused with Himalayan Salt and Centella Asiatica Extract, this lightweight gel cream tightens, refines, and smooths skin texture, without stripping moisture.</p></div>
-        </div>
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)" data-title="COSRX The Retinol 0.5 Oil" data-img="images/cosrx retinol.png" data-desc="This nighttime lightweight facial oil works while you dream: 0.5% pure retinol smooths fine lines, fades breakouts, and firms skin.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;"><img class="w-full h-full object-cover" loading="lazy" src="images/cosrx retinol.png" alt="COSRX The Retinol 0.5 Oil"></div>
-          <div class="p-8" style="background: rgb(253, 243, 240);"><p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">This nighttime lightweight facial oil works while you dream: 0.5% pure retinol smooths fine lines and firms skin...</p></div>
-        </div>
-        <div class="project-card rounded-3xl overflow-hidden shadow-xl reveal" onclick="openModal(this)" data-title="Anua - 8 Hyaluronic Acid Moisturizing Gentle Gel Cleanser" data-img="images/anua cleanser.png" data-desc="Formulated with 8 types of Hyaluronic Acid, Squalane, and Glycerin to lock in hydration while deeply cleansing pores.">
-          <div class="overflow-hidden" style="aspect-ratio:1/1;"><img class="w-full h-full object-cover" loading="lazy" src="images/anua cleanser.png" alt="Anua 8 Hyaluronic Acid Moisturizing Gentle Gel Cleanser"></div>
-          <div class="p-9" style="background: rgb(253, 243, 240);"><p class="text-sm" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Formulated with 8 types of Hyaluronic Acid, Squalane, and Glycerin to lock in hydration while deeply cleansing...</p></div>
-        </div>
+
       </div>
-    </div>
-  </section>
 
-  <!-- Services -->
-  <section id="services" class="py-24 px-6 relative" style="background: rgb(253, 243, 240);">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-center mb-4 reveal" style="color: rgb(107, 83, 68); font-weight: 700; font-size: 27px;">My Services</h2>
-      <p class="text-center mb-16 reveal" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 18px;">Comprehensive design solutions for creative design & digital marketing</p>
-      <div class="service-grid reveal" id="serviceGrid"></div>
-    </div>
-  </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-24 px-6 relative overflow-hidden" style="background: linear-gradient(135deg, rgb(216, 168, 154), rgb(201, 123, 138));">
-    <div class="absolute -top-10 -right-10 w-40 h-40 border-4 border-white/20 rounded-full blob-1"></div>
-    <div class="absolute bottom-5 left-5 w-24 h-24 bg-white/10 rotate-12 rounded-2xl blob-3"></div>
-    <div class="max-w-2xl mx-auto text-center relative z-10 reveal">
-      <h2 class="mb-4" style="color: rgb(255, 251, 249); font-weight: 700; font-size: 27px;">Let's create something together.</h2>
-      <p class="mb-8" style="color: rgb(245, 230, 224); font-weight: 400; font-size: 18px;">Open for freelance projects, collaborations, and creative partnerships.</p>
-      <a href="mailto:sakinahamid53@hotmail.com" class="inline-block px-10 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg" style="background: rgb(255, 251, 249); color: rgb(212, 138, 154);">Get in Touch →</a>
+      <div class="flex flex-col justify-center lg:order-2">
+
+        <h2
+          class="mb-6"
+          style="
+            color: rgb(107, 83, 68);
+            font-weight: 700;
+            font-size: 27px;
+          "
+        >
+          About Me
+        </h2>
+
+
+        <p
+          class="leading-relaxed"
+          style="
+            color: rgb(93, 74, 64);
+            font-weight: 400;
+            font-size: 20px;
+          "
+        >
+          I'm a digital designer and video editor who brings brands to life
+          through compelling visual design and engaging content. From social
+          media graphics and branding to short-form video editing,
+          photorealistic 3D product visualization, and animation, I create
+          visuals that don't just look beautiful — they help brands stand out
+          and connect with their audience.
+        </p>
+
+      </div>
+
     </div>
-  </section>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SKILLS
+========================================================= -->
+
+<section
+  id="skills"
+  class="py-20 px-6 relative"
+  style="background: rgb(253, 243, 240);"
+>
+
+  <div class="max-w-5xl mx-auto reveal">
+
+    <h2
+      class="text-center mb-12"
+      style="
+        color: rgb(107, 83, 68);
+        font-weight: 700;
+        font-size: 27px;
+      "
+    >
+      My Expertise
+    </h2>
+
+
+    <!-- SKILL FILTER -->
+
+    <div
+      class="flex flex-wrap justify-center gap-3 mb-10"
+    >
+
+      <button
+        class="filter-btn active"
+        data-filter="design"
+      >
+        🎨 Design
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="marketing"
+      >
+        📱 Marketing
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="3d"
+      >
+        🧊 3D Design
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="video"
+      >
+        🎬 Video Editing
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="tools"
+      >
+        🛠️ Tools
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="web"
+      >
+        🌐 Web
+      </button>
+
+    </div>
+
+
+    <div class="flex flex-wrap justify-center gap-4">
+
+
+      <!-- =====================================================
+           DESIGN
+      ===================================================== -->
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="design"
+        style="background: rgb(252, 232, 224);"
+      >
+        <p
+          style="
+            color: rgb(107, 83, 68);
+            font-weight: 500;
+            font-size: 18px;
+          "
+        >
+          Product Advertising
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="design"
+        style="background: rgb(232, 229, 245);"
+      >
+        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+          Brand Identity
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="design"
+        style="background: rgb(243, 217, 232);"
+      >
+        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+          Typography
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="design"
+        style="background: rgb(253, 233, 228);"
+      >
+        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+          Social Media Design
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="design"
+        style="background: rgb(252, 232, 224);"
+      >
+        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+          Logo Design
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="design"
+        style="background: rgb(232, 229, 245);"
+      >
+        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+          Color Theory
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="design"
+        style="background: rgb(243, 217, 232);"
+      >
+        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+          Layout & Composition
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="design"
+        style="background: rgb(253, 233, 228);"
+      >
+        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+          Visual Hierarchy
+        </p>
+      </div>
+
+
+      <!-- =====================================================
+           MARKETING
+      ===================================================== -->
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="marketing"
+        style="background: rgb(252, 232, 224); display:none;"
+      >
+        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+          Content Strategy
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="marketing"
+        style="background: rgb(232, 229, 245); display:none;"
+      >
+        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+          Audience Engagement
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="marketing"
+        style="background: rgb(243, 217, 232); display:none;"
+      >
+        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+          Social Media Marketing
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="marketing"
+        style="background: rgb(253, 233, 228); display:none;"
+      >
+        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+          Campaign Planning
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="marketing"
+        style="background: rgb(252, 232, 224); display:none;"
+      >
+        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+          Brand Positioning
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="marketing"
+        style="background: rgb(232, 229, 245); display:none;"
+      >
+        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+          Market Research
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="marketing"
+        style="background: rgb(243, 217, 232); display:none;"
+      >
+        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+          Copywriting
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="marketing"
+        style="background: rgb(253, 233, 228); display:none;"
+      >
+        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+          Analytics & Metrics
+        </p>
+      </div>
+
+
+      <!-- =====================================================
+           3D
+      ===================================================== -->
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="3d"
+        style="background: rgb(252, 232, 224); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          3D Product Modeling
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="3d"
+        style="background: rgb(232, 229, 245); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Product Visualization
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="3d"
+        style="background: rgb(243, 217, 232); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Photorealistic Rendering
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="3d"
+        style="background: rgb(253, 233, 228); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          CGI Product Advertising
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="3d"
+        style="background: rgb(252, 232, 224); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          3D Product Animation
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="3d"
+        style="background: rgb(232, 229, 245); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Material & Shader Creation
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="3d"
+        style="background: rgb(243, 217, 232); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Cinematic Lighting & Studio Setup
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="3d"
+        style="background: rgb(253, 233, 228); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          PBR Texturing & UV Mapping
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="3d"
+        style="background: rgb(252, 232, 224); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Camera Animation
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="3d"
+        style="background: rgb(232, 229, 245); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Motion Graphics & Visual Effects
+        </p>
+      </div>
+
+
+      <!-- =====================================================
+           VIDEO EDITING
+      ===================================================== -->
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="video"
+        style="background: rgb(252, 232, 224); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Short-Form Video Editing
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="video"
+        style="background: rgb(232, 229, 245); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Reels & TikTok Editing
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="video"
+        style="background: rgb(243, 217, 232); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Product Video Ads
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="video"
+        style="background: rgb(253, 233, 228); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Motion Graphics
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="video"
+        style="background: rgb(252, 232, 224); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Text & Caption Animation
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="video"
+        style="background: rgb(232, 229, 245); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Video Ad Creatives
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="video"
+        style="background: rgb(243, 217, 232); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Cinematic Product Videos
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="video"
+        style="background: rgb(253, 233, 228); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          CapCut Video Editing
+        </p>
+      </div>
+
+
+      <!-- =====================================================
+           TOOLS
+      ===================================================== -->
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="tools"
+        style="background: rgb(252, 232, 224); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Blender
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="tools"
+        style="background: rgb(252, 232, 224); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Canva
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="tools"
+        style="background: rgb(232, 229, 245); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Photoshop
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="tools"
+        style="background: rgb(243, 217, 232); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Illustrator
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="tools"
+        style="background: rgb(253, 233, 228); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Figma
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="tools"
+        style="background: rgb(252, 232, 224); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Adobe XD
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="tools"
+        style="background: rgb(232, 229, 245); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          InDesign
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="tools"
+        style="background: rgb(243, 217, 232); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          CapCut
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="tools"
+        style="background: rgb(253, 233, 228); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Procreate
+        </p>
+      </div>
+
+
+      <!-- =====================================================
+           WEB
+      ===================================================== -->
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="web"
+        style="background: rgb(252, 232, 224); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          HTML/CSS
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="web"
+        style="background: rgb(232, 229, 245); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Responsive Design
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="web"
+        style="background: rgb(243, 217, 232); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          UI/UX Design
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="web"
+        style="background: rgb(253, 233, 228); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          JavaScript
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="web"
+        style="background: rgb(252, 232, 224); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Web Prototyping
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="web"
+        style="background: rgb(232, 229, 245); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Wireframing
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="web"
+        style="background: rgb(243, 217, 232); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          User Experience
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="web"
+        style="background: rgb(253, 233, 228); display:none;">
+        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+          Interactive Design
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section
+  id="projects"
+  class="py-24 px-6"
+  style="background: rgb(255, 252, 250);"
+>
+
+  <div class="max-w-6xl mx-auto">
+
+
+    <h2
+      class="text-center mb-4 reveal"
+      style="
+        color: rgb(107, 83, 68);
+        font-weight: 700;
+        font-size: 27px;
+      "
+    >
+      Featured Projects
+    </h2>
+
+
+    <p
+      class="text-center mb-10 reveal"
+      style="
+        color: rgb(93, 74, 64);
+        font-size: 17px;
+      "
+    >
+      A selection of my design, advertising, and video editing work.
+    </p>
+
+
+    <!-- PROJECT FILTER -->
+
+    <div
+      class="flex flex-wrap justify-center gap-3 mb-14 reveal"
+    >
+
+      <button
+        class="project-filter active"
+        data-project-filter="all"
+      >
+        ✨ All Work
+      </button>
+
+      <button
+        class="project-filter"
+        data-project-filter="image"
+      >
+        🖼️ Images & Design
+      </button>
+
+      <button
+        class="project-filter"
+        data-project-filter="video"
+      >
+        🎬 Video Editing
+      </button>
+
+    </div>
+
+
+    <!-- =======================================================
+         PROJECT GRID
+    ======================================================== -->
+
+    <div
+      id="projectGrid"
+      class="grid md:grid-cols-3 gap-10"
+    >
+
+
+      <!-- =====================================================
+           IMAGE PROJECT 1
+      ===================================================== -->
+
+      <div
+        class="project-card rounded-3xl overflow-hidden shadow-xl reveal"
+        data-project-type="image"
+        onclick="openModal(this)"
+        data-title="Skin1004 Madagascar Centella"
+        data-img="images/skin1004.png"
+        data-desc="Skin1004 Madagascar Centella sun serum with Hyalu-Cica Water-Fit technology and zero white cast, delivering lightweight hydration and daily sun protection."
+      >
+
+        <div
+          class="overflow-hidden"
+          style="aspect-ratio:1/1;"
+        >
+
+          <img
+            class="w-full h-full object-cover"
+            loading="lazy"
+            src="images/skin1004.png"
+            alt="SKIN1004 Madagascar Centella skincare product"
+          >
+
+        </div>
+
+
+        <div
+          class="p-6"
+          style="background: rgb(253, 243, 240);"
+        >
+
+          <p
+            class="text-sm"
+            style="
+              color: rgb(93, 74, 64);
+              font-weight: 400;
+              font-size: 18px;
+            "
+          >
+            Product Advertising • Skincare
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           IMAGE PROJECT 2
+      ===================================================== -->
+
+      <div
+        class="project-card rounded-3xl overflow-hidden shadow-xl reveal"
+        data-project-type="image"
+        onclick="openModal(this)"
+        data-title="JUMISO - Niacinamide 20 Serum"
+        data-img="images/jumiso.png"
+        data-desc="A brightening serum with 20% Niacinamide, Tranexamic Acid, and Glutathione that fades dark spots, evens skin tone, refines pores, soothes irritation and strengthens the skin barrier."
+      >
+
+        <div
+          class="overflow-hidden"
+          style="aspect-ratio:1/1;"
+        >
+
+          <img
+            class="w-full h-full object-cover"
+            loading="lazy"
+            src="images/jumiso.png"
+            alt="JUMISO Niacinamide 20 Serum"
+          >
+
+        </div>
+
+
+        <div
+          class="p-6"
+          style="background: rgb(253, 243, 240);"
+        >
+
+          <p
+            style="
+              color: rgb(93, 74, 64);
+              font-size: 18px;
+            "
+          >
+            Product Advertising • Beauty
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           IMAGE PROJECT 3
+      ===================================================== -->
+
+      <div
+        class="project-card rounded-3xl overflow-hidden shadow-xl reveal"
+        data-project-type="image"
+        onclick="openModal(this)"
+        data-title="Mixsoon Bean Essence"
+        data-img="images/mixsoon.png"
+        data-desc="A clean product-focused visual for Mixsoon Bean Essence, highlighting hydration, exfoliation, and natural skin radiance."
+      >
+
+        <div
+          class="overflow-hidden"
+          style="aspect-ratio:1/1;"
+        >
+
+          <img
+            class="w-full h-full object-cover"
+            loading="lazy"
+            src="images/mixsoon.png"
+            alt="Mixsoon Bean Essence"
+          >
+
+        </div>
+
+
+        <div
+          class="p-6"
+          style="background: rgb(253, 243, 240);"
+        >
+
+          <p
+            style="
+              color: rgb(93, 74, 64);
+              font-size: 18px;
+            "
+          >
+            Product Advertising • Skincare
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           IMAGE PROJECT 4
+      ===================================================== -->
+
+      <div
+        class="project-card rounded-3xl overflow-hidden shadow-xl reveal"
+        data-project-type="image"
+        onclick="openModal(this)"
+        data-title="COSRX Vitamin C 13 Serum"
+        data-img="images/vitamin.png"
+        data-desc="The COSRX 13% pure Vitamin C targets dark spots, blemishes and uneven tone while Super Vitamin E smooths fine lines."
+      >
+
+        <div
+          class="overflow-hidden"
+          style="aspect-ratio:1/1;"
+        >
+
+          <img
+            class="w-full h-full object-cover"
+            loading="lazy"
+            src="images/vitamin.png"
+            alt="COSRX Vitamin C 13 Serum"
+          >
+
+        </div>
+
+
+        <div
+          class="p-6"
+          style="background: rgb(253, 243, 240);"
+        >
+
+          <p
+            style="
+              color: rgb(93, 74, 64);
+              font-size: 18px;
+            "
+          >
+            Product Advertising • Beauty
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           IMAGE PROJECT 5
+      ===================================================== -->
+
+      <div
+        class="project-card rounded-3xl overflow-hidden shadow-xl reveal"
+        data-project-type="image"
+        onclick="openModal(this)"
+        data-title="The AXIS-Y Daily Purifying Treatment Toner"
+        data-img="images/axis.png"
+        data-desc="A skincare advertising visual highlighting centella asiatica, tea tree, sugar cane and lotus ingredients."
+      >
+
+        <div
+          class="overflow-hidden"
+          style="aspect-ratio:1/1;"
+        >
+
+          <img
+            class="w-full h-full object-cover"
+            loading="lazy"
+            src="images/axis.png"
+            alt="AXIS-Y Daily Purifying Treatment Toner"
+          >
+
+        </div>
+
+
+        <div
+          class="p-6"
+          style="background: rgb(253, 243, 240);"
+        >
+
+          <p
+            style="
+              color: rgb(93, 74, 64);
+              font-size: 18px;
+            "
+          >
+            Product Advertising • Skincare
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           IMAGE PROJECT 6
+      ===================================================== -->
+
+      <div
+        class="project-card rounded-3xl overflow-hidden shadow-xl reveal"
+        data-project-type="image"
+        onclick="openModal(this)"
+        data-title="COSRX Advanced Snail 96"
+        data-img="images/cosrx.png"
+        data-desc="COSRX Advanced Snail 96 Mucin Essence visual highlighting hydration, glow and skin barrier care."
+      >
+
+        <div
+          class="overflow-hidden"
+          style="aspect-ratio:1/1;"
+        >
+
+          <img
+            class="w-full h-full object-cover"
+            loading="lazy"
+            src="images/cosrx.png"
+            alt="COSRX Advanced Snail 96 Mucin Essence"
+          >
+
+        </div>
+
+
+        <div
+          class="p-6"
+          style="background: rgb(253, 243, 240);"
+        >
+
+          <p
+            style="
+              color: rgb(93, 74, 64);
+              font-size: 18px;
+            "
+          >
+            Product Advertising • Skincare
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           IMAGE PROJECT 7
+      ===================================================== -->
+
+      <div
+        class="project-card rounded-3xl overflow-hidden shadow-xl reveal"
+        data-project-type="image"
+        onclick="openModal(this)"
+        data-title="SKIN1004 Centella Poremizing Gel Cream"
+        data-img="images/poremizing.png"
+        data-desc="Infused with Himalayan Salt and Centella Asiatica Extract, this lightweight gel cream tightens, refines and smooths skin texture."
+      >
+
+        <div
+          class="overflow-hidden"
+          style="aspect-ratio:1/1;"
+        >
+
+          <img
+            class="w-full h-full object-cover"
+            loading="lazy"
+            src="images/poremizing.png"
+            alt="SKIN1004 Centella Poremizing Gel Cream"
+          >
+
+        </div>
+
+
+        <div
+          class="p-6"
+          style="background: rgb(253, 243, 240);"
+        >
+
+          <p
+            style="
+              color: rgb(93, 74, 64);
+              font-size: 18px;
+            "
+          >
+            Product Advertising • Skincare
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           IMAGE PROJECT 8
+      ===================================================== -->
+
+      <div
+        class="project-card rounded-3xl overflow-hidden shadow-xl reveal"
+        data-project-type="image"
+        onclick="openModal(this)"
+        data-title="COSRX The Retinol 0.5 Oil"
+        data-img="images/cosrx retinol.png"
+        data-desc="A nighttime skincare advertising visual for COSRX Retinol 0.5 Oil."
+      >
+
+        <div
+          class="overflow-hidden"
+          style="aspect-ratio:1/1;"
+        >
+
+          <img
+            class="w-full h-full object-cover"
+            loading="lazy"
+            src="images/cosrx retinol.png"
+            alt="COSRX The Retinol 0.5 Oil"
+          >
+
+        </div>
+
+
+        <div
+          class="p-6"
+          style="background: rgb(253, 243, 240);"
+        >
+
+          <p
+            style="
+              color: rgb(93, 74, 64);
+              font-size: 18px;
+            "
+          >
+            Product Advertising • Beauty
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           IMAGE PROJECT 9
+      ===================================================== -->
+
+      <div
+        class="project-card rounded-3xl overflow-hidden shadow-xl reveal"
+        data-project-type="image"
+        onclick="openModal(this)"
+        data-title="Anua 8 Hyaluronic Acid Cleanser"
+        data-img="images/anua cleanser.png"
+        data-desc="Product-focused visual for Anua 8 Hyaluronic Acid Moisturizing Gentle Gel Cleanser."
+      >
+
+        <div
+          class="overflow-hidden"
+          style="aspect-ratio:1/1;"
+        >
+
+          <img
+            class="w-full h-full object-cover"
+            loading="lazy"
+            src="images/anua cleanser.png"
+            alt="Anua 8 Hyaluronic Acid Moisturizing Gentle Gel Cleanser"
+          >
+
+        </div>
+
+
+        <div
+          class="p-6"
+          style="background: rgb(253, 243, 240);"
+        >
+
+          <p
+            style="
+              color: rgb(93, 74, 64);
+              font-size: 18px;
+            "
+          >
+            Product Advertising • Skincare
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           VIDEO PROJECT 1
+           CHANGE VIDEO FILE
+      ===================================================== -->
+
+      <div
+        class="project-card rounded-3xl overflow-hidden shadow-xl reveal"
+        data-project-type="video"
+        onclick="openVideoModal(this)"
+        data-title="Luxury Perfume Product Advertisement"
+        data-video="videos/perfume-ad.mp4"
+        data-desc="A cinematic short-form product advertisement created for a luxury perfume campaign."
+      >
+
+        <div
+          class="video-card-preview"
+          style="aspect-ratio:9/16;"
+        >
+
+          <video
+            class="project-video"
+            muted
+            loop
+            playsinline
+            preload="metadata"
+          >
+
+            <source
+              src="videos/perfume-ad.mp4"
+              type="video/mp4"
+            >
+
+          </video>
+
+
+          <div class="video-play-overlay">
+
+            <div class="video-play-button">
+              ▶
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="p-6"
+          style="background: rgb(253, 243, 240);"
+        >
+
+          <p
+            style="
+              color: rgb(93, 74, 64);
+              font-size: 18px;
+            "
+          >
+            🎬 Product Video Advertisement
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           VIDEO PROJECT 2
+      ===================================================== -->
+
+      <div
+        class="project-card rounded-3xl overflow-hidden shadow-xl reveal"
+        data-project-type="video"
+        onclick="openVideoModal(this)"
+        data-title="Short-Form Social Media Reel"
+        data-video="videos/social-reel.mp4"
+        data-desc="Short-form social media Reel edited for attention, pacing, transitions, music synchronization and visual storytelling."
+      >
+
+        <div
+          class="video-card-preview"
+          style="aspect-ratio:9/16;"
+        >
+
+          <video
+            class="project-video"
+            muted
+            loop
+            playsinline
+            preload="metadata"
+          >
+
+            <source
+              src="videos/social-reel.mp4"
+              type="video/mp4"
+            >
+
+          </video>
+
+
+          <div class="video-play-overlay">
+
+            <div class="video-play-button">
+              ▶
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="p-6"
+          style="background: rgb(253, 243, 240);"
+        >
+
+          <p
+            style="
+              color: rgb(93, 74, 64);
+              font-size: 18px;
+            "
+          >
+            🎬 Social Media Reel
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           VIDEO PROJECT 3
+      ===================================================== -->
+
+      <div
+        class="project-card rounded-3xl overflow-hidden shadow-xl reveal"
+        data-project-type="video"
+        onclick="openVideoModal(this)"
+        data-title="Product Ad Creative"
+        data-video="videos/product-ad.mp4"
+        data-desc="Short-form product advertising edit designed for social media advertising and product promotion."
+      >
+
+        <div
+          class="video-card-preview"
+          style="aspect-ratio:9/16;"
+        >
+
+          <video
+            class="project-video"
+            muted
+            loop
+            playsinline
+            preload="metadata"
+          >
+
+            <source
+              src="videos/product-ad.mp4"
+              type="video/mp4"
+            >
+
+          </video>
+
+
+          <div class="video-play-overlay">
+
+            <div class="video-play-button">
+              ▶
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="p-6"
+          style="background: rgb(253, 243, 240);"
+        >
+
+          <p
+            style="
+              color: rgb(93, 74, 64);
+              font-size: 18px;
+            "
+          >
+            🎬 Product Video Ad
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section
+  id="services"
+  class="py-24 px-6 relative"
+  style="background: rgb(253, 243, 240);"
+>
+
+  <div class="max-w-4xl mx-auto">
+
+    <h2
+      class="text-center mb-4 reveal"
+      style="
+        color: rgb(107, 83, 68);
+        font-weight: 700;
+        font-size: 27px;
+      "
+    >
+      My Services
+    </h2>
+
+
+    <p
+      class="text-center mb-16 reveal"
+      style="
+        color: rgb(93, 74, 64);
+        font-weight: 400;
+        font-size: 18px;
+      "
+    >
+      Comprehensive design, video editing, advertising, and digital creative solutions.
+    </p>
+
+
+    <div
+      class="service-grid reveal"
+      id="serviceGrid"
+    >
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section
+  id="contact"
+  class="py-24 px-6 relative overflow-hidden"
+  style="
+    background:
+      linear-gradient(
+        135deg,
+        rgb(216, 168, 154),
+        rgb(201, 123, 138)
+      );
+  "
+>
+
+  <div
+    class="absolute -top-10 -right-10 w-40 h-40 border-4 border-white/20 rounded-full blob-1">
+  </div>
+
+  <div
+    class="absolute bottom-5 left-5 w-24 h-24 bg-white/10 rotate-12 rounded-2xl blob-3">
+  </div>
+
+
+  <div
+    class="max-w-2xl mx-auto text-center relative z-10 reveal"
+  >
+
+    <h2
+      class="mb-4"
+      style="
+        color: rgb(255, 251, 249);
+        font-weight: 700;
+        font-size: 27px;
+      "
+    >
+      Let's create something together.
+    </h2>
+
+
+    <p
+      class="mb-8"
+      style="
+        color: rgb(245, 230, 224);
+        font-weight: 400;
+        font-size: 18px;
+      "
+    >
+      Open for freelance projects, video editing, collaborations,
+      and creative partnerships.
+    </p>
+
+
+    <a
+      href="mailto:sakinahamid53@hotmail.com"
+      class="inline-block px-10 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg"
+      style="
+        background: rgb(255, 251, 249);
+        color: rgb(212, 138, 154);
+      "
+    >
+      Get in Touch →
+    </a>
+
+  </div>
+
+</section>
+
 
 </main>
 
-<footer class="relative z-10 py-6 text-center border-t border-gray-200/50">
-  <p class="text-sm" style="color: rgb(154, 128, 120); font-weight: 400; font-size: 18px;">© 2026 Sakina Kaderbhai. All rights reserved.</p>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer
+  class="relative z-10 py-6 text-center border-t border-gray-200/50"
+>
+
+  <p
+    class="text-sm"
+    style="
+      color: rgb(154, 128, 120);
+      font-weight: 400;
+      font-size: 18px;
+    "
+  >
+    © 2026 Sakina Kaderbhai. All rights reserved.
+  </p>
+
 </footer>
 
-<!-- MODAL -->
-<div id="modal" class="modal-overlay" onclick="closeModalOutside(event)">
+
+<!-- =========================================================
+     IMAGE MODAL
+========================================================= -->
+
+<div
+  id="modal"
+  class="modal-overlay"
+  onclick="closeModalOutside(event)"
+>
+
   <div class="modal-card">
-    <img id="modalImg" class="modal-img" alt="Project image">
+
+    <img
+      id="modalImg"
+      class="modal-img"
+      alt="Project image"
+    >
+
+
     <div class="modal-body">
-      <h2 id="modalTitle" style="color: rgb(61, 43, 34); font-weight: 700; font-size: 24px; margin-bottom: 12px;"></h2>
-      <p id="modalDesc" style="color: rgb(93, 74, 64); font-weight: 400; font-size: 16px; line-height: 1.6;"></p>
+
+      <h2
+        id="modalTitle"
+        style="
+          color: rgb(61, 43, 34);
+          font-weight: 700;
+          font-size: 24px;
+          margin-bottom: 12px;
+        "
+      >
+      </h2>
+
+
+      <p
+        id="modalDesc"
+        style="
+          color: rgb(93, 74, 64);
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 1.6;
+        "
+      >
+      </p>
+
     </div>
-    <button class="modal-close" onclick="closeModal()" aria-label="Close modal">✕</button>
+
+
+    <button
+      class="modal-close"
+      onclick="closeModal()"
+      aria-label="Close modal"
+    >
+      ✕
+    </button>
+
   </div>
+
 </div>
 
-<!-- WHATSAPP -->
-<a href="https://wa.me/255686210125?text=Hi%20I%20found%20your%20portfolio%20and%20want%20to%20hire%20you"
-   class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-  <svg class="whatsapp-icon" viewBox="0 0 32 32">
-    <path fill="white" d="M16 3C9.37 3 4 8.37 4 15c0 2.61.85 5.02 2.29 6.97L4 29l7.28-2.25C13.1 27.54 14.52 28 16 28c6.63 0 12-5.37 12-12S22.63 3 16 3zm0 22c-1.35 0-2.65-.27-3.85-.8l-.28-.12-4.32 1.34.95-3.46-.24-.38C6.14 19.65 5.5 17.41 5.5 15c0-5.79 4.71-10.5 10.5-10.5S26.5 9.21 26.5 15 21.79 25 16 25z"/>
-    <path fill="white" d="M20.5 17.5c-.27 0-.55-.08-.82-.25-.5-.32-1.3-.7-2.7-1.5-1.4-.8-2.1-1.2-2.37-1.5-.27-.3-.27-.7 0-1.06.54-.72 1.08-1.44 1.08-1.44l.18-.27c.36-.54.18-1.08-.18-1.44-.36-.36-.9-.72-1.26-.9-.36-.18-.72-.09-1.08.09-.36.18-.72.72-.9 1.26-.18.54-.27 1.26-.09 1.98.18.72.9 1.62 1.62 2.34.72.72 1.62 1.44 2.34 1.62.72.18 1.44.09 1.98-.09.54-.18 1.08-.54 1.26-.9.18-.36.09-.72-.09-1.08-.18-.36-.54-.72-.9-.9-.27-.17-.55-.25-.82-.25z"/>
+
+<!-- =========================================================
+     VIDEO MODAL
+========================================================= -->
+
+<div
+  id="videoModal"
+  class="modal-overlay"
+  onclick="closeVideoModalOutside(event)"
+>
+
+  <div class="modal-card">
+
+    <div class="modal-video-container">
+
+      <video
+        id="modalVideo"
+        class="modal-video"
+        controls
+        playsinline
+      >
+      </video>
+
+    </div>
+
+
+    <div class="modal-body">
+
+      <h2
+        id="videoModalTitle"
+        style="
+          color: rgb(61, 43, 34);
+          font-weight: 700;
+          font-size: 24px;
+          margin-bottom: 12px;
+        "
+      >
+      </h2>
+
+
+      <p
+        id="videoModalDesc"
+        style="
+          color: rgb(93, 74, 64);
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 1.6;
+        "
+      >
+      </p>
+
+    </div>
+
+
+    <button
+      class="modal-close"
+      onclick="closeVideoModal()"
+      aria-label="Close video"
+    >
+      ✕
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     WHATSAPP
+========================================================= -->
+
+<a
+  href="https://wa.me/255686210125?text=Hi%20I%20found%20your%20portfolio%20and%20want%20to%20hire%20you"
+  class="whatsapp-float"
+  target="_blank"
+  aria-label="Chat on WhatsApp"
+>
+
+  <svg
+    class="whatsapp-icon"
+    viewBox="0 0 32 32"
+  >
+
+    <path
+      fill="white"
+      d="M16 3C9.37 3 4 8.37 4 15c0 2.61.85 5.02 2.29 6.97L4 29l7.28-2.25C13.1 27.54 14.52 28 16 28c6.63 0 12-5.37 12-12S22.63 3 16 3zm0 22c-1.35 0-2.65-.27-3.85-.8l-.28-.12-4.32 1.34.95-3.46-.24-.38C6.14 19.65 5.5 17.41 5.5 15c0-5.79 4.71-10.5 10.5-10.5S26.5 9.21 26.5 15 21.79 25 16 25z"
+    />
+
+    <path
+      fill="white"
+      d="M20.5 17.5c-.27 0-.55-.08-.82-.25-.5-.32-1.3-.7-2.7-1.5-1.4-.8-2.1-1.2-2.37-1.5-.27-.3-.27-.7 0-1.06.54-.72 1.08-1.44 1.08-1.44l.18-.27c.36-.54.18-1.08-.18-1.44-.36-.36-.9-.72-1.26-.9-.36-.18-.72-.09-1.08.09-.36.18-.72.72-.9 1.26-.18.54-.27 1.26-.09 1.98.18.72.9 1.62 1.62 2.34.72.72 1.62 1.44 2.34 1.62.72.18 1.44.09 1.98-.09.54-.18 1.08-.54 1.26-.9.18-.36.09-.72-.09-1.08-.18-.36-.54-.72-.9-.9-.27-.17-.55-.25-.82-.25z"
+    />
+
   </svg>
-  <span>WhatsApp Me</span>
+
+  <span>
+    WhatsApp Me
+  </span>
+
 </a>
 
+
 <script>
+
+  /* =========================================================
+     ICONS
+  ========================================================= */
+
   lucide.createIcons();
 
-  // Reveal on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-  }, { threshold: 0.15 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // Smooth scroll
+  /* =========================================================
+     REVEAL ON SCROLL
+  ========================================================= */
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.15
+    }
+  );
+
+
+  document
+    .querySelectorAll('.reveal')
+    .forEach(el => observer.observe(el));
+
+
+  /* =========================================================
+     SMOOTH SCROLL
+  ========================================================= */
+
   function smoothScroll(event) {
+
     event.preventDefault();
-    const target = document.querySelector(event.currentTarget.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    const target = document.querySelector(
+      event.currentTarget.getAttribute('href')
+    );
+
+    if (target) {
+
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+
+    }
+
   }
 
-  // Modal
+
+  /* =========================================================
+     IMAGE MODAL
+  ========================================================= */
+
   function openModal(el) {
+
     document.getElementById('modal').style.display = 'flex';
-    document.getElementById('modalTitle').innerText = el.dataset.title;
-    document.getElementById('modalImg').src = el.dataset.img;
-    document.getElementById('modalDesc').innerText = el.dataset.desc;
+
+    document.getElementById('modalTitle').innerText =
+      el.dataset.title;
+
+    document.getElementById('modalImg').src =
+      el.dataset.img;
+
+    document.getElementById('modalDesc').innerText =
+      el.dataset.desc;
+
     document.body.style.overflow = 'hidden';
+
   }
+
+
   function closeModal() {
+
     document.getElementById('modal').style.display = 'none';
+
     document.body.style.overflow = 'auto';
+
   }
-  function closeModalOutside(e) { if (e.target.id === 'modal') closeModal(); }
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-  // Skill filter
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      document.querySelectorAll('.skill-pill').forEach(skill => {
-        skill.style.display = skill.dataset.category === filter ? 'inline-flex' : 'none';
-      });
-    });
-  });
 
-  // ===================== SERVICES =====================
-  const servicesData = [
-    { icon: '🎨', title: 'Graphic Design & Branding', items: ['Logo Design','Brand Identity Design','Brand Style Guides','Rebranding Projects','Business Cards & Stationery','Packaging & Label Design','Marketing Materials','Corporate Branding Assets'] },
-    { icon: '📱', title: 'Social Media & Content', items: ['Social Media Posts & Stories','Carousel Posts','Social Media Campaigns','Content Creation & Planning','Instagram Highlight Covers','YouTube Thumbnails','Social Media Templates','Digital Content Graphics'] },
-    { icon: '📢', title: 'Advertising & Marketing', items: ['Product Advertisements','Promotional Campaign Graphics','Event Marketing Materials','Email Marketing Designs','Digital Ads & Banners','Sales & Launch Campaign Creatives','E-commerce Marketing Assets'] },
-    { icon: '🛍️', title: 'Product & E-commerce', items: ['Product Mockups','Product Listing Images','Beauty & Skincare Creatives','Amazon & Online Store Graphics','Product Launch Visuals','Before & After Graphics','Product Catalog Design'] },
-    { icon: '💻', title: 'Web & Digital Design', items: ['Landing Page Design','Portfolio Websites','Canva Website Design','Website Graphics & Banners','UI Mockups','Digital Asset Design','Website Content Visuals'] },
-    { icon: '🎮', title: 'Interactive & Educational', items: ['Interactive Games','Educational Learning Games','Baby Shower & Party Games','Bridal Shower Games','Interactive Presentations','Quizzes & Assessments','Learning Activities & Worksheets'] },
-    { icon: '📄', title: 'Print & Publication', items: ['Flyers & Posters','Brochures & Booklets','Menus','Invitations','Certificates','Workbooks & Planners','Magazines & Catalogs'] },
-    { icon: '🧊', title: '3D Product Design & Animation', items: [ '3D Product Modeling','Photorealistic Product Rendering','3D Product Animation','CGI Advertising Images','Realistic Texturing & Materials','Lighting & Studio Rendering','Camera Animation & Product Cinematics'] },   
-    { icon: '📊', title: 'Business & Professional', items: ['Presentation Design','Pitch Decks','Company Profiles','Resume/CV Design','Portfolio Design','Proposal Design','Reports & Business Documents'] },
-    { icon: '✨', title: 'Custom Creative Solutions', items: ['Canva Templates','Digital Products','Printable Designs','Custom Client Requests','Creative Consultation','Design Support for Small Businesses & Startups'] ,  special: true },
-    ];
+  function closeModalOutside(e) {
 
-  const grid = document.getElementById('serviceGrid');
+    if (e.target.id === 'modal') {
+      closeModal();
+    }
 
-  servicesData.forEach(s => {
-    const card = document.createElement('div');
-    card.className = 'service-card' + (s.special ? ' special-card' : '');
+  }
 
-    card.innerHTML = `
-      <div class="card-header">
-        <div class="card-left">
-          <div class="card-icon">${s.icon}</div>
-          <span>${s.title}</span>
-        </div>
-        <span class="chevron">▼</span>
-      </div>
-      <div class="card-body">
-        <div class="card-body-inner">
-          <hr class="card-divider">
-          <ul class="service-list">
-            ${s.items.map(item => `<li>${item}</li>`).join('')}
-          </ul>
-        </div>
-      </div>
-    `;
 
-    card.querySelector('.card-header').addEventListener('click', () => {
-      const isOpen = card.classList.contains('open');
+  /* =========================================================
+     VIDEO MODAL
+  ========================================================= */
 
-      // Close all cards first (no layout jump: we just collapse max-height)
-      document.querySelectorAll('.service-card.open').forEach(c => {
-        c.classList.remove('open');
-        c.querySelector('.card-body').style.maxHeight = '0';
-      });
+  function openVideoModal(el) {
 
-      if (!isOpen) {
-        card.classList.add('open');
-        const body = card.querySelector('.card-body');
-        const inner = card.querySelector('.card-body-inner');
-        // Use scrollHeight of inner so the expansion is exact, no layout shift on siblings
-        body.style.maxHeight = inner.scrollHeight + 32 + 'px';
+    const modal =
+      document.getElementById('videoModal');
 
-        // Stagger list items
-        card.querySelectorAll('.service-list li').forEach((li, i) => {
-          li.style.transitionDelay = (i * 35) + 'ms';
-        });
+    const video =
+      document.getElementById('modalVideo');
+
+    const title =
+      document.getElementById('videoModalTitle');
+
+    const desc =
+      document.getElementById('videoModalDesc');
+
+
+    title.innerText =
+      el.dataset.title;
+
+    desc.innerText =
+      el.dataset.desc;
+
+    video.src =
+      el.dataset.video;
+
+    modal.style.display =
+      'flex';
+
+    document.body.style.overflow =
+      'hidden';
+
+    video.currentTime = 0;
+
+    video.play().catch(() => {});
+
+  }
+
+
+  function closeVideoModal() {
+
+    const modal =
+      document.getElementById('videoModal');
+
+    const video =
+      document.getElementById('modalVideo');
+
+    video.pause();
+
+    video.removeAttribute('src');
+
+    video.load();
+
+    modal.style.display =
+      'none';
+
+    document.body.style.overflow =
+      'auto';
+
+  }
+
+
+  function closeVideoModalOutside(e) {
+
+    if (e.target.id === 'videoModal') {
+      closeVideoModal();
+    }
+
+  }
+
+
+  /* =========================================================
+     ESCAPE KEY
+  ========================================================= */
+
+  document.addEventListener(
+    'keydown',
+    e => {
+
+      if (e.key === 'Escape') {
+
+        closeModal();
+        closeVideoModal();
+
       }
+
+    }
+  );
+
+
+  /* =========================================================
+     SKILL FILTER
+  ========================================================= */
+
+  document
+    .querySelectorAll('.filter-btn')
+    .forEach(btn => {
+
+      btn.addEventListener(
+        'click',
+        () => {
+
+          document
+            .querySelectorAll('.filter-btn')
+            .forEach(b =>
+              b.classList.remove('active')
+            );
+
+
+          btn.classList.add('active');
+
+
+          const filter =
+            btn.dataset.filter;
+
+
+          document
+            .querySelectorAll('.skill-pill')
+            .forEach(skill => {
+
+              if (
+                skill.dataset.category === filter
+              ) {
+
+                skill.style.display =
+                  'inline-flex';
+
+              } else {
+
+                skill.style.display =
+                  'none';
+
+              }
+
+            });
+
+        }
+      );
+
     });
 
-    grid.appendChild(card);
-  });
+
+  /* =========================================================
+     PROJECT FILTER
+  ========================================================= */
+
+  document
+    .querySelectorAll('.project-filter')
+    .forEach(btn => {
+
+      btn.addEventListener(
+        'click',
+        () => {
+
+          document
+            .querySelectorAll('.project-filter')
+            .forEach(b =>
+              b.classList.remove('active')
+            );
+
+
+          btn.classList.add('active');
+
+
+          const filter =
+            btn.dataset.projectFilter;
+
+
+          document
+            .querySelectorAll('.project-card')
+            .forEach(project => {
+
+              const type =
+                project.dataset.projectType;
+
+
+              if (
+                filter === 'all' ||
+                type === filter
+              ) {
+
+                project.style.display =
+                  '';
+
+              } else {
+
+                project.style.display =
+                  'none';
+
+              }
+
+            });
+
+
+          /* Restart video previews */
+
+          if (filter === 'video') {
+
+            document
+              .querySelectorAll('.project-card video')
+              .forEach(video => {
+
+                video.play().catch(() => {});
+
+              });
+
+          } else {
+
+            document
+              .querySelectorAll('.project-card video')
+              .forEach(video => {
+
+                video.pause();
+
+              });
+
+          }
+
+        }
+      );
+
+    });
+
+
+  /* =========================================================
+     VIDEO CARD HOVER PREVIEWS
+  ========================================================= */
+
+  document
+    .querySelectorAll('.project-card video')
+    .forEach(video => {
+
+      const card =
+        video.closest('.project-card');
+
+
+      card.addEventListener(
+        'mouseenter',
+        () => {
+
+          if (
+            card.dataset.projectType === 'video'
+          ) {
+
+            video.play().catch(() => {});
+
+          }
+
+        }
+      );
+
+
+      card.addEventListener(
+        'mouseleave',
+        () => {
+
+          video.pause();
+
+        }
+      );
+
+    });
+
+
+  /* =========================================================
+     SERVICES
+  ========================================================= */
+
+  const servicesData = [
+
+    {
+      icon: '🎨',
+      title: 'Graphic Design & Branding',
+
+      items: [
+        'Logo Design',
+        'Brand Identity Design',
+        'Brand Style Guides',
+        'Rebranding Projects',
+        'Business Cards & Stationery',
+        'Packaging & Label Design',
+        'Marketing Materials',
+        'Corporate Branding Assets'
+      ]
+    },
+
+
+    {
+      icon: '📱',
+      title: 'Social Media & Content',
+
+      items: [
+        'Social Media Posts & Stories',
+        'Carousel Posts',
+        'Social Media Campaigns',
+        'Content Creation & Planning',
+        'Instagram Highlight Covers',
+        'YouTube Thumbnails',
+        'Social Media Templates',
+        'Digital Content Graphics'
+      ]
+    },
+
+
+    {
+      icon: '🎬',
+      title: 'Video Editing & Motion',
+
+      items: [
+        'Instagram Reels',
+        'TikTok Videos',
+        'Short-Form Video Editing',
+        'Product Video Ads',
+        'Social Media Advertisements',
+        'UGC Video Editing',
+        'Motion Graphics',
+        'Text & Caption Animation',
+        'Product Promo Videos',
+        'Cinematic Product Videos',
+        'Transitions & Effects',
+        'Music & Sound Sync'
+      ]
+    },
+
+
+    {
+      icon: '📢',
+      title: 'Advertising & Marketing',
+
+      items: [
+        'Product Advertisements',
+        'Promotional Campaign Graphics',
+        'Event Marketing Materials',
+        'Email Marketing Designs',
+        'Digital Ads & Banners',
+        'Sales & Launch Campaign Creatives',
+        'E-commerce Marketing Assets'
+      ]
+    },
+
+
+    {
+      icon: '🛍️',
+      title: 'Product & E-commerce',
+
+      items: [
+        'Product Mockups',
+        'Product Listing Images',
+        'Beauty & Skincare Creatives',
+        'Amazon & Online Store Graphics',
+        'Product Launch Visuals',
+        'Before & After Graphics',
+        'Product Catalog Design'
+      ]
+    },
+
+
+    {
+      icon: '💻',
+      title: 'Web & Digital Design',
+
+      items: [
+        'Landing Page Design',
+        'Portfolio Websites',
+        'Canva Website Design',
+        'Website Graphics & Banners',
+        'UI Mockups',
+        'Digital Asset Design',
+        'Website Content Visuals'
+      ]
+    },
+
+
+    {
+      icon: '🎮',
+      title: 'Interactive & Educational',
+
+      items: [
+        'Interactive Games',
+        'Educational Learning Games',
+        'Baby Shower & Party Games',
+        'Bridal Shower Games',
+        'Interactive Presentations',
+        'Quizzes & Assessments',
+        'Learning Activities & Worksheets'
+      ]
+    },
+
+
+    {
+      icon: '📄',
+      title: 'Print & Publication',
+
+      items: [
+        'Flyers & Posters',
+        'Brochures & Booklets',
+        'Menus',
+        'Invitations',
+        'Certificates',
+        'Workbooks & Planners',
+        'Magazines & Catalogs'
+      ]
+    },
+
+
+    {
+      icon: '🧊',
+      title: '3D Product Design & Animation',
+
+      items: [
+        '3D Product Modeling',
+        'Photorealistic Product Rendering',
+        '3D Product Animation',
+        'CGI Advertising Images',
+        'Realistic Texturing & Materials',
+        'Lighting & Studio Rendering',
+        'Camera Animation & Product Cinematics'
+      ]
+    },
+
+
+    {
+      icon: '📊',
+      title: 'Business & Professional',
+
+      items: [
+        'Presentation Design',
+        'Pitch Decks',
+        'Company Profiles',
+        'Resume/CV Design',
+        'Portfolio Design',
+        'Proposal Design',
+        'Reports & Business Documents'
+      ]
+    },
+
+
+    {
+      icon: '✨',
+      title: 'Custom Creative Solutions',
+
+      items: [
+        'Canva Templates',
+        'Digital Products',
+        'Printable Designs',
+        'Custom Client Requests',
+        'Creative Consultation',
+        'Design Support for Small Businesses & Startups'
+      ],
+
+      special: true
+
+    }
+
+  ];
+
+
+  const grid =
+    document.getElementById('serviceGrid');
+
+
+  servicesData.forEach(
+    s => {
+
+      const card =
+        document.createElement('div');
+
+
+      card.className =
+        'service-card' +
+        (s.special ? ' special-card' : '');
+
+
+      card.innerHTML = `
+
+        <div class="card-header">
+
+          <div class="card-left">
+
+            <div class="card-icon">
+              ${s.icon}
+            </div>
+
+            <span>
+              ${s.title}
+            </span>
+
+          </div>
+
+          <span class="chevron">
+            ▼
+          </span>
+
+        </div>
+
+
+        <div class="card-body">
+
+          <div class="card-body-inner">
+
+            <hr class="card-divider">
+
+
+            <ul class="service-list">
+
+              ${s.items
+                .map(
+                  item =>
+                    `<li>${item}</li>`
+                )
+                .join('')
+              }
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      `;
+
+
+      card
+        .querySelector('.card-header')
+        .addEventListener(
+          'click',
+          () => {
+
+            const isOpen =
+              card.classList.contains('open');
+
+
+            document
+              .querySelectorAll(
+                '.service-card.open'
+              )
+              .forEach(c => {
+
+                c.classList.remove(
+                  'open'
+                );
+
+                c.querySelector(
+                  '.card-body'
+                ).style.maxHeight =
+                  '0';
+
+              });
+
+
+            if (!isOpen) {
+
+              card.classList.add(
+                'open'
+              );
+
+
+              const body =
+                card.querySelector(
+                  '.card-body'
+                );
+
+
+              const inner =
+                card.querySelector(
+                  '.card-body-inner'
+                );
+
+
+              body.style.maxHeight =
+                inner.scrollHeight +
+                32 +
+                'px';
+
+
+              card
+                .querySelectorAll(
+                  '.service-list li'
+                )
+                .forEach(
+                  (li, i) => {
+
+                    li.style.transitionDelay =
+                      (i * 35) +
+                      'ms';
+
+                  }
+                );
+
+            }
+
+          }
+        );
+
+
+      grid.appendChild(card);
+
+    }
+  );
+
+
 </script>
 
 </body>
