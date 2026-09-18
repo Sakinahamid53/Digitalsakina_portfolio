@@ -29,14 +29,14 @@
 
   <style>
     :root {
-      --ivory: #F8E7C9;
-      --powder-blue: #B6CBDE;
-      --charcoal-plum: #4F444C;
+      --ivory: #FFF7E8;
+      --powder-blue: #D8E6F1;
+      --charcoal-plum: #625861;
       --deep-plum: #4D424C;
-      --soft-cream: #FFF9ED;
-      --mist-blue: #DCE7EF;
-      --dusty-blue: #8FAFC7;
-      --muted-mauve: #766A73;
+      --soft-cream: #FFFDF7;
+      --mist-blue: #EAF1F6;
+      --dusty-blue: #C1D5E4;
+      --muted-mauve: #827780;
     }
 
 
@@ -164,8 +164,8 @@
       padding: 8px 20px;
       border-radius: 50px;
       border: 2px solid transparent;
-      background: #FFF9ED;
-      color: #4F444C;
+      background: #FFFDF7;
+      color: #625861;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -190,8 +190,8 @@
       padding: 9px 22px;
       border-radius: 50px;
       border: 2px solid transparent;
-      background: #FFF9ED;
-      color: #4F444C;
+      background: #FFFDF7;
+      color: #625861;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -220,7 +220,7 @@
 
     .skill-pill:hover {
       transform: translateY(-4px) scale(1.05);
-      box-shadow: 0 8px 20px rgba(77, 66, 76, 0.10);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
 
 
@@ -281,7 +281,7 @@
     }
 
     .service-card {
-      background: #FFF9ED;
+      background: #FFFDF7;
       border-radius: 20px;
       box-shadow: 0 4px 16px rgba(77, 66, 76, 0.07);
       transition:
@@ -298,8 +298,8 @@
     .service-card.special-card {
       background: linear-gradient(
         135deg,
-        #4D424C,
-        #625861
+        #D8E6F1,
+        #D8E6F1
       );
     }
 
@@ -334,7 +334,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 18px 20px;
-      color: #4F444C;
+      color: #625861;
       font-weight: 600;
       font-size: 14px;
       cursor: pointer;
@@ -352,7 +352,7 @@
       width: 36px;
       height: 36px;
       border-radius: 10px;
-      background: #F8E7C9;
+      background: #FFF7E8;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -367,7 +367,7 @@
 
     .chevron {
       font-size: 11px;
-      color: #766A73;
+      color: #827780;
       transition:
         transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
       flex-shrink: 0;
@@ -414,7 +414,7 @@
       gap: 8px;
       padding: 6px 0;
       font-size: 13px;
-      color: #4F444C;
+      color: #625861;
       border-bottom: 1px solid rgba(77, 66, 76, 0.06);
       opacity: 0;
       transform: translateX(-6px);
@@ -451,7 +451,7 @@
     .video-card-preview {
       position: relative;
       overflow: hidden;
-      background: #DCE7EF;
+      background: #EAF1F6;
     }
 
     .video-cover {
@@ -507,7 +507,7 @@
     }
 
     .modal-card {
-      background: #FFF9ED;
+      background: #FFFDF7;
       width: 100%;
       max-width: 700px;
       border-radius: 24px;
@@ -555,7 +555,7 @@
       position: absolute;
       top: 12px;
       right: 14px;
-      background: #FFF9ED;
+      background: #FFFDF7;
       border: none;
       width: 38px;
       height: 38px;
@@ -568,7 +568,6 @@
       align-items: center;
       justify-content: center;
       z-index: 10000;
-      color: #4D424C;
     }
 
     .modal-close:hover {
@@ -596,7 +595,7 @@
       position: fixed;
       bottom: 22px;
       right: 22px;
-      background: #25D366;
+      background: #D8E6F1;
       color: white;
       padding: 12px 18px;
       border-radius: 50px;
@@ -694,7 +693,7 @@
 <body
   style="
     background:
-      linear-gradient(135deg, #FFF9ED, #F8E7C9);
+      linear-gradient(135deg, #FFFDF7, #FFF7E8);
   "
 >
 
@@ -706,15 +705,15 @@
 <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
 
   <div
-    class="blob-1 absolute top-[10%] left-[5%] w-72 h-72 rounded-full bg-gradient-to-br from-[#F8E7C9]/50 to-[#B6CBDE]/30 blur-3xl">
+    class="blob-1 absolute top-[10%] left-[5%] w-72 h-72 rounded-full bg-gradient-to-br from-[#FFF7E8]/50 to-[#D8E6F1]/30 blur-3xl">
   </div>
 
   <div
-    class="blob-2 absolute top-[50%] right-[10%] w-96 h-96 rounded-full bg-gradient-to-br from-[#B6CBDE]/25 to-[#4D424C]/20 blur-3xl">
+    class="blob-2 absolute top-[50%] right-[10%] w-96 h-96 rounded-full bg-gradient-to-br from-[#D8E6F1]/25 to-[#625861]/20 blur-3xl">
   </div>
 
   <div
-    class="blob-3 absolute bottom-[10%] left-[30%] w-64 h-64 rounded-full bg-gradient-to-br from-[#F8E7C9]/60 to-[#B6CBDE]/30 blur-3xl">
+    class="blob-3 absolute bottom-[10%] left-[30%] w-64 h-64 rounded-full bg-gradient-to-br from-[#FFF7E8]/60 to-[#D8E6F1]/30 blur-3xl">
   </div>
 
 </div>
@@ -725,7 +724,7 @@
 ========================================================= -->
 
 <header
-  class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/70 border-b border-[#4D424C]/10"
+  class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/70 border-b border-[#625861]/10"
 >
 
   <nav
@@ -734,7 +733,7 @@
 
     <span
       class="font-bold text-lg"
-      style="color: #4F444C;"
+      style="color: #625861;"
     >
       Sakina Kaderbhai
     </span>
@@ -743,7 +742,7 @@
 
       <a
         href="#about"
-        class="text-[#4F444C]/75 hover:text-[#4F444C] transition"
+        class="text-[#625861]/75 hover:text-[#625861] transition"
         onclick="smoothScroll(event)"
       >
         About
@@ -751,7 +750,7 @@
 
       <a
         href="#skills"
-        class="text-[#4F444C]/75 hover:text-[#4F444C] transition"
+        class="text-[#625861]/75 hover:text-[#625861] transition"
         onclick="smoothScroll(event)"
       >
         Skills
@@ -759,7 +758,7 @@
 
       <a
         href="#projects"
-        class="text-[#4F444C]/75 hover:text-[#4F444C] transition"
+        class="text-[#625861]/75 hover:text-[#625861] transition"
         onclick="smoothScroll(event)"
       >
         Projects
@@ -767,7 +766,7 @@
 
       <a
         href="#services"
-        class="text-[#4F444C]/75 hover:text-[#4F444C] transition"
+        class="text-[#625861]/75 hover:text-[#625861] transition"
         onclick="smoothScroll(event)"
       >
         Services
@@ -775,7 +774,7 @@
 
       <a
         href="#contact"
-        class="text-[#4F444C]/75 hover:text-[#4F444C] transition"
+        class="text-[#625861]/75 hover:text-[#625861] transition"
         onclick="smoothScroll(event)"
       >
         Contact
@@ -809,12 +808,12 @@
       class="w-full h-full object-cover"
       loading="lazy"
       style="filter: saturate(0.72) sepia(0.08);"
-      src="images/bgportfolio.png"
+      src="images/background.png"
       alt="Minimalist pink desk setup"
     >
 
     <div
-      class="absolute inset-0 bg-gradient-to-r from-[#F8E7C9]/92 via-[#FFF9ED]/72 to-[#B6CBDE]/42">
+      class="absolute inset-0 bg-gradient-to-r from-[#FFF7E8]/92 via-[#FFFDF7]/72 to-[#D8E6F1]/42">
     </div>
 
   </div>
@@ -831,7 +830,7 @@
       <p
         class="uppercase tracking-[0.3em] mb-4 hero-text"
         style="
-          color: #4D424C;
+          color: #D8E6F1;
           font-weight: 500;
           font-size: 13px;
         "
@@ -843,7 +842,7 @@
       <h1
         class="mb-6 hero-text hero-text-d1 leading-tight"
         style="
-          color: #4F444C;
+          color: #625861;
           font-weight: 900;
           font-size: 64px;
         "
@@ -855,7 +854,7 @@
       <p
         class="mb-8 hero-text hero-text-d2 max-w-2xl"
         style="
-          color: #4F444C;
+          color: #625861;
           font-weight: 400;
           font-size: 18px;
         "
@@ -869,7 +868,7 @@
         class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg w-fit hero-text hero-text-d3 cursor-pointer"
         onclick="smoothScroll(event)"
         style="
-          background: #4D424C;
+          background: #D8E6F1;
           color: white;
         "
       >
@@ -890,7 +889,7 @@
 <section
   id="about"
   class="py-24 px-6 relative"
-  style="background: #FFF9ED;"
+  style="background: #FFFDF7;"
 >
 
   <div class="max-w-4xl mx-auto reveal">
@@ -904,7 +903,7 @@
         <div class="relative w-full max-w-xs">
 
           <div
-            class="absolute -inset-4 bg-gradient-to-br from-[#F8E7C9]/50 to-[#B6CBDE]/25 rounded-full blur-2xl">
+            class="absolute -inset-4 bg-gradient-to-br from-[#FFF7E8]/50 to-[#D8E6F1]/25 rounded-full blur-2xl">
           </div>
 
           <div
@@ -930,7 +929,7 @@
         <h2
           class="mb-6"
           style="
-            color: #4F444C;
+            color: #625861;
             font-weight: 700;
             font-size: 27px;
           "
@@ -942,7 +941,7 @@
         <p
           class="leading-relaxed"
           style="
-            color: #4F444C;
+            color: #625861;
             font-weight: 400;
             font-size: 20px;
           "
@@ -1571,7 +1570,7 @@
 <section
   id="projects"
   class="py-24 px-6"
-  style="background: #FFF9ED;"
+  style="background: #FFFDF7;"
 >
 
   <div class="max-w-6xl mx-auto">
@@ -1580,7 +1579,7 @@
     <h2
       class="text-center mb-4 reveal"
       style="
-        color: #4F444C;
+        color: #625861;
         font-weight: 700;
         font-size: 27px;
       "
@@ -1592,7 +1591,7 @@
     <p
       class="text-center mb-10 reveal"
       style="
-        color: #4F444C;
+        color: #625861;
         font-size: 17px;
       "
     >
@@ -1624,18 +1623,21 @@
         class="project-filter"
         data-project-filter="atelier"
       >
-        🖌️ Atelier
+        🖌️Atelier
       </button>
 
     </div>
 
 
-    <!-- PROJECT GRID -->
+    <!-- =======================================================
+         PROJECT GRID
+    ======================================================== -->
 
     <div
       id="projectGrid"
       class="grid md:grid-cols-3 gap-10"
     >
+      <!-- Projects are rendered from the portfolio manifest below. -->
     </div>
 
   </div>
@@ -1650,7 +1652,7 @@
 <section
   id="services"
   class="py-24 px-6 relative"
-  style="background: #DCE7EF;"
+  style="background: #EAF1F6;"
 >
 
   <div class="max-w-4xl mx-auto">
@@ -1658,7 +1660,7 @@
     <h2
       class="text-center mb-4 reveal"
       style="
-        color: #4F444C;
+        color: #625861;
         font-weight: 700;
         font-size: 27px;
       "
@@ -1670,7 +1672,7 @@
     <p
       class="text-center mb-16 reveal"
       style="
-        color: #4F444C;
+        color: #625861;
         font-weight: 400;
         font-size: 18px;
       "
@@ -1723,7 +1725,7 @@
     <h2
       class="mb-4"
       style="
-        color: #FFF9ED;
+        color: #FFFDF7;
         font-weight: 700;
         font-size: 27px;
       "
@@ -1735,7 +1737,7 @@
     <p
       class="mb-8"
       style="
-        color: #DCE7EF;
+        color: #EAF1F6;
         font-weight: 400;
         font-size: 18px;
       "
@@ -1748,7 +1750,7 @@
       href="mailto:sakinahamid53@hotmail.com"
       class="inline-block px-10 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg"
       style="
-        background: #FFF9ED;
+        background: #FFFDF7;
         color: #4D424C;
       "
     >
@@ -1768,13 +1770,13 @@
 ========================================================= -->
 
 <footer
-  class="relative z-10 py-6 text-center border-t border-[#4D424C]/15"
+  class="relative z-10 py-6 text-center border-t border-[#625861]/15"
 >
 
   <p
     class="text-sm"
     style="
-      color: rgba(77, 66, 76, 0.65);
+      color: rgba(115, 54, 42, 0.65);
       font-weight: 400;
       font-size: 18px;
     "
@@ -1809,7 +1811,7 @@
       <h2
         id="modalTitle"
         style="
-          color: #4F444C;
+          color: #625861;
           font-weight: 700;
           font-size: 24px;
           margin-bottom: 12px;
@@ -1821,7 +1823,7 @@
       <p
         id="modalDesc"
         style="
-          color: #4F444C;
+          color: #625861;
           font-weight: 400;
           font-size: 16px;
           line-height: 1.6;
@@ -1875,7 +1877,7 @@
       <h2
         id="videoModalTitle"
         style="
-          color: #4F444C;
+          color: #625861;
           font-weight: 700;
           font-size: 24px;
           margin-bottom: 12px;
@@ -1887,7 +1889,7 @@
       <p
         id="videoModalDesc"
         style="
-          color: #4F444C;
+          color: #625861;
           font-weight: 400;
           font-size: 16px;
           line-height: 1.6;
@@ -1916,906 +1918,818 @@
 ========================================================= -->
 
 <a
-  href="https://wa.me/255686210125?text=Hi%20I%20found%20your%20portfolio%20and%20want%20to%20hire%20you"
-  class="whatsapp-float"
-  target="_blank"
-  aria-label="Chat on WhatsApp"
->
-
-  <svg
-    class="whatsapp-icon"
-    viewBox="0 0 32 32"
-  >
-
-    <path
-      fill="white"
-      d="M16 3C9.37 3 4 8.37 4 15c0 2.61.85 5.02 2.29 6.97L4 29l7.28-2.25C13.1 27.54 14.52 28 16 28c6.63 0 12-5.37 12-12S22.63 3 16 3zm0 22c-1.35 0-2.65-.27-3.85-.8l-.28-.12-4.32 1.34.95-3.46-.24-.38C6.14 19.65 5.5 17.41 5.5 15c0-5.79 4.71-10.5 10.5-10.5S26.5 9.21 26.5 15 21.79 25 16 25z"
-    />
-
-    <path
-      fill="white"
-      d="M20.5 17.5c-.27 0-.55-.08-.82-.25-.5-.32-1.3-.7-2.7-1.5-1.4-.8-2.1-1.2-2.37-1.5-.27-.3-.27-.7 0-1.06.54-.72 1.08-1.44 1.08-1.44l.18-.27c.36-.54.18-1.08-.18-1.44-.36-.36-.9-.72-1.26-.9-.36-.18-.72-.09-1.08.09-.36.18-.72.72-.9 1.26-.18.54-.27 1.26-.09 1.98.18.72.9 1.62 1.62 2.34.72.72 1.62 1.44 2.34 1.62.72.18 1.44.09 1.98-.09.54-.18 1.08-.54 1.26-.9.18-.36.09-.72-.09-1.08-.18-.36-.54-.72-.9-.9-.27-.17-.55-.25-.82-.25z"
-    />
-
-  </svg>
-
-  <span>
-    WhatsApp Me
-  </span>
-
-</a>
-
-
-<script>
-
-  /* =========================================================
-     ICONS
-  ========================================================= */
-
-  lucide.createIcons();
-
-
-  /* =========================================================
-     REVEAL ON SCROLL
-  ========================================================= */
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-
-      entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-
-      });
-
-    },
-    {
-      threshold: 0.15
-    }
-  );
-
-
-  document
-    .querySelectorAll('.reveal')
-    .forEach(el => observer.observe(el));
-
-
-  /* =========================================================
-     SMOOTH SCROLL
-  ========================================================= */
-
-  function smoothScroll(event) {
-
-    event.preventDefault();
-
-    const target = document.querySelector(
-      event.currentTarget.getAttribute('href')
-    );
-
-    if (target) {
-
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-
-    }
-
-  }
-
-
-  /* =========================================================
-     IMAGE MODAL
-  ========================================================= */
-
-  function openModal(el) {
-
-    document.getElementById('modal').style.display = 'flex';
-
-    document.getElementById('modalTitle').innerText =
-      el.dataset.title;
-
-    document.getElementById('modalImg').src =
-      el.dataset.img;
-
-    document.getElementById('modalDesc').innerText =
-      el.dataset.desc;
-
-    document.body.style.overflow = 'hidden';
-
-  }
-
-
-  function closeModal() {
-
-    document.getElementById('modal').style.display = 'none';
-
-    document.body.style.overflow = 'auto';
-
-  }
-
-
-  function closeModalOutside(e) {
-
-    if (e.target.id === 'modal') {
-      closeModal();
-    }
-
-  }
-
-
-  /* =========================================================
-     VIDEO MODAL
-  ========================================================= */
-
-  function openVideoModal(el) {
-
-    const modal =
-      document.getElementById('videoModal');
-
-    const video =
-      document.getElementById('modalVideo');
-
-    const title =
-      document.getElementById('videoModalTitle');
-
-    const desc =
-      document.getElementById('videoModalDesc');
-
-
-    title.innerText =
-      el.dataset.title;
-
-    desc.innerText =
-      el.dataset.desc;
-
-    video.src =
-      el.dataset.video;
-
-    modal.style.display =
-      'flex';
-
-    document.body.style.overflow =
-      'hidden';
-
-    video.currentTime = 0;
-
-    video.play().catch(() => {});
-
-  }
-
-
-  function closeVideoModal() {
-
-    const modal =
-      document.getElementById('videoModal');
-
-    const video =
-      document.getElementById('modalVideo');
-
-    video.pause();
-
-    video.removeAttribute('src');
-
-    video.load();
-
-    modal.style.display =
-      'none';
-
-    document.body.style.overflow =
-      'auto';
-
-  }
-
-
-  function closeVideoModalOutside(e) {
-
-    if (e.target.id === 'videoModal') {
-      closeVideoModal();
-    }
-
-  }
-
-
-  /* =========================================================
-     ESCAPE KEY
-  ========================================================= */
-
-  document.addEventListener(
-    'keydown',
-    e => {
-
-      if (e.key === 'Escape') {
-
-        closeModal();
-        closeVideoModal();
-
-      }
-
-    }
-  );
-
-
-  /* =========================================================
-     SKILL FILTER
-  ========================================================= */
-
-  document
-    .querySelectorAll('.filter-btn')
-    .forEach(btn => {
-
-      btn.addEventListener(
-        'click',
-        () => {
-
-          document
-            .querySelectorAll('.filter-btn')
-            .forEach(b =>
-              b.classList.remove('active')
-            );
-
-
-          btn.classList.add('active');
-
-
-          const filter =
-            btn.dataset.filter;
-
-
-          document
-            .querySelectorAll('.skill-pill')
-            .forEach(skill => {
-
-              if (
-                skill.dataset.category === filter
-              ) {
-
-                skill.style.display =
-                  'inline-flex';
-
-              } else {
-
-                skill.style.display =
-                  'none';
-
-              }
-
-            });
-
-        }
-      );
-
-    });
-
-
-  /* =========================================================
-     PORTFOLIO MANIFEST + PROJECT RENDERING
-  ========================================================= */
-
-  const portfolioProjects = {
-
-    images: [
-      {
-        title: 'Skin1004 Madagascar Centella',
-        file: 'images/skin1004.png',
-        label: 'Product Advertising • Skincare',
-        desc: 'Skin1004 Madagascar Centella sun serum with Hyalu-Cica Water-Fit technology and zero white cast, presented through a clean, product-focused advertising visual.'
-      },
-      {
-        title: 'JUMISO — Niacinamide 20 Serum',
-        file: 'images/jumiso.png',
-        label: 'Product Advertising • Beauty',
-        desc: 'A brightening serum visual highlighting Niacinamide, Tranexamic Acid, and Glutathione through focused product storytelling.'
-      },
-      {
-        title: 'Mixsoon Bean Essence',
-        file: 'images/mixsoon.png',
-        label: 'Product Advertising • Skincare',
-        desc: 'A clean product-focused visual for Mixsoon Bean Essence, built around hydration, exfoliation, and natural skin radiance.'
-      },
-      {
-        title: 'COSRX Vitamin C 13 Serum',
-        file: 'images/vitamin.png',
-        label: 'Product Advertising • Beauty',
-        desc: 'A product advertising visual for COSRX Vitamin C 13 Serum, focusing on brightening, dark-spot care, and a refined skincare aesthetic.'
-      },
-      {
-        title: 'The AXIS-Y Daily Purifying Treatment Toner',
-        file: 'images/axis.png',
-        label: 'Product Advertising • Skincare',
-        desc: 'A skincare advertising visual highlighting centella asiatica, tea tree, sugar cane, and lotus ingredients.'
-      },
-      {
-        title: 'COSRX Advanced Snail 96',
-        file: 'images/cosrx.png',
-        label: 'Product Advertising • Skincare',
-        desc: 'A product-focused visual highlighting hydration, glow, and skin-barrier care.'
-      }
-    ],
-
-    motion: [
-      {
-        title: 'Caught in the Scent',
-        video: 'vidoes/202609051215(7).mp4',
-        cover: 'vidoes/web.png',
-        label: 'Fragrance • Product Film',
-        desc: 'A cinematic fragrance reel built around the idea of being irresistibly drawn in. The web represents the invisible pull of Hamidi Intense, turning a simple product shot into a visual story.\n\nWhat I Created\nA creative product marketing reel combining fragrance storytelling, cinematic composition, visual effects, and social-media-focused motion design to create an intriguing first impression.'
-      },
-      {
-        title: 'Shelf Stories',
-        video: 'vidoes/0916.mp4',
-        cover: 'vidoes/shelf.jpg',
-        label: 'Skincare • Social Reel',
-        desc: 'A visual skincare journey built around the idea that every shelf tells a different story. Shelf Stories brings together multiple skincare brands and their identities through seamless shelf transitions, creating a curated world of beauty and self-care.\n\nWhat I Created\nA cinematic social-media skincare reel combining brand storytelling, product styling, animated typography, smooth transitions, and visual composition.'
-      },
-      {
-        title: 'The Third Necessity',
-        video: 'vidoes/oud perfume.mp4',
-        cover: 'vidoes/perfume.png',
-        label: 'Fragrance • Concept Reel',
-        desc: 'A playful fragrance concept built around the idea that oxygen, water, and an irresistible scent belong on the list. The rotating “An Irresistible Scent” typography reinforces the idea while adding movement and personality to the product reveal.\n\nWhat I Created\nA cinematic social-media fragrance reel combining humor, product styling, animated typography, motion, and storytelling to turn a simple perfume showcase into a memorable visual concept.'
-      }
-    ],
-
-    atelier: [
-      /* Add files from atelier/ here as you build this collection. */
-    ]
-  };
-
-
-  const projectGrid =
-    document.getElementById('projectGrid');
-
-
-  function escapeHtml(value) {
-
-    return String(value)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#039;');
-
-  }
-
-
-  function renderProjects(filter = 'images') {
-
-    projectGrid.innerHTML = '';
-
-    const projects =
-      portfolioProjects[filter] || [];
-
-
-    if (!projects.length) {
-
-      projectGrid.innerHTML = `
-        <div class="md:col-span-3 text-center py-16">
-          <p style="color: #4F444C; font-size: 17px;">
-            This collection is being curated.
-          </p>
-        </div>
-      `;
-
-      return;
-
-    }
-
-
-    projects.forEach((project, index) => {
-
-      const card =
-        document.createElement('div');
-
-
-      card.className =
-        'project-card rounded-3xl overflow-hidden shadow-xl reveal';
-
-
-      card.style.transitionDelay =
-        `${index * 60}ms`;
-
-
-      if (filter === 'motion') {
-
-        card.dataset.title =
-          project.title;
-
-        card.dataset.video =
-          project.video;
-
-        card.dataset.desc =
-          project.desc;
-
-        card.onclick =
-          () => openVideoModal(card);
-
-
-        card.innerHTML = `
-
-          <div
-            class="video-card-preview"
-            style="aspect-ratio:9/16;"
-          >
-
-            <img
-              class="video-cover"
-              loading="lazy"
-              src="${escapeHtml(project.cover)}"
-              alt="${escapeHtml(project.title)} video cover"
-            >
-
-            <div class="video-play-overlay">
-
-              <div
-                class="video-play-button"
-                aria-label="Play video"
-              >
-                ▶
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <div
-            class="p-6"
-            style="background: #DCE7EF;"
-          >
-
-            <p
-              style="
-                color: #4F444C;
-                font-size: 18px;
-              "
-            >
-              ${escapeHtml(project.label)}
-            </p>
-
-          </div>
-
-        `;
-
-      } else {
-
-        card.dataset.title =
-          project.title;
-
-        card.dataset.img =
-          project.file;
-
-        card.dataset.desc =
-          project.desc;
-
-        card.onclick =
-          () => openModal(card);
-
-
-        card.innerHTML = `
-
-          <div
-            class="overflow-hidden"
-            style="aspect-ratio:1/1;"
-          >
-
-            <img
-              class="w-full h-full object-cover"
-              loading="lazy"
-              src="${escapeHtml(project.file)}"
-              alt="${escapeHtml(project.title)}"
-            >
-
-          </div>
-
-
-          <div
-            class="p-6"
-            style="background: #DCE7EF;"
-          >
-
-            <p
-              style="
-                color: #4F444C;
-                font-size: 18px;
-              "
-            >
-              ${escapeHtml(project.label)}
-            </p>
-
-          </div>
-
-        `;
-
-      }
-
-
-      projectGrid.appendChild(card);
-
-
-      requestAnimationFrame(
-        () => card.classList.add('visible')
-      );
-
-    });
-
-  }
-
-
-  /* =========================================================
-     PROJECT FILTER
-  ========================================================= */
-
-  document
-    .querySelectorAll('.project-filter')
-    .forEach(btn => {
-
-      btn.addEventListener(
-        'click',
-        () => {
-
-          document
-            .querySelectorAll('.project-filter')
-            .forEach(b =>
-              b.classList.remove('active')
-            );
-
-
-          btn.classList.add('active');
-
-
-          renderProjects(
-            btn.dataset.projectFilter
-          );
-
-        }
-      );
-
-    });
-
-
-  /* Visual Crafts is the default collection. */
-
-  renderProjects('images');
-
-
-  /* =========================================================
-     SERVICES
-  ========================================================= */
-
-  const servicesData = [
-
-    {
-      icon: '🎨',
-      title: 'Graphic Design & Branding',
-
-      items: [
-        'Brand Identity Design',
-        'Brand Style Guides',
-        'Rebranding Projects',
-        'Business Cards & Stationery',
-        'Packaging & Label Design',
-        'Marketing Materials',
-        'Corporate Branding Assets'
-      ]
-    },
-
-
-    {
-      icon: '📱',
-      title: 'Social Media & Content',
-
-      items: [
-        'Social Media Posts & Stories',
-        'Carousel Posts',
-        'Social Media Campaigns',
-        'Content Creation & Planning',
-        'Instagram Highlight Covers',
-        'YouTube Thumbnails',
-        'Social Media Templates',
-        'Digital Content Graphics'
-      ]
-    },
-
-
-    {
-      icon: '🎬',
-      title: 'Video Editing & Motion',
-
-      items: [
-        'Short-Form Video Editing',
-        'Product Video Ads',
-        'Social Media Advertisements',
-        'UGC Video Editing',
-        'Motion Graphics',
-        'Text & Caption Animation',
-        'Product Promo Videos',
-        'Cinematic Product Videos',
-        'Transitions & Effects',
-        'Music & Sound Sync'
-      ]
-    },
-
-
-    {
-      icon: '📢',
-      title: 'Advertising & Marketing',
-
-      items: [
-        'Product Advertisements',
-        'Promotional Campaign Graphics',
-        'Event Marketing Materials',
-        'Email Marketing Designs',
-        'Digital Ads & Banners',
-        'Sales & Launch Campaign Creatives',
-        'E-commerce Marketing Assets'
-      ]
-    },
-
-
-    {
-      icon: '🛍️',
-      title: 'Product & E-commerce',
-
-      items: [
-        'Product Mockups',
-        'Product Listing Images',
-        'Beauty & Skincare Creatives',
-        'Amazon & Online Store Graphics',
-        'Product Launch Visuals',
-        'Before & After Graphics',
-        'Product Catalog Design'
-      ]
-    },
-
-
-    {
-      icon: '💻',
-      title: 'Web & Digital Design',
-
-      items: [
-        'Landing Page Design',
-        'Portfolio Websites',
-        'Canva Website Design',
-        'Website Graphics & Banners',
-        'UI Mockups',
-        'Digital Asset Design',
-        'Website Content Visuals'
-      ]
-    },
-
-
-    {
-      icon: '🎮',
-      title: 'Interactive & Educational',
-
-      items: [
-        'Interactive Games',
-        'Educational Learning Games',
-        'Baby Shower & Party Games',
-        'Bridal Shower Games',
-        'Interactive Presentations',
-        'Quizzes & Assessments',
-        'Learning Activities & Worksheets'
-      ]
-    },
-
-
-    {
-      icon: '📄',
-      title: 'Print & Publication',
-
-      items: [
-        'Flyers & Posters',
-        'Brochures & Booklets',
-        'Menus',
-        'Invitations',
-        'Certificates',
-        'Workbooks & Planners',
-        'Magazines & Catalogs'
-      ]
-    },
-
-
-    {
-      icon: '🧊',
-      title: '3D Product Design & Animation',
-
-      items: [
-        '3D Product Modeling',
-        'Photorealistic Product Rendering',
-        '3D Product Animation',
-        'CGI Advertising Images',
-        'Realistic Texturing & Materials',
-        'Lighting & Studio Rendering',
-        'Camera Animation & Product Cinematics'
-      ]
-    },
-
-
-    {
-      icon: '📊',
-      title: 'Business & Professional',
-
-      items: [
-        'Presentation Design',
-        'Pitch Decks',
-        'Company Profiles',
-        'Resume/CV Design',
-        'Portfolio Design',
-        'Proposal Design',
-        'Reports & Business Documents'
-      ]
-    },
-
-
-    {
-      icon: '✨',
-      title: 'Custom Creative Solutions',
-
-      items: [
-        'Canva Templates',
-        'Digital Products',
-        'Printable Designs',
-        'Custom Client Requests',
-        'Creative Consultation',
-        'Design Support for Small Businesses & Startups'
-      ],
-
-      special: true
-
-    }
-
-  ];
-
-
-  const grid =
-    document.getElementById('serviceGrid');
-
-
-  servicesData.forEach(
-    s => {
-
-      const card =
-        document.createElement('div');
-
-
-      card.className =
-        'service-card' +
-        (s.special ? ' special-card' : '');
-
-
-      card.innerHTML = `
-
-        <div class="card-header">
-
-          <div class="card-left">
-
-            <div class="card-icon">
-              ${s.icon}
-            </div>
-
-            <span>
-              ${s.title}
-            </span>
-
-          </div>
-
-          <span class="chevron">
-            ▼
-          </span>
-
-        </div>
-
-
-        <div class="card-body">
-
-          <div class="card-body-inner">
-
-            <hr class="card-divider">
-
-
-            <ul class="service-list">
-
-              ${s.items
-                .map(
-                  item =>
-                    `<li>${item}</li>`
-                )
-                .join('')
-              }
-
-            </ul>
-
-          </div>
-
-        </div>
-
-      `;
-
-
-      card
-        .querySelector('.card-header')
-        .addEventListener(
-          'click',
-          () => {
-
-            const isOpen =
-              card.classList.contains('open');
-
-
-            document
-              .querySelectorAll(
-                '.service-card.open'
-              )
-              .forEach(c => {
-
-                c.classList.remove(
-                  'open'
-                );
-
-                c.querySelector(
-                  '.card-body'
-                ).style.maxHeight =
-                  '0';
-
-              });
-
-
-            if (!isOpen) {
-
-              card.classList.add(
-                'open'
-              );
-
-
-              const body =
-                card.querySelector(
-                  '.card-body'
-                );
-
-
-              const inner =
-                card.querySelector(
-                  '.card-body-inner'
-                );
-
-
-              body.style.maxHeight =
-                inner.scrollHeight +
-                32 +
-                'px';
-
-
-              card
-                .querySelectorAll(
-                  '.service-list li'
-                )
-                .forEach(
-                  (li, i) => {
-
-                    li.style.transitionDelay =
-                      (i * 35) +
-                      'ms';
-
-                  }
-                );
-
-            }
-
-          }
-        );
-
-
-      grid.appendChild(card);
-
-    }
-  );
-
-
-</script>
-
-</body>
+  href="https://wa.me/255686210125?text=Hi%20I%20found%20your%20portfolio%20and%20want%20to%20hire%20you" 
+  class="whatsapp-float" 
+  target="_blank" 
+  aria-label="Chat on WhatsApp" 
+> 
+ 
+  <svg 
+    class="whatsapp-icon" 
+    viewBox="0 0 32 32" 
+  > 
+ 
+    <path 
+      fill="white" 
+      d="M16 3C9.37 3 4 8.37 4 15c0 2.61.85 5.02 2.29 6.97L4 29l7.28-2.25C13.1 27.54 14.52 28 16 28c6.63 0 12-5.37 12-12S22.63 3 16 3zm0 22c-1.35 0-2.65-.27-3.85-.8l-.28-.12-4.32 1.34.95-3.46-.24-.38C6.14 19.65 5.5 17.41 5.5 15c0-5.79 4.71-10.5 10.5-10.5S26.5 9.21 26.5 15 21.79 25 16 25z" 
+    /> 
+ 
+    <path 
+      fill="white" 
+      d="M20.5 17.5c-.27 0-.55-.08-.82-.25-.5-.32-1.3-.7-2.7-1.5-1.4-.8-2.1-1.2-2.37-1.5-.27-.3-.27-.7 0-1.06.54-.72 1.08-1.44 1.08-1.44l.18-.27c.36-.54.18-1.08-.18-1.44-.36-.36-.9-.72-1.26-.9-.36-.18-.72-.09-1.08.09-.36.18-.72.72-.9 1.26-.18.54-.27 1.26-.09 1.98.18.72.9 1.62 1.62 2.34.72.72 1.62 1.44 2.34 1.62.72.18 1.44.09 1.98-.09.54-.18 1.08-.54 1.26-.9.18-.36.09-.72-.09-1.08-.18-.36-.54-.72-.9-.9-.27-.17-.55-.25-.82-.25z" 
+    /> 
+ 
+  </svg> 
+ 
+  <span> 
+    WhatsApp Me 
+  </span> 
+ 
+</a> 
+ 
+ 
+<script> 
+ 
+  /* ========================================================= 
+     ICONS 
+  ========================================================= */ 
+ 
+  lucide.createIcons(); 
+ 
+ 
+  /* ========================================================= 
+     REVEAL ON SCROLL 
+  ========================================================= */ 
+ 
+  const observer = new IntersectionObserver( 
+    (entries) => { 
+ 
+      entries.forEach(entry => { 
+ 
+        if (entry.isIntersecting) { 
+          entry.target.classList.add('visible'); 
+        } 
+ 
+      }); 
+ 
+    }, 
+    { 
+      threshold: 0.15 
+    } 
+  ); 
+ 
+ 
+  document 
+    .querySelectorAll('.reveal') 
+    .forEach(el => observer.observe(el)); 
+ 
+ 
+  /* ========================================================= 
+     SMOOTH SCROLL 
+  ========================================================= */ 
+ 
+  function smoothScroll(event) { 
+ 
+    event.preventDefault(); 
+ 
+    const target = document.querySelector( 
+      event.currentTarget.getAttribute('href') 
+    ); 
+ 
+    if (target) { 
+ 
+      target.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+      }); 
+ 
+    } 
+ 
+  } 
+ 
+ 
+  /* ========================================================= 
+     IMAGE MODAL 
+  ========================================================= */ 
+ 
+  function openModal(el) { 
+ 
+    document.getElementById('modal').style.display = 'flex'; 
+ 
+    document.getElementById('modalTitle').innerText = 
+      el.dataset.title; 
+ 
+    document.getElementById('modalImg').src = 
+      el.dataset.img; 
+ 
+    document.getElementById('modalDesc').innerText = 
+      el.dataset.desc; 
+ 
+    document.body.style.overflow = 'hidden'; 
+ 
+  } 
+ 
+ 
+  function closeModal() { 
+ 
+    document.getElementById('modal').style.display = 'none'; 
+ 
+    document.body.style.overflow = 'auto'; 
+ 
+  } 
+ 
+ 
+  function closeModalOutside(e) { 
+ 
+    if (e.target.id === 'modal') { 
+      closeModal(); 
+    } 
+ 
+  } 
+ 
+ 
+  /* ========================================================= 
+     VIDEO MODAL 
+  ========================================================= */ 
+ 
+  function openVideoModal(el) { 
+ 
+    const modal = 
+      document.getElementById('videoModal'); 
+ 
+    const video = 
+      document.getElementById('modalVideo'); 
+ 
+    const title = 
+      document.getElementById('videoModalTitle'); 
+ 
+    const desc = 
+      document.getElementById('videoModalDesc'); 
+ 
+ 
+    title.innerText = 
+      el.dataset.title; 
+ 
+    desc.innerText = 
+      el.dataset.desc; 
+ 
+    video.src = 
+      el.dataset.video; 
+ 
+    modal.style.display = 
+      'flex'; 
+ 
+    document.body.style.overflow = 
+      'hidden'; 
+ 
+    video.currentTime = 0; 
+ 
+    video.play().catch(() => {}); 
+ 
+  } 
+ 
+ 
+  function closeVideoModal() { 
+ 
+    const modal = 
+      document.getElementById('videoModal'); 
+ 
+    const video = 
+      document.getElementById('modalVideo'); 
+ 
+    video.pause(); 
+ 
+    video.removeAttribute('src'); 
+ 
+    video.load(); 
+ 
+    modal.style.display = 
+      'none'; 
+ 
+    document.body.style.overflow = 
+      'auto'; 
+ 
+  } 
+ 
+ 
+  function closeVideoModalOutside(e) { 
+ 
+    if (e.target.id === 'videoModal') { 
+      closeVideoModal(); 
+    } 
+ 
+  } 
+ 
+ 
+  /* ========================================================= 
+     ESCAPE KEY 
+  ========================================================= */ 
+ 
+  document.addEventListener( 
+    'keydown', 
+    e => { 
+ 
+      if (e.key === 'Escape') { 
+ 
+        closeModal(); 
+        closeVideoModal(); 
+ 
+      } 
+ 
+    } 
+  ); 
+ 
+ 
+  /* ========================================================= 
+     SKILL FILTER 
+  ========================================================= */ 
+ 
+  document 
+    .querySelectorAll('.filter-btn') 
+    .forEach(btn => { 
+ 
+      btn.addEventListener( 
+        'click', 
+        () => { 
+ 
+          document 
+            .querySelectorAll('.filter-btn') 
+            .forEach(b => 
+              b.classList.remove('active') 
+            ); 
+ 
+ 
+          btn.classList.add('active'); 
+ 
+ 
+          const filter = 
+            btn.dataset.filter; 
+ 
+ 
+          document 
+            .querySelectorAll('.skill-pill') 
+            .forEach(skill => { 
+ 
+              if ( 
+                skill.dataset.category === filter 
+              ) { 
+ 
+                skill.style.display = 
+                  'inline-flex'; 
+ 
+              } else { 
+ 
+                skill.style.display = 
+                  'none'; 
+ 
+              } 
+ 
+            }); 
+ 
+        } 
+      ); 
+ 
+    }); 
+ 
+ 
+  /* ========================================================= 
+     PORTFOLIO MANIFEST + PROJECT RENDERING 
+     ========================================================= */ 
+ 
+  /* 
+     Keep the portfolio organised by folder: 
+       Visual Crafts -> images/ 
+       Motionworks   -> videos/   + cover images 
+       Atelier       -> atelier/ 
+ 
+     Static websites cannot automatically list a local folder, so this 
+     manifest is the single source of truth. Add/remove an entry here 
+     whenever you add a file to one of the folders. 
+  */ 
+ 
+  const portfolioProjects = { 
+ 
+    images: [ 
+      { 
+        title: 'Skin1004 Madagascar Centella', 
+        file: 'images/skin1004.png', 
+        label: 'Product Advertising • Skincare', 
+        desc: 'Skin1004 Madagascar Centella sun serum with Hyalu-Cica Water-Fit technology and zero white cast, presented through a clean, product-focused advertising visual.' 
+      }, 
+      { 
+        title: 'JUMISO — Niacinamide 20 Serum', 
+        file: 'images/jumiso.png', 
+        label: 'Product Advertising • Beauty', 
+        desc: 'A brightening serum visual highlighting Niacinamide, Tranexamic Acid, and Glutathione through focused product storytelling.' 
+      }, 
+      { 
+        title: 'Mixsoon Bean Essence', 
+        file: 'images/mixsoon.png', 
+        label: 'Product Advertising • Skincare', 
+        desc: 'A clean product-focused visual for Mixsoon Bean Essence, built around hydration, exfoliation, and natural skin radiance.' 
+      }, 
+      { 
+        title: 'COSRX Vitamin C 13 Serum', 
+        file: 'images/vitamin.png', 
+        label: 'Product Advertising • Beauty', 
+        desc: 'A product advertising visual for COSRX Vitamin C 13 Serum, focusing on brightening, dark-spot care, and a refined skincare aesthetic.' 
+      }, 
+      { 
+        title: 'The AXIS-Y Daily Purifying Treatment Toner', 
+        file: 'images/axis.png', 
+        label: 'Product Advertising • Skincare', 
+        desc: 'A skincare advertising visual highlighting centella asiatica, tea tree, sugar cane, and lotus ingredients.' 
+      }, 
+      { 
+        title: 'COSRX Advanced Snail 96', 
+        file: 'images/cosrx.png', 
+        label: 'Product Advertising • Skincare', 
+        desc: 'A product-focused visual highlighting hydration, glow, and skin-barrier care.' 
+      } 
+    ], 
+ 
+    motion: [ 
+      { 
+        title: 'Caught in the Scent', 
+        video: 'vidoes/202609051215(7).mp4', 
+        cover: 'vidoes/web.png', 
+        label: 'Fragrance • Product Film', 
+        desc: 'A cinematic fragrance reel built around the idea of being irresistibly drawn in. The web represents the invisible pull of Hamidi Intense, turning a simple product shot into a visual story.\n\nWhat I Created\nA creative product marketing reel combining fragrance storytelling, cinematic composition, visual effects, and social-media-focused motion design to create an intriguing first impression.' 
+      }, 
+      { 
+        title: 'Shelf Stories', 
+        video: 'vidoes/0916.mp4', 
+        cover: 'vidoes/shelf.jpg', 
+        label: 'Skincare • Social Reel', 
+        desc: 'A visual skincare journey built around the idea that every shelf tells a different story. Shelf Stories brings together multiple skincare brands and their identities through seamless shelf transitions, creating a curated world of beauty and self-care.\n\nWhat I Created\nA cinematic social-media skincare reel combining brand storytelling, product styling, animated typography, smooth transitions, and visual composition.' 
+      }, 
+      { 
+        title: 'The Third Necessity', 
+        video: 'vidoes/oud perfume.mp4', 
+        cover: 'vidoes/perfume.png', 
+        label: 'Fragrance • Concept Reel', 
+        desc: 'A playful fragrance concept built around the idea that oxygen, water, and an irresistible scent belong on the list. The rotating “An Irresistible Scent” typography reinforces the idea while adding movement and personality to the product reveal.\n\nWhat I Created\nA cinematic social-media fragrance reel combining humor, product styling, animated typography, motion, and storytelling to turn a simple perfume showcase into a memorable visual concept.' 
+      } 
+    ], 
+ 
+    atelier: [ 
+      /* Add files from atelier/ here as you build this collection. */ 
+    ] 
+  }; 
+ 
+ 
+  const projectGrid = document.getElementById('projectGrid'); 
+ 
+ 
+  function escapeHtml(value) { 
+    return String(value) 
+      .replace(/&/g, '&amp;') 
+      .replace(/</g, '&lt;') 
+      .replace(/>/g, '&gt;') 
+      .replace(/"/g, '&quot;') 
+      .replace(/'/g, '&#039;'); 
+  } 
+ 
+ 
+  function renderProjects(filter = 'images') { 
+ 
+    projectGrid.innerHTML = ''; 
+ 
+    const projects = portfolioProjects[filter] || []; 
+ 
+    if (!projects.length) { 
+      projectGrid.innerHTML = ` 
+        <div class="md:col-span-3 text-center py-16"> 
+          <p style="color: #625861; font-size: 17px;"> 
+            This collection is being curated. 
+          </p> 
+        </div> 
+      `; 
+      return; 
+    } 
+ 
+    projects.forEach((project, index) => { 
+ 
+      const card = document.createElement('div'); 
+      card.className = 'project-card rounded-3xl overflow-hidden shadow-xl reveal'; 
+      card.style.transitionDelay = `${index * 60}ms`; 
+ 
+      if (filter === 'motion') { 
+ 
+        card.dataset.title = project.title; 
+        card.dataset.video = project.video; 
+        card.dataset.desc = project.desc; 
+        card.onclick = () => openVideoModal(card); 
+ 
+        card.innerHTML = ` 
+          <div class="video-card-preview" style="aspect-ratio:9/16;"> 
+            <img 
+              class="video-cover" 
+              loading="lazy" 
+              src="${escapeHtml(project.cover)}" 
+              alt="${escapeHtml(project.title)} video cover" 
+            > 
+            <div class="video-play-overlay"> 
+              <div class="video-play-button" aria-label="Play video">▶</div> 
+            </div> 
+          </div> 
+          <div class="p-6" style="background: #EAF1F6;"> 
+            <p style="color: #625861; font-size: 18px;"> 
+              ${escapeHtml(project.label)} 
+            </p> 
+          </div> 
+        `; 
+ 
+      } else { 
+ 
+        card.dataset.title = project.title; 
+        card.dataset.img = project.file; 
+        card.dataset.desc = project.desc; 
+        card.onclick = () => openModal(card); 
+ 
+        card.innerHTML = ` 
+          <div class="overflow-hidden" style="aspect-ratio:1/1;"> 
+            <img 
+              class="w-full h-full object-cover" 
+              loading="lazy" 
+              src="${escapeHtml(project.file)}" 
+              alt="${escapeHtml(project.title)}" 
+            > 
+          </div> 
+          <div class="p-6" style="background: #EAF1F6;"> 
+            <p style="color: #625861; font-size: 18px;"> 
+              ${escapeHtml(project.label)} 
+            </p> 
+          </div> 
+        `; 
+      } 
+ 
+      projectGrid.appendChild(card); 
+ 
+      requestAnimationFrame(() => card.classList.add('visible')); 
+ 
+    }); 
+  } 
+ 
+ 
+  /* ========================================================= 
+     PROJECT FILTER 
+  ========================================================= */ 
+ 
+  document 
+    .querySelectorAll('.project-filter') 
+    .forEach(btn => { 
+ 
+      btn.addEventListener('click', () => { 
+ 
+        document 
+          .querySelectorAll('.project-filter') 
+          .forEach(b => b.classList.remove('active')); 
+ 
+        btn.classList.add('active'); 
+ 
+        renderProjects(btn.dataset.projectFilter); 
+ 
+      }); 
+ 
+    }); 
+ 
+ 
+  /* Visual Crafts is the default collection. */ 
+  renderProjects('images'); 
+ 
+ 
+  /* ========================================================= 
+     SERVICES 
+  ========================================================= */ 
+ 
+  const servicesData = [ 
+ 
+    { 
+      icon: '🎨', 
+      title: 'Graphic Design & Branding', 
+ 
+      items: [ 
+        'Brand Identity Design', 
+        'Brand Style Guides', 
+        'Rebranding Projects', 
+        'Business Cards & Stationery', 
+        'Packaging & Label Design', 
+        'Marketing Materials', 
+        'Corporate Branding Assets' 
+      ] 
+    }, 
+ 
+ 
+    { 
+      icon: '📱', 
+      title: 'Social Media & Content', 
+ 
+      items: [ 
+        'Social Media Posts & Stories', 
+        'Carousel Posts', 
+        'Social Media Campaigns', 
+        'Content Creation & Planning', 
+        'Instagram Highlight Covers', 
+        'YouTube Thumbnails', 
+        'Social Media Templates', 
+        'Digital Content Graphics' 
+      ] 
+    }, 
+ 
+ 
+    { 
+      icon: '🎬', 
+      title: 'Video Editing & Motion', 
+ 
+      items: [ 
+        'Short-Form Video Editing', 
+        'Product Video Ads', 
+        'Social Media Advertisements', 
+        'UGC Video Editing', 
+        'Motion Graphics', 
+        'Text & Caption Animation', 
+        'Product Promo Videos', 
+        'Cinematic Product Videos', 
+        'Transitions & Effects', 
+        'Music & Sound Sync' 
+      ] 
+    }, 
+ 
+ 
+    { 
+      icon: '📢', 
+      title: 'Advertising & Marketing', 
+ 
+      items: [ 
+        'Product Advertisements', 
+        'Promotional Campaign Graphics', 
+        'Event Marketing Materials', 
+        'Email Marketing Designs', 
+        'Digital Ads & Banners', 
+        'Sales & Launch Campaign Creatives', 
+        'E-commerce Marketing Assets' 
+      ] 
+    }, 
+ 
+ 
+    { 
+      icon: '🛍️', 
+      title: 'Product & E-commerce', 
+ 
+      items: [ 
+        'Product Mockups', 
+        'Product Listing Images', 
+        'Beauty & Skincare Creatives', 
+        'Amazon & Online Store Graphics', 
+        'Product Launch Visuals', 
+        'Before & After Graphics', 
+        'Product Catalog Design' 
+      ] 
+    }, 
+ 
+ 
+    { 
+      icon: '💻', 
+      title: 'Web & Digital Design', 
+ 
+      items: [ 
+        'Landing Page Design', 
+        'Portfolio Websites', 
+        'Canva Website Design', 
+        'Website Graphics & Banners', 
+        'UI Mockups', 
+        'Digital Asset Design', 
+        'Website Content Visuals' 
+      ] 
+    }, 
+ 
+ 
+    { 
+      icon: '🎮', 
+      title: 'Interactive & Educational', 
+ 
+      items: [ 
+        'Interactive Games', 
+        'Educational Learning Games', 
+        'Baby Shower & Party Games', 
+        'Bridal Shower Games', 
+        'Interactive Presentations', 
+        'Quizzes & Assessments', 
+        'Learning Activities & Worksheets' 
+      ] 
+    }, 
+ 
+ 
+    { 
+      icon: '📄', 
+      title: 'Print & Publication', 
+ 
+      items: [ 
+        'Flyers & Posters', 
+        'Brochures & Booklets', 
+        'Menus', 
+        'Invitations', 
+        'Certificates', 
+        'Workbooks & Planners', 
+        'Magazines & Catalogs' 
+      ] 
+    }, 
+ 
+ 
+    { 
+      icon: '🧊', 
+      title: '3D Product Design & Animation', 
+ 
+      items: [ 
+        '3D Product Modeling', 
+        'Photorealistic Product Rendering', 
+        '3D Product Animation', 
+        'CGI Advertising Images', 
+        'Realistic Texturing & Materials', 
+        'Lighting & Studio Rendering', 
+        'Camera Animation & Product Cinematics' 
+      ] 
+    }, 
+ 
+ 
+    { 
+      icon: '📊', 
+      title: 'Business & Professional', 
+ 
+      items: [ 
+        'Presentation Design', 
+        'Pitch Decks', 
+        'Company Profiles', 
+        'Resume/CV Design', 
+        'Portfolio Design', 
+        'Proposal Design', 
+        'Reports & Business Documents' 
+      ] 
+    }, 
+ 
+ 
+    { 
+      icon: '✨', 
+      title: 'Custom Creative Solutions', 
+ 
+      items: [ 
+        'Canva Templates', 
+        'Digital Products', 
+        'Printable Designs', 
+        'Custom Client Requests', 
+        'Creative Consultation', 
+        'Design Support for Small Businesses & Startups' 
+      ], 
+ 
+      special: true 
+ 
+    } 
+ 
+  ]; 
+ 
+ 
+  const grid = 
+    document.getElementById('serviceGrid'); 
+ 
+ 
+  servicesData.forEach( 
+    s => { 
+ 
+      const card = 
+        document.createElement('div'); 
+ 
+ 
+      card.className = 
+        'service-card' + 
+        (s.special ? ' special-card' : ''); 
+ 
+ 
+      card.innerHTML = ` 
+ 
+        <div class="card-header"> 
+ 
+          <div class="card-left"> 
+ 
+            <div class="card-icon"> 
+              ${s.icon} 
+            </div> 
+ 
+            <span> 
+              ${s.title} 
+            </span> 
+ 
+          </div> 
+ 
+          <span class="chevron"> 
+            ▼ 
+          </span> 
+ 
+        </div> 
+ 
+ 
+        <div class="card-body"> 
+ 
+          <div class="card-body-inner"> 
+ 
+            <hr class="card-divider"> 
+ 
+ 
+            <ul class="service-list"> 
+ 
+              ${s.items 
+                .map( 
+                  item => 
+                    `<li>${item}</li>` 
+                ) 
+                .join('') 
+              } 
+ 
+            </ul> 
+ 
+          </div> 
+ 
+        </div> 
+ 
+      `; 
+ 
+ 
+      card 
+        .querySelector('.card-header') 
+        .addEventListener( 
+          'click', 
+          () => { 
+ 
+            const isOpen = 
+              card.classList.contains('open'); 
+ 
+ 
+            document 
+              .querySelectorAll( 
+                '.service-card.open' 
+              ) 
+              .forEach(c => { 
+ 
+                c.classList.remove( 
+                  'open' 
+                ); 
+ 
+                c.querySelector( 
+                  '.card-body' 
+                ).style.maxHeight = 
+                  '0'; 
+ 
+              }); 
+ 
+ 
+            if (!isOpen) { 
+ 
+              card.classList.add( 
+                'open' 
+              ); 
+ 
+              const body = 
+                card.querySelector( 
+                  '.card-body' 
+                ); 
+ 
+              const inner = 
+                card.querySelector( 
+                  '.card-body-inner' 
+                ); 
+ 
+              body.style.maxHeight = 
+                inner.scrollHeight + 
+                32 + 
+                'px'; 
+ 
+              card 
+                .querySelectorAll( 
+                  '.service-list li' 
+                ) 
+                .forEach( 
+                  (li, i) => { 
+ 
+                    li.style.transitionDelay = 
+                      (i * 35) + 
+                      'ms'; 
+ 
+                  } 
+                ); 
+ 
+            } 
+ 
+          } 
+        ); 
+ 
+ 
+      grid.appendChild(card); 
+ 
+    } 
+  ); 
+ 
+ 
+</script> 
+ 
+</body> 
 </html>
