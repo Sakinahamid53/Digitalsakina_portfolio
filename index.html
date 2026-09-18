@@ -1,876 +1,657 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Sakina Kaderbhai - Digital Designer & Creative Specialist working across visual design, branding, digital content, motion, 3D visualization, web design, and interactive experiences."
-  />
-  <title>Sakina | Digital Designer & Creative Specialist</title>
-  <link rel="icon" href="images/favicon.png" />
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@600;700;900&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --ivory: #F3E8D6;
-      --ivory-soft: #F8F1E4;
-      --blue: #AEC6D6;
-      --blue-soft: #DDEAF3;
-      --plum: #4E434A;
-      --plum-soft: #655B62;
-      --cream: #F9F5EE;
-      --warm-gold: #D9BE8C;
-      --shadow: rgba(78, 67, 74, 0.12);
-    }
-
-    * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'DM Sans', sans-serif;
-      background: linear-gradient(135deg, var(--ivory) 0%, var(--ivory-soft) 48%, var(--blue) 100%);
-      color: var(--plum);
-      overflow-x: hidden;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Fraunces', serif;
-      margin: 0;
-    }
-
-    a { text-decoration: none; }
-
-    .page-shell {
-      position: relative;
-      min-height: 100vh;
-      overflow: hidden;
-    }
-
-    .bg-blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.75;
-      pointer-events: none;
-      animation: drift 16s ease-in-out infinite alternate;
-    }
-
-    .blob-1 {
-      width: 22rem;
-      height: 22rem;
-      top: 8%;
-      left: 4%;
-      background: rgba(243, 232, 214, 0.8);
-    }
-
-    .blob-2 {
-      width: 26rem;
-      height: 26rem;
-      right: 8%;
-      top: 38%;
-      background: rgba(174, 198, 214, 0.55);
-      animation-delay: 1s;
-    }
-
-    .blob-3 {
-      width: 18rem;
-      height: 18rem;
-      left: 28%;
-      bottom: 8%;
-      background: rgba(248, 241, 228, 0.8);
-      animation-delay: 2s;
-    }
-
-    @keyframes drift {
-      0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(25px, -18px) scale(1.08); }
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(14px);
-      background: rgba(255,255,255,0.62);
-      border-bottom: 1px solid rgba(78, 67, 74, 0.1);
-    }
-
-    .nav-wrap {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 18px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .brand {
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      color: var(--plum);
-      font-size: 1.05rem;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: rgba(78, 67, 74, 0.8);
-      font-weight: 500;
-      transition: color 0.25s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--plum);
-    }
-
-    main {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 120px 24px 80px;
-    }
-
-    .hero-media {
-      position: absolute;
-      inset: 0;
-      background: url('images/bgportfolio.png') center/cover no-repeat;
-      filter: saturate(0.7) sepia(0.08);
-      opacity: 0.92;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(243, 232, 214, 0.93) 0%, rgba(249, 245, 238, 0.78) 52%, rgba(174, 198, 214, 0.48) 100%);
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      max-width: 980px;
-      width: 100%;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .eyebrow {
-      letter-spacing: 0.34em;
-      text-transform: uppercase;
-      color: var(--blue);
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    h1.hero-title {
-      font-size: clamp(3rem, 6vw, 5rem);
-      line-height: 0.95;
-      color: var(--plum);
-      margin-bottom: 1.25rem;
-    }
-
-    .lead {
-      max-width: 760px;
-      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-      line-height: 1.7;
-      color: var(--plum);
-      margin-bottom: 2rem;
-    }
-
-    .cta {
-      display: inline-block;
-      padding: 1rem 2rem;
-      border-radius: 999px;
-      background: var(--blue);
-      color: white;
-      font-weight: 600;
-      box-shadow: 0 14px 30px rgba(78, 67, 74, 0.12);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .cta:hover {
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 18px 34px rgba(78, 67, 74, 0.2);
-    }
-
-    section {
-      position: relative;
-      z-index: 1;
-    }
-
-    .section-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 96px 24px;
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .portrait-wrap {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .portrait-glow {
-      position: absolute;
-      inset: -1.5rem;
-      border-radius: 50%;
-      background: linear-gradient(135deg, rgba(243, 232, 214, 0.8), rgba(174, 198, 214, 0.45));
-      filter: blur(40px);
-      opacity: 0.8;
-    }
-
-    .portrait {
-      position: relative;
-      width: min(380px, 80%);
-      aspect-ratio: 1 / 1;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--blue-soft), #f4efe7);
-      overflow: hidden;
-      border: 4px solid rgba(255,255,255,0.6);
-      box-shadow: 0 24px 60px rgba(78, 67, 74, 0.14);
-    }
-
-    .portrait img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      opacity: 0.8;
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 4vw, 2.7rem);
-      color: var(--plum);
-      margin-bottom: 1.5rem;
-    }
-
-    .text-copy {
-      font-size: 1.1rem;
-      line-height: 1.9;
-      color: rgba(78, 67, 74, 0.9);
-    }
-
-    .skills {
-      background: rgba(221, 234, 243, 0.7);
-    }
-
-    .filter-row {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin: 1.5rem 0 2.5rem;
-    }
-
-    .filter-btn {
-      border: none;
-      border-radius: 999px;
-      padding: 0.8rem 1.25rem;
-      background: #fffaf3;
-      color: var(--plum);
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 10px 24px rgba(78, 67, 74, 0.05);
-      transition: all 0.25s ease;
-    }
-
-    .filter-btn.active {
-      background: var(--blue);
-      color: white;
-    }
-
-    .pill-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .pill {
-      padding: 0.9rem 1.5rem;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.5);
-      box-shadow: 0 6px 18px rgba(78, 67, 74, 0.04);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 56px;
-      font-weight: 600;
-      color: var(--plum-soft);
-      transition: transform 0.2s ease;
-    }
-
-    .pill:hover {
-      transform: translateY(-3px);
-    }
-
-    .pill[data-group="design"] { background: rgba(255,255,255,0.75); }
-    .pill[data-group="marketing"] { background: rgba(243, 232, 214, 0.82); }
-    .pill[data-group="3d"] { background: rgba(221, 234, 243, 0.9); }
-    .pill[data-group="video"] { background: rgba(255,255,255,0.7); }
-    .pill[data-group="tools"] { background: rgba(243, 232, 214, 0.75); }
-    .pill[data-group="web"] { background: rgba(221, 234, 243, 0.8); }
-
-    .hidden { display: none !important; }
-
-    .projects {
-      background: rgba(249, 245, 238, 0.92);
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .project-card {
-      background: rgba(255,255,255,0.4);
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 18px 30px rgba(78, 67, 74, 0.08);
-      cursor: pointer;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 24px 40px rgba(78, 67, 74, 0.14);
-    }
-
-    .project-image {
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      background: var(--blue-soft);
-    }
-
-    .project-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .project-meta {
-      padding: 1.2rem 1.1rem 1.5rem;
-      background: rgba(221, 234, 243, 0.72);
-      color: var(--plum);
-      font-weight: 600;
-    }
-
-    .services {
-      background: rgba(221, 234, 243, 0.65);
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.1rem;
-      margin-top: 2rem;
-    }
-
-    .service-card {
-      background: rgba(255,255,255,0.7);
-      border-radius: 22px;
-      box-shadow: 0 18px 30px rgba(78, 67, 74, 0.06);
-      overflow: hidden;
-      border: 1px solid rgba(78, 67, 74, 0.06);
-    }
-
-    .service-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.9rem;
-      padding: 1.1rem 1.15rem;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .service-title-wrap {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      font-weight: 700;
-      color: var(--plum);
-    }
-
-    .service-icon {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 12px;
-      background: var(--ivory);
-      font-size: 1.2rem;
-    }
-
-    .service-card.open .chevron {
-      transform: rotate(180deg);
-    }
-
-    .chevron {
-      transition: transform 0.25s ease;
-      color: var(--plum-soft);
-      font-size: 0.8rem;
-    }
-
-    .service-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-    }
-
-    .service-body-inner {
-      padding: 0 1.15rem 1.2rem;
-    }
-
-    .service-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      border-top: 1px solid rgba(78, 67, 74, 0.08);
-    }
-
-    .service-list li {
-      padding: 0.7rem 0;
-      border-bottom: 1px solid rgba(78, 67, 74, 0.06);
-      color: rgba(78, 67, 74, 0.8);
-      font-size: 0.96rem;
-    }
-
-    .contact {
-      background: linear-gradient(135deg, var(--plum) 0%, var(--plum-soft) 100%);
-      color: white;
-    }
-
-    .contact-box {
-      text-align: center;
-      max-width: 780px;
-      margin: 0 auto;
-    }
-
-    .contact-box h2 {
-      color: #fff;
-      margin-bottom: 1rem;
-      font-size: clamp(2rem, 4vw, 2.7rem);
-    }
-
-    .contact-box p {
-      color: rgba(255,255,255,0.8);
-      font-size: 1.08rem;
-      line-height: 1.8;
-      margin-bottom: 2rem;
-    }
-
-    .contact-btn {
-      display: inline-block;
-      padding: 1rem 2rem;
-      border-radius: 999px;
-      background: var(--ivory-soft);
-      color: var(--plum);
-      font-weight: 700;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.14);
-    }
-
-    footer {
-      padding: 1.5rem 0 2.5rem;
-      text-align: center;
-      color: rgba(78, 67, 74, 0.75);
-      background: rgba(255,255,255,0.28);
-    }
-
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(14, 12, 14, 0.66);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      z-index: 100;
-    }
-
-    .modal.show {
-      display: flex;
-    }
-
-    .modal-card {
-      width: min(720px, 100%);
-      background: #fffaf3;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 28px 60px rgba(0,0,0,0.22);
-      position: relative;
-    }
-
-    .modal-image {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      background: #e9eff4;
-    }
-
-    .modal-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .modal-content {
-      padding: 1.3rem 1.5rem 1.7rem;
-    }
-
-    .modal-content h3 {
-      font-size: 1.8rem;
-      margin-bottom: 0.7rem;
-      color: var(--plum);
-    }
-
-    .modal-content p {
-      margin: 0;
-      color: rgba(78, 67, 74, 0.85);
-      line-height: 1.7;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      width: 40px;
-      height: 40px;
-      border: none;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.92);
-      color: var(--plum);
-      font-size: 1.2rem;
-      cursor: pointer;
-      box-shadow: 0 10px 18px rgba(0,0,0,0.12);
-    }
-
-    @media (max-width: 860px) {
-      .split,
-      .project-grid,
-      .service-grid {
-        grid-template-columns: 1fr;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sakina Kaderbhai - Digital Designer & Creative Specialist creating visual identities, brand experiences, motion content, and digital storytelling."
+    />
+    <title>Sakina | Digital Designer & Creative Specialist</title>
+    <link rel="icon" href="images/favicon.png" />
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+    <style>
+      :root {
+        --ivory: #f3e7d3;
+        --ivory-soft: #f7f0e5;
+        --blue: #b8c9d8;
+        --blue-soft: #dfeaf3;
+        --plum: #4f4448;
+        --plum-soft: #665a60;
+        --cream: #f9f5ef;
+        --warm-gold: #d9b57a;
+        --shadow: rgba(79, 68, 72, 0.14);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        font-family: 'DM Sans', sans-serif;
+        background: linear-gradient(135deg, var(--ivory) 0%, var(--ivory-soft) 45%, var(--blue) 100%);
+        color: var(--plum);
+        overflow-x: hidden;
+      }
+
+      h1, h2, h3 {
+        font-family: 'Fraunces', serif;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      img { max-width: 100%; display: block; }
+
+      .page-shell {
+        position: relative;
+        min-height: 100vh;
+        overflow: hidden;
+      }
+
+      .bg-blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.7;
+        pointer-events: none;
+        animation: drift 16s ease-in-out infinite alternate;
+      }
+
+      .blob-1 {
+        width: 22rem;
+        height: 22rem;
+        top: 8%;
+        left: 4%;
+        background: rgba(243, 231, 211, 0.9);
+      }
+
+      .blob-2 {
+        width: 26rem;
+        height: 26rem;
+        right: 8%;
+        top: 38%;
+        background: rgba(184, 201, 216, 0.55);
+        animation-delay: 1s;
+      }
+
+      .blob-3 {
+        width: 18rem;
+        height: 18rem;
+        left: 28%;
+        bottom: 8%;
+        background: rgba(249, 245, 239, 0.85);
+        animation-delay: 2s;
+      }
+
+      @keyframes drift {
+        0% { transform: translate(0, 0) scale(1); }
+        100% { transform: translate(25px, -18px) scale(1.08); }
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(14px);
+        background: rgba(255, 255, 255, 0.62);
+        border-bottom: 1px solid rgba(79, 68, 72, 0.12);
+      }
+
+      .nav-wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 18px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand {
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        color: var(--plum);
+        font-size: 1.05rem;
       }
 
       .nav-links {
-        display: none;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
       }
 
-      .project-grid {
-        grid-template-columns: 1fr 1fr;
+      .nav-links a {
+        color: rgba(79, 68, 72, 0.8);
+        font-weight: 500;
+        transition: color 0.25s ease;
       }
-    }
 
-    @media (max-width: 560px) {
-      .project-grid {
-        grid-template-columns: 1fr;
+      .nav-links a:hover {
+        color: var(--plum);
+      }
+
+      main { position: relative; z-index: 1; }
+
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 120px 24px 80px;
+      }
+
+      .hero-media {
+        position: absolute;
+        inset: 0;
+        background: url('images/bgportfolio.png') center/cover no-repeat;
+        filter: saturate(0.7) sepia(0.08);
+        opacity: 0.92;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(243, 231, 211, 0.93) 0%,
+          rgba(249, 245, 239, 0.8) 52%,
+          rgba(184, 201, 216, 0.48) 100%
+        );
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 980px;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .eyebrow {
+        letter-spacing: 0.34em;
+        text-transform: uppercase;
+        color: var(--blue);
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      h1.hero-title {
+        font-size: clamp(3rem, 6vw, 5rem);
+        line-height: 0.95;
+        color: var(--plum);
+        margin-bottom: 1.25rem;
+      }
+
+      .lead {
+        max-width: 760px;
+        font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+        line-height: 1.7;
+        color: var(--plum);
+        margin-bottom: 2rem;
+      }
+
+      .cta-row {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .cta {
+        display: inline-block;
+        padding: 1rem 2rem;
+        border-radius: 999px;
+        background: var(--blue);
+        color: white;
+        font-weight: 700;
+        box-shadow: 0 14px 30px rgba(79, 68, 72, 0.12);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .cta.secondary {
+        background: rgba(255, 255, 255, 0.6);
+        color: var(--plum);
+        border: 1px solid rgba(79, 68, 72, 0.08);
+      }
+
+      .cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 34px rgba(79, 68, 72, 0.18);
+      }
+
+      section {
+        position: relative;
+        z-index: 1;
       }
 
       .section-inner {
-        padding: 78px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 96px 24px;
       }
 
-      .hero {
-        padding-top: 100px;
+      .section-header {
+        max-width: 720px;
+        margin-bottom: 2.5rem;
       }
-    }
-  </style>
-</head>
-<body>
-  <div class="page-shell">
-    <div class="bg-blob blob-1"></div>
-    <div class="bg-blob blob-2"></div>
-    <div class="bg-blob blob-3"></div>
 
-    <header>
-      <div class="nav-wrap">
-        <div class="brand">Sakina Kaderbhai</div>
-        <nav class="nav-links">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#services">Services</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </header>
+      .section-kicker {
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--plum-soft);
+        font-size: 0.78rem;
+        font-weight: 700;
+        margin-bottom: 0.8rem;
+      }
 
-    <main>
-      <section class="hero">
-        <div class="hero-media"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-inner">
-          <div class="eyebrow">Digital Designer • Creative Specialist • Visual Storyteller</div>
-          <h1 class="hero-title">Digital Designer &amp;<br />Creative Specialist</h1>
-          <p class="lead">
-            Crafting cohesive visual identities, digital experiences, content, motion, and product-led creative that help brands communicate with clarity, character, and distinction.
-          </p>
-          <a class="cta" href="#projects">View My Work →</a>
+      .section-title {
+        font-size: clamp(2.2rem, 4vw, 3.5rem);
+        line-height: 1.1;
+        color: var(--plum);
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .story-card {
+        background: rgba(255,255,255,0.28);
+        border: 1px solid rgba(79, 68, 72, 0.08);
+        border-radius: 28px;
+        padding: 2rem;
+        box-shadow: 0 16px 36px var(--shadow);
+      }
+
+      .story-card p {
+        margin: 0;
+        color: var(--plum);
+        font-size: 1.04rem;
+        line-height: 1.8;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .stat {
+        background: var(--cream);
+        border: 1px solid rgba(79, 68, 72, 0.08);
+        border-radius: 22px;
+        padding: 1.4rem;
+        box-shadow: 0 12px 26px rgba(79, 68, 72, 0.08);
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 2rem;
+        font-family: 'Fraunces', serif;
+        margin-bottom: 0.35rem;
+        color: var(--plum);
+      }
+
+      .stat span {
+        color: var(--plum-soft);
+        font-weight: 600;
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.5rem;
+      }
+
+      .service-card {
+        background: rgba(255,255,255,0.3);
+        border: 1px solid rgba(79, 68, 72, 0.08);
+        border-radius: 26px;
+        padding: 1.6rem;
+        box-shadow: 0 16px 30px rgba(79, 68, 72, 0.08);
+      }
+
+      .service-card.featured {
+        background: linear-gradient(135deg, var(--blue), var(--blue-soft));
+      }
+
+      .service-icon {
+        width: 48px;
+        height: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 14px;
+        background: rgba(255,255,255,0.7);
+        color: var(--plum);
+        margin-bottom: 1rem;
+      }
+
+      .service-card h3 {
+        margin-bottom: 0.8rem;
+        font-size: 1.5rem;
+        color: var(--plum);
+      }
+
+      .service-card p {
+        margin: 0;
+        color: var(--plum-soft);
+        line-height: 1.7;
+      }
+
+      .work-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.5rem;
+      }
+
+      .project-card {
+        background: rgba(255,255,255,0.34);
+        border: 1px solid rgba(79, 68, 72, 0.08);
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 18px 32px rgba(79, 68, 72, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 24px 40px rgba(79, 68, 72, 0.14);
+      }
+
+      .project-thumb {
+        height: 240px;
+        background: linear-gradient(135deg, var(--ivory), var(--blue));
+        position: relative;
+        overflow: hidden;
+      }
+
+      .project-thumb::before,
+      .project-thumb::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+      }
+
+      .project-thumb::before {
+        width: 180px;
+        height: 180px;
+        background: rgba(255,255,255,0.45);
+        right: -30px;
+        top: -20px;
+      }
+
+      .project-thumb::after {
+        width: 220px;
+        height: 220px;
+        background: rgba(79, 68, 72, 0.08);
+        left: -20px;
+        bottom: -35px;
+      }
+
+      .project-copy {
+        padding: 1.3rem 1.4rem 1.5rem;
+      }
+
+      .project-copy h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .project-copy p {
+        margin: 0 0 1rem;
+        color: var(--plum-soft);
+        line-height: 1.7;
+      }
+
+      .tag {
+        display: inline-block;
+        padding: 0.45rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(184, 201, 216, 0.45);
+        color: var(--plum);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .contact-box {
+        background: linear-gradient(135deg, rgba(79, 68, 72, 0.96), rgba(79, 68, 72, 0.82));
+        border-radius: 30px;
+        padding: 2rem;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .contact-box h3 {
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        line-height: 1.05;
+      }
+
+      .contact-box p {
+        margin: 0.8rem 0 0;
+        color: rgba(255,255,255,0.8);
+      }
+
+      footer {
+        padding: 28px 24px 48px;
+        text-align: center;
+        color: var(--plum-soft);
+      }
+
+      @media (max-width: 900px) {
+        .about-grid,
+        .service-grid,
+        .work-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-box {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero {
+          padding-top: 90px;
+        }
+
+        .cta-row {
+          width: 100%;
+        }
+
+        .cta {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="bg-blob blob-1"></div>
+      <div class="bg-blob blob-2"></div>
+      <div class="bg-blob blob-3"></div>
+
+      <header>
+        <div class="nav-wrap">
+          <a href="#top" class="brand">SAKINA</a>
+          <nav class="nav-links" aria-label="Main navigation">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#work">Work</a>
+            <a href="#contact">Contact</a>
+          </nav>
         </div>
-      </section>
+      </header>
 
-      <section id="about">
-        <div class="section-inner split">
-          <div class="portrait-wrap">
-            <div class="portrait-glow"></div>
-            <div class="portrait">
-              <img src="" alt="Sakina Kaderbhai portrait" />
+      <main id="top">
+        <section class="hero" aria-label="Hero section">
+          <div class="hero-media"></div>
+          <div class="hero-overlay"></div>
+
+          <div class="hero-inner">
+            <div class="eyebrow">Digital designer • creative specialist</div>
+            <h1 class="hero-title">Designing stories that feel as good as they look.</h1>
+            <p class="lead">
+              I craft visual identities, digital experiences, motion narratives, and brand systems that help ideas feel intentional, elevated, and memorable.
+            </p>
+            <div class="cta-row">
+              <a class="cta" href="#work">View projects</a>
+              <a class="cta secondary" href="#contact">Let’s talk</a>
             </div>
           </div>
+        </section>
 
-          <div>
-            <h2 class="section-title">About Me</h2>
-            <p class="text-copy">
-              I’m a multidisciplinary digital designer and creative specialist working across visual design, branding, digital content, web design, motion, 3D product visualization, and interactive experiences. I bring together visual thinking, storytelling, and practical digital execution to create work that feels cohesive, considered, and purposeful — from a brand’s visual identity to the content and experiences that bring it to life.
-            </p>
+        <section id="about">
+          <div class="section-inner">
+            <div class="section-header">
+              <div class="section-kicker">About</div>
+              <h2 class="section-title">Creative direction shaped by taste, clarity, and storytelling.</h2>
+            </div>
+
+            <div class="about-grid">
+              <div class="story-card">
+                <p>
+                  Sakina Kaderbhai is a digital designer and creative specialist creating work across branding, visual design, motion, web design, and interactive experiences. Her practice blends art direction with thoughtful execution to produce polished, expressive creative that feels both modern and emotionally resonant.
+                </p>
+              </div>
+
+              <div class="stats">
+                <div class="stat">
+                  <strong>7+</strong>
+                  <span>Years designing</span>
+                </div>
+                <div class="stat">
+                  <strong>40+</strong>
+                  <span>Brand experiences</span>
+                </div>
+                <div class="stat">
+                  <strong>12</strong>
+                  <span>Campaign launches</span>
+                </div>
+                <div class="stat">
+                  <strong>∞</strong>
+                  <span>Creative possibilities</span>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="skills" class="skills">
-        <div class="section-inner">
-          <h2 class="section-title" style="text-align: center;">My Expertise</h2>
+        <section id="services">
+          <div class="section-inner">
+            <div class="section-header">
+              <div class="section-kicker">Services</div>
+              <h2 class="section-title">A flexible creative toolkit for brands, products, and digital stories.</h2>
+            </div>
 
-          <div class="filter-row">
-            <button class="filter-btn active" data-filter="design">🎨 Design</button>
-            <button class="filter-btn" data-filter="marketing">📱 Marketing</button>
-            <button class="filter-btn" data-filter="3d">🧊 3D Design</button>
-            <button class="filter-btn" data-filter="video">🎬 Video Editing</button>
-            <button class="filter-btn" data-filter="tools">🛠️ Tools</button>
-            <button class="filter-btn" data-filter="web">🌐 Web</button>
+            <div class="service-grid">
+              <article class="service-card">
+                <div class="service-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M17 8.5A4.5 4.5 0 0 0 12 4a4.5 4.5 0 0 0-5 4.5c0 3 2 4.5 5 6.5s5 3.5 5 6.5A4.5 4.5 0 0 1 12 20a4.5 4.5 0 0 1-5-4.5"/></svg>
+                </div>
+                <h3>Branding</h3>
+                <p>Identity systems, visual language, art direction, and positioning for brands that want to feel distinct and premium.</p>
+              </article>
+
+              <article class="service-card featured">
+                <div class="service-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 20h10"/><path d="M9 16v4"/><path d="M15 16v4"/></svg>
+                </div>
+                <h3>Digital Design</h3>
+                <p>Website design, landing pages, UI thinking, and branded digital experiences that connect clarity with emotion.</p>
+              </article>
+
+              <article class="service-card">
+                <div class="service-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/><path d="M3 3v18h18"/></svg>
+                </div>
+                <h3>Motion & Content</h3>
+                <p>Short-form visuals, animations, social content, and campaign assets designed to capture attention and retain meaning.</p>
+              </article>
+            </div>
           </div>
+        </section>
 
-          <div class="pill-grid">
-            <div class="pill" data-group="design">Product Advertising</div>
-            <div class="pill" data-group="design">Brand Identity</div>
-            <div class="pill" data-group="design">Typography</div>
-            <div class="pill" data-group="design">Social Media Design</div>
-            <div class="pill" data-group="design">Logo Design</div>
-            <div class="pill" data-group="design">Layout &amp; Composition</div>
+        <section id="work">
+          <div class="section-inner">
+            <div class="section-header">
+              <div class="section-kicker">Selected work</div>
+              <h2 class="section-title">A portfolio built around atmosphere, clarity, and narrative impact.</h2>
+            </div>
 
-            <div class="pill hidden" data-group="marketing">Content Strategy</div>
-            <div class="pill hidden" data-group="marketing">Audience Engagement</div>
-            <div class="pill hidden" data-group="marketing">Social Media Marketing</div>
-            <div class="pill hidden" data-group="marketing">Campaign Planning</div>
-            <div class="pill hidden" data-group="marketing">Brand Positioning</div>
-            <div class="pill hidden" data-group="marketing">Copywriting</div>
+            <div class="work-grid">
+              <article class="project-card">
+                <div class="project-thumb"></div>
+                <div class="project-copy">
+                  <h3>Brand Refresh</h3>
+                  <p>Luxury identity concept blending editorial typography and soft, tactile color systems.</p>
+                  <span class="tag">Branding</span>
+                </div>
+              </article>
 
-            <div class="pill hidden" data-group="3d">3D Product Modeling</div>
-            <div class="pill hidden" data-group="3d">Product Visualization</div>
-            <div class="pill hidden" data-group="3d">Photorealistic Rendering</div>
-            <div class="pill hidden" data-group="3d">CGI Product Advertising</div>
-            <div class="pill hidden" data-group="3d">Material &amp; Shader Creation</div>
-            <div class="pill hidden" data-group="3d">Cinematic Lighting</div>
+              <article class="project-card">
+                <div class="project-thumb" style="background: linear-gradient(135deg, #dfeaf3, #b8c9d8);"></div>
+                <div class="project-copy">
+                  <h3>Campaign Storyboard</h3>
+                  <p>Visual direction for a seasonal campaign focused on motion, atmosphere, and product storytelling.</p>
+                  <span class="tag">Motion</span>
+                </div>
+              </article>
 
-            <div class="pill hidden" data-group="video">Short-Form Video Editing</div>
-            <div class="pill hidden" data-group="video">Reels &amp; TikTok Editing</div>
-            <div class="pill hidden" data-group="video">Product Video Ads</div>
-            <div class="pill hidden" data-group="video">Motion Graphics</div>
-            <div class="pill hidden" data-group="video">Video Ad Creatives</div>
-            <div class="pill hidden" data-group="video">Cinematic Product Videos</div>
-
-            <div class="pill hidden" data-group="tools">Blender</div>
-            <div class="pill hidden" data-group="tools">Canva</div>
-            <div class="pill hidden" data-group="tools">Photoshop</div>
-            <div class="pill hidden" data-group="tools">Illustrator</div>
-            <div class="pill hidden" data-group="tools">Figma</div>
-            <div class="pill hidden" data-group="tools">CapCut</div>
-
-            <div class="pill hidden" data-group="web">HTML/CSS</div>
-            <div class="pill hidden" data-group="web">Responsive Design</div>
-            <div class="pill hidden" data-group="web">UI/UX Design</div>
-            <div class="pill hidden" data-group="web">JavaScript</div>
-            <div class="pill hidden" data-group="web">Web Prototyping</div>
-            <div class="pill hidden" data-group="web">Interactive Design</div>
+              <article class="project-card">
+                <div class="project-thumb" style="background: linear-gradient(135deg, #f3e7d3, #d9b57a);"></div>
+                <div class="project-copy">
+                  <h3>Web Experience</h3>
+                  <p>Refined digital experience design balancing minimal structure with warm editorial character.</p>
+                  <span class="tag">Web</span>
+                </div>
+              </article>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="projects" class="projects">
-        <div class="section-inner">
-          <h2 class="section-title" style="text-align: center;">Featured Projects</h2>
-          <div class="project-grid" id="projectGrid"></div>
-        </div>
-      </section>
+        <section id="contact">
+          <div class="section-inner">
+            <div class="contact-box">
+              <div>
+                <div class="section-kicker" style="color: rgba(255,255,255,0.75);">Let’s create</div>
+                <h3>Bring your next idea to life.</h3>
+                <p>Available for branding, design direction, and digital creative collaborations.</p>
+              </div>
+              <a class="cta secondary" href="mailto:hello@sakina.design" style="background: rgba(255,255,255,0.92); color: var(--plum);">hello@sakina.design</a>
+            </div>
+          </div>
+        </section>
+      </main>
 
-      <section id="services" class="services">
-        <div class="section-inner">
-          <h2 class="section-title" style="text-align: center;">My Services</h2>
-          <div class="service-grid" id="serviceGrid"></div>
-        </div>
-      </section>
-
-      <section id="contact" class="contact">
-        <div class="section-inner contact-box">
-          <h2>Have a project in mind?</h2>
-          <p>
-            Available for freelance projects, creative collaborations, and digital design partnerships — from focused deliverables to end-to-end creative support.
-          </p>
-          <a class="contact-btn" href="mailto:sakinahamid53@hotmail.com">Get in Touch →</a>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      © 2026 Sakina Kaderbhai. All rights reserved.
-    </footer>
-  </div>
-
-  <div class="modal" id="projectModal" aria-modal="true">
-    <div class="modal-card">
-      <button class="close-btn" aria-label="Close" onclick="closeModal()">✕</button>
-      <div class="modal-image">
-        <img id="modalImage" src="" alt="Project preview" />
-      </div>
-      <div class="modal-content">
-        <h3 id="modalTitle">Project</h3>
-        <p id="modalText">Description</p>
-      </div>
+      <footer>
+        © 2025 Sakina Kaderbhai — Digital Designer & Creative Specialist
+      </footer>
     </div>
-  </div>
-
-  <script>
-    const projects = [
-      { title: 'Skin1004 Madagascar Centella', desc: 'Product-focused skincare visual highlighting brightening and hydration in a clean editorial palette.', image: 'images/skin1004.png' },
-      { title: 'JUMISO — Niacinamide 20 Serum', desc: 'Beauty product advertising concept built around skin clarity, glow, and clinical elegance.', image: 'images/jumiso.png' },
-      { title: 'Mixsoon Bean Essence', desc: 'Minimal skincare storytelling centered on hydration, care, and natural luminosity.', image: 'images/mixsoon.png' },
-      { title: 'COSRX Vitamin C 13 Serum', desc: 'Brightening product visual with a premium, refined skincare identity.', image: 'images/vitamin.png' },
-      { title: 'The AXIS-Y Daily Purifying Treatment Toner', desc: 'Calm, ingredient-led beauty visual designed for clarity and product trust.', image: 'images/axis.png' },
-      { title: 'COSRX Advanced Snail 96', desc: 'Hydrating skincare creative built around softness, clarity, and ingredient story.', image: 'images/cosrx.png' }
-    ];
-
-    const projectGrid = document.getElementById('projectGrid');
-
-    projects.forEach((project) => {
-      const card = document.createElement('article');
-      card.className = 'project-card';
-      card.innerHTML = `
-        <div class="project-image">
-          <img src="${project.image}" alt="${project.title}" loading="lazy" />
-        </div>
-        <div class="project-meta">${project.title}</div>
-      `;
-      card.addEventListener('click', () => openModal(project));
-      projectGrid.appendChild(card);
-    });
-
-    const modal = document.getElementById('projectModal');
-    const modalImage = document.getElementById('modalImage');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalText = document.getElementById('modalText');
-
-    function openModal(item) {
-      modalImage.src = item.image;
-      modalTitle.textContent = item.title;
-      modalText.textContent = item.desc;
-      modal.classList.add('show');
-    }
-
-    function closeModal() {
-      modal.classList.remove('show');
-    }
-
-    modal.addEventListener('click', (event) => {
-      if (event.target === modal) closeModal();
-    });
-
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') closeModal();
-    });
-
-    document.querySelectorAll('.filter-btn').forEach((button) => {
-      button.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach((btn) => btn.classList.remove('active'));
-        button.classList.add('active');
-        const filter = button.dataset.filter;
-
-        document.querySelectorAll('.pill').forEach((pill) => {
-          const show = pill.dataset.group === filter;
-          pill.classList.toggle('hidden', !show);
-        });
-      });
-    });
-
-    const services = [
-      { icon: '🎨', title: 'Graphic Design & Branding', items: ['Brand Identity Design', 'Brand Style Guides', 'Marketing Materials', 'Packaging Design'] },
-      { icon: '📱', title: 'Social Media & Content', items: ['Social Media Posts', 'Campaign Design', 'Content Planning', 'Digital Content Graphics'] },
-      { icon: '🎬', title: 'Video Editing & Motion', items: ['Short-Form Video Editing', 'Product Video Ads', 'Social Media Reels', 'Motion Graphics'] },
-      { icon: '📢', title: 'Advertising & Marketing', items: ['Product Advertisements', 'Promotional Graphics', 'Launch Campaigns', 'Brand Positioning'] },
-      { icon: '🛍️', title: 'Product & E-commerce', items: ['Product Mockups', 'Product Listing Graphics', 'E-commerce Assets', 'Creative Campaigns'] },
-      { icon: '💻', title: 'Web & Digital Design', items: ['Landing Page Design', 'Portfolio Websites', 'UI Mockups', 'Website Graphics'] },
-      { icon: '🧊', title: '3D Product Design & Animation', items: ['3D Product Modeling', 'Cinematic Rendering', 'Animation', 'CGI Advertising'] },
-      { icon: '📄', title: 'Print & Publication', items: ['Flyers & Posters', 'Brochures', 'Invitations', 'Professional Documents'] },
-      { icon: '✨', title: 'Custom Creative Solutions', items: ['Canva Templates', 'Printable Designs', 'Creative Consultation', 'Custom Client Requests'] }
-    ];
-
-    const serviceGrid = document.getElementById('serviceGrid');
-
-    services.forEach((service) => {
-      const card = document.createElement('div');
-      card.className = 'service-card';
-      card.innerHTML = `
-        <div class="service-header">
-          <div class="service-title-wrap">
-            <span class="service-icon">${service.icon}</span>
-            <span>${service.title}</span>
-          </div>
-          <span class="chevron">▼</span>
-        </div>
-        <div class="service-body">
-          <div class="service-body-inner">
-            <ul class="service-list">
-              ${service.items.map((item) => `<li>${item}</li>`).join('')}
-            </ul>
-          </div>
-        </div>
-      `;
-
-      const header = card.querySelector('.service-header');
-      const body = card.querySelector('.service-body');
-
-      header.addEventListener('click', () => {
-        const isOpen = card.classList.contains('open');
-        document.querySelectorAll('.service-card').forEach((c) => {
-          c.classList.remove('open');
-          c.querySelector('.service-body').style.maxHeight = '0px';
-        });
-
-        if (!isOpen) {
-          card.classList.add('open');
-          body.style.maxHeight = body.scrollHeight + 'px';
-        }
-      });
-
-      serviceGrid.appendChild(card);
-    });
-  </script>
-</body>
+  </body>
 </html>
