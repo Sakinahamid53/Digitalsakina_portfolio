@@ -28,6 +28,17 @@
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
 
   <style>
+    :root {
+      --ivory: #F8E7C9;
+      --powder-blue: #B6CBDE;
+      --charcoal-plum: #4F444C;
+      --soft-cream: #FFF9ED;
+      --mist-blue: #DCE7EF;
+      --dusty-blue: #8FAFC7;
+      --muted-mauve: #766A73;
+    }
+
+
 
     /* =========================================================
        GLOBAL
@@ -128,7 +139,7 @@
 
     .project-card:hover {
       transform: rotate(-1deg) scale(1.03);
-      box-shadow: 0 25px 50px rgba(107, 83, 68, 0.2);
+      box-shadow: 0 25px 50px rgba(115, 54, 42, 0.2);
     }
 
     .project-card:nth-child(even):hover {
@@ -152,8 +163,8 @@
       padding: 8px 20px;
       border-radius: 50px;
       border: 2px solid transparent;
-      background: white;
-      color: rgb(107, 83, 68);
+      background: #FFF9ED;
+      color: #4F444C;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -164,9 +175,9 @@
     }
 
     .filter-btn.active {
-      background: rgb(212, 138, 154);
+      background: #B6CBDE;
       color: white;
-      box-shadow: 0 8px 20px rgba(212, 138, 154, 0.3);
+      box-shadow: 0 8px 20px rgba(222, 131, 141, 0.3);
     }
 
 
@@ -178,8 +189,8 @@
       padding: 9px 22px;
       border-radius: 50px;
       border: 2px solid transparent;
-      background: white;
-      color: rgb(107, 83, 68);
+      background: #FFF9ED;
+      color: #4F444C;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -190,9 +201,9 @@
     }
 
     .project-filter.active {
-      background: rgb(212, 138, 154);
+      background: #B6CBDE;
       color: white;
-      box-shadow: 0 8px 20px rgba(212, 138, 154, 0.3);
+      box-shadow: 0 8px 20px rgba(222, 131, 141, 0.3);
     }
 
 
@@ -269,9 +280,9 @@
     }
 
     .service-card {
-      background: white;
+      background: #FFF9ED;
       border-radius: 20px;
-      box-shadow: 0 4px 16px rgba(107, 83, 68, 0.07);
+      box-shadow: 0 4px 16px rgba(115, 54, 42, 0.07);
       transition:
         box-shadow 0.3s ease,
         transform 0.3s ease;
@@ -279,15 +290,15 @@
     }
 
     .service-card:hover {
-      box-shadow: 0 10px 32px rgba(212, 138, 154, 0.22);
+      box-shadow: 0 10px 32px rgba(222, 131, 141, 0.22);
       transform: translateY(-3px);
     }
 
     .service-card.special-card {
       background: linear-gradient(
         135deg,
-        rgb(212, 138, 154),
-        rgb(225, 100, 130)
+        #B6CBDE,
+        #B6CBDE
       );
     }
 
@@ -322,7 +333,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 18px 20px;
-      color: rgb(107, 83, 68);
+      color: #4F444C;
       font-weight: 600;
       font-size: 14px;
       cursor: pointer;
@@ -340,7 +351,7 @@
       width: 36px;
       height: 36px;
       border-radius: 10px;
-      background: rgb(253, 235, 228);
+      background: #F8E7C9;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -355,7 +366,7 @@
 
     .chevron {
       font-size: 11px;
-      color: rgb(180, 140, 130);
+      color: #766A73;
       transition:
         transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
       flex-shrink: 0;
@@ -388,7 +399,7 @@
 
     .card-divider {
       border: none;
-      border-top: 1px solid rgba(107, 83, 68, 0.08);
+      border-top: 1px solid rgba(115, 54, 42, 0.08);
       margin-bottom: 12px;
     }
 
@@ -402,8 +413,8 @@
       gap: 8px;
       padding: 6px 0;
       font-size: 13px;
-      color: rgb(93, 74, 64);
-      border-bottom: 1px solid rgba(107, 83, 68, 0.06);
+      color: #4F444C;
+      border-bottom: 1px solid rgba(115, 54, 42, 0.06);
       opacity: 0;
       transform: translateX(-6px);
       transition:
@@ -439,7 +450,7 @@
     .video-card-preview {
       position: relative;
       overflow: hidden;
-      background: #f3e8eb;
+      background: #DCE7EF;
     }
 
     .video-cover {
@@ -463,7 +474,7 @@
       height: 64px;
       border-radius: 50%;
       background: rgba(255,255,255,0.92);
-      color: rgb(212, 138, 154);
+      color: #B6CBDE;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -495,7 +506,7 @@
     }
 
     .modal-card {
-      background: white;
+      background: #FFF9ED;
       width: 100%;
       max-width: 700px;
       border-radius: 24px;
@@ -543,7 +554,7 @@
       position: absolute;
       top: 12px;
       right: 14px;
-      background: white;
+      background: #FFF9ED;
       border: none;
       width: 38px;
       height: 38px;
@@ -681,11 +692,7 @@
 <body
   style="
     background:
-      linear-gradient(
-        135deg,
-        rgb(250, 245, 243),
-        rgb(245, 230, 240)
-      );
+      linear-gradient(135deg, #FFF9ED, #F8E7C9);
   "
 >
 
@@ -697,15 +704,15 @@
 <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
 
   <div
-    class="blob-1 absolute top-[10%] left-[5%] w-72 h-72 rounded-full bg-gradient-to-br from-pink-200/40 to-orange-200/40 blur-3xl">
+    class="blob-1 absolute top-[10%] left-[5%] w-72 h-72 rounded-full bg-gradient-to-br from-[#F8E7C9]/50 to-[#B6CBDE]/30 blur-3xl">
   </div>
 
   <div
-    class="blob-2 absolute top-[50%] right-[10%] w-96 h-96 rounded-full bg-gradient-to-br from-purple-200/30 to-rose-200/30 blur-3xl">
+    class="blob-2 absolute top-[50%] right-[10%] w-96 h-96 rounded-full bg-gradient-to-br from-[#B6CBDE]/25 to-[#4F444C]/20 blur-3xl">
   </div>
 
   <div
-    class="blob-3 absolute bottom-[10%] left-[30%] w-64 h-64 rounded-full bg-gradient-to-br from-amber-200/40 to-pink-200/40 blur-3xl">
+    class="blob-3 absolute bottom-[10%] left-[30%] w-64 h-64 rounded-full bg-gradient-to-br from-[#F8E7C9]/60 to-[#B6CBDE]/30 blur-3xl">
   </div>
 
 </div>
@@ -716,7 +723,7 @@
 ========================================================= -->
 
 <header
-  class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/70 border-b border-gray-100/50"
+  class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/70 border-b border-[#4F444C]/10"
 >
 
   <nav
@@ -725,7 +732,7 @@
 
     <span
       class="font-bold text-lg"
-      style="color: rgb(107, 83, 68);"
+      style="color: #4F444C;"
     >
       Sakina Kaderbhai
     </span>
@@ -734,7 +741,7 @@
 
       <a
         href="#about"
-        class="text-gray-600 hover:text-gray-900 transition"
+        class="text-[#4F444C]/75 hover:text-[#4F444C] transition"
         onclick="smoothScroll(event)"
       >
         About
@@ -742,7 +749,7 @@
 
       <a
         href="#skills"
-        class="text-gray-600 hover:text-gray-900 transition"
+        class="text-[#4F444C]/75 hover:text-[#4F444C] transition"
         onclick="smoothScroll(event)"
       >
         Skills
@@ -750,7 +757,7 @@
 
       <a
         href="#projects"
-        class="text-gray-600 hover:text-gray-900 transition"
+        class="text-[#4F444C]/75 hover:text-[#4F444C] transition"
         onclick="smoothScroll(event)"
       >
         Projects
@@ -758,7 +765,7 @@
 
       <a
         href="#services"
-        class="text-gray-600 hover:text-gray-900 transition"
+        class="text-[#4F444C]/75 hover:text-[#4F444C] transition"
         onclick="smoothScroll(event)"
       >
         Services
@@ -766,7 +773,7 @@
 
       <a
         href="#contact"
-        class="text-gray-600 hover:text-gray-900 transition"
+        class="text-[#4F444C]/75 hover:text-[#4F444C] transition"
         onclick="smoothScroll(event)"
       >
         Contact
@@ -799,15 +806,15 @@
     <img
       class="w-full h-full object-cover"
       loading="lazy"
-      style="filter: saturate(0.9) brightness(1.02);"
-      src="images/hero.jpg"
+      style="filter: saturate(0.72) sepia(0.08);"
+      src="images/bg.png"
       alt="Minimalist pink desk setup"
     >
 
-<div
-  class="absolute inset-0 bg-gradient-to-r from-white/85 via-white/70 to-white/5">
-</div>
-    
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-[#F8E7C9]/92 via-[#FFF9ED]/72 to-[#B6CBDE]/42">
+    </div>
+
   </div>
 
 
@@ -822,7 +829,7 @@
       <p
         class="uppercase tracking-[0.3em] mb-4 hero-text"
         style="
-          color: rgb(208, 138, 154);
+          color: #B6CBDE;
           font-weight: 500;
           font-size: 13px;
         "
@@ -834,7 +841,7 @@
       <h1
         class="mb-6 hero-text hero-text-d1 leading-tight"
         style="
-          color: rgb(61, 43, 34);
+          color: #4F444C;
           font-weight: 900;
           font-size: 64px;
         "
@@ -846,7 +853,7 @@
       <p
         class="mb-8 hero-text hero-text-d2 max-w-2xl"
         style="
-          color: rgb(93, 74, 64);
+          color: #4F444C;
           font-weight: 400;
           font-size: 18px;
         "
@@ -860,7 +867,7 @@
         class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg w-fit hero-text hero-text-d3 cursor-pointer"
         onclick="smoothScroll(event)"
         style="
-          background: rgb(212, 138, 154);
+          background: #B6CBDE;
           color: white;
         "
       >
@@ -881,7 +888,7 @@
 <section
   id="about"
   class="py-24 px-6 relative"
-  style="background: rgb(255, 252, 250);"
+  style="background: #FFF9ED;"
 >
 
   <div class="max-w-4xl mx-auto reveal">
@@ -895,7 +902,7 @@
         <div class="relative w-full max-w-xs">
 
           <div
-            class="absolute -inset-4 bg-gradient-to-br from-pink-300/40 to-purple-300/20 rounded-full blur-2xl">
+            class="absolute -inset-4 bg-gradient-to-br from-[#F8E7C9]/50 to-[#B6CBDE]/25 rounded-full blur-2xl">
           </div>
 
           <div
@@ -921,7 +928,7 @@
         <h2
           class="mb-6"
           style="
-            color: rgb(107, 83, 68);
+            color: #4F444C;
             font-weight: 700;
             font-size: 27px;
           "
@@ -933,7 +940,7 @@
         <p
           class="leading-relaxed"
           style="
-            color: rgb(93, 74, 64);
+            color: #4F444C;
             font-weight: 400;
             font-size: 20px;
           "
@@ -957,7 +964,7 @@
 <section
   id="skills"
   class="py-20 px-6 relative"
-  style="background: rgb(253, 243, 240);"
+  style="background: #DCE7EF;"
 >
 
   <div class="max-w-5xl mx-auto reveal">
@@ -965,7 +972,7 @@
     <h2
       class="text-center mb-12"
       style="
-        color: rgb(107, 83, 68);
+        color: #4F444C;
         font-weight: 700;
         font-size: 27px;
       "
@@ -1035,11 +1042,11 @@
       <div
         class="skill-pill px-8 py-4 rounded-full"
         data-category="design"
-        style="background: rgb(252, 232, 224);"
+        style="background: #F8E7C9;"
       >
         <p
           style="
-            color: rgb(107, 83, 68);
+            color: #4F444C;
             font-weight: 500;
             font-size: 18px;
           "
@@ -1052,9 +1059,9 @@
       <div
         class="skill-pill px-8 py-4 rounded-full"
         data-category="design"
-        style="background: rgb(232, 229, 245);"
+        style="background: #F8E7C9;"
       >
-        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+        <p style="color: #4F444C; font-weight: 500; font-size: 18px;">
           Brand Identity
         </p>
       </div>
@@ -1063,9 +1070,9 @@
       <div
         class="skill-pill px-8 py-4 rounded-full"
         data-category="design"
-        style="background: rgb(243, 217, 232);"
+        style="background: #B6CBDE;"
       >
-        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+        <p style="color: #4F444C; font-weight: 500; font-size: 18px;">
           Typography
         </p>
       </div>
@@ -1074,9 +1081,9 @@
       <div
         class="skill-pill px-8 py-4 rounded-full"
         data-category="design"
-        style="background: rgb(253, 233, 228);"
+        style="background: #DCE7EF;"
       >
-        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+        <p style="color: #4F444C; font-weight: 500; font-size: 18px;">
           Social Media Design
         </p>
       </div>
@@ -1085,9 +1092,9 @@
       <div
         class="skill-pill px-8 py-4 rounded-full"
         data-category="design"
-        style="background: rgb(252, 232, 224);"
+        style="background: #F8E7C9;"
       >
-        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+        <p style="color: #4F444C; font-weight: 500; font-size: 18px;">
           Logo Design
         </p>
       </div>
@@ -1096,9 +1103,9 @@
       <div
         class="skill-pill px-8 py-4 rounded-full"
         data-category="design"
-        style="background: rgb(232, 229, 245);"
+        style="background: #F8E7C9;"
       >
-        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+        <p style="color: #4F444C; font-weight: 500; font-size: 18px;">
           Color Theory
         </p>
       </div>
@@ -1107,9 +1114,9 @@
       <div
         class="skill-pill px-8 py-4 rounded-full"
         data-category="design"
-        style="background: rgb(243, 217, 232);"
+        style="background: #B6CBDE;"
       >
-        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+        <p style="color: #4F444C; font-weight: 500; font-size: 18px;">
           Layout & Composition
         </p>
       </div>
@@ -1118,9 +1125,9 @@
       <div
         class="skill-pill px-8 py-4 rounded-full"
         data-category="design"
-        style="background: rgb(253, 233, 228);"
+        style="background: #DCE7EF;"
       >
-        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+        <p style="color: #4F444C; font-weight: 500; font-size: 18px;">
           Visual Hierarchy
         </p>
       </div>
@@ -1133,9 +1140,9 @@
       <div
         class="skill-pill px-8 py-4 rounded-full"
         data-category="marketing"
-        style="background: rgb(252, 232, 224); display:none;"
+        style="background: #F8E7C9; display:none;"
       >
-        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+        <p style="color: #4F444C; font-weight: 500; font-size: 18px;">
           Content Strategy
         </p>
       </div>
@@ -1144,9 +1151,9 @@
       <div
         class="skill-pill px-8 py-4 rounded-full"
         data-category="marketing"
-        style="background: rgb(232, 229, 245); display:none;"
+        style="background: #F8E7C9; display:none;"
       >
-        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+        <p style="color: #4F444C; font-weight: 500; font-size: 18px;">
           Audience Engagement
         </p>
       </div>
@@ -1155,9 +1162,9 @@
       <div
         class="skill-pill px-8 py-4 rounded-full"
         data-category="marketing"
-        style="background: rgb(243, 217, 232); display:none;"
+        style="background: #B6CBDE; display:none;"
       >
-        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+        <p style="color: #4F444C; font-weight: 500; font-size: 18px;">
           Social Media Marketing
         </p>
       </div>
@@ -1166,9 +1173,9 @@
       <div
         class="skill-pill px-8 py-4 rounded-full"
         data-category="marketing"
-        style="background: rgb(253, 233, 228); display:none;"
+        style="background: #DCE7EF; display:none;"
       >
-        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+        <p style="color: #4F444C; font-weight: 500; font-size: 18px;">
           Campaign Planning
         </p>
       </div>
@@ -1177,9 +1184,9 @@
       <div
         class="skill-pill px-8 py-4 rounded-full"
         data-category="marketing"
-        style="background: rgb(252, 232, 224); display:none;"
+        style="background: #F8E7C9; display:none;"
       >
-        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+        <p style="color: #4F444C; font-weight: 500; font-size: 18px;">
           Brand Positioning
         </p>
       </div>
@@ -1188,9 +1195,9 @@
       <div
         class="skill-pill px-8 py-4 rounded-full"
         data-category="marketing"
-        style="background: rgb(232, 229, 245); display:none;"
+        style="background: #F8E7C9; display:none;"
       >
-        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+        <p style="color: #4F444C; font-weight: 500; font-size: 18px;">
           Market Research
         </p>
       </div>
@@ -1199,9 +1206,9 @@
       <div
         class="skill-pill px-8 py-4 rounded-full"
         data-category="marketing"
-        style="background: rgb(243, 217, 232); display:none;"
+        style="background: #B6CBDE; display:none;"
       >
-        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+        <p style="color: #4F444C; font-weight: 500; font-size: 18px;">
           Copywriting
         </p>
       </div>
@@ -1210,9 +1217,9 @@
       <div
         class="skill-pill px-8 py-4 rounded-full"
         data-category="marketing"
-        style="background: rgb(253, 233, 228); display:none;"
+        style="background: #DCE7EF; display:none;"
       >
-        <p style="color: rgb(107, 83, 68); font-weight: 500; font-size: 18px;">
+        <p style="color: #4F444C; font-weight: 500; font-size: 18px;">
           Analytics & Metrics
         </p>
       </div>
@@ -1224,8 +1231,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="3d"
-        style="background: rgb(252, 232, 224); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #F8E7C9; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           3D Product Modeling
         </p>
       </div>
@@ -1233,8 +1240,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="3d"
-        style="background: rgb(232, 229, 245); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #F8E7C9; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Product Visualization
         </p>
       </div>
@@ -1242,8 +1249,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="3d"
-        style="background: rgb(243, 217, 232); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #B6CBDE; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Photorealistic Rendering
         </p>
       </div>
@@ -1251,8 +1258,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="3d"
-        style="background: rgb(253, 233, 228); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #DCE7EF; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           CGI Product Advertising
         </p>
       </div>
@@ -1260,8 +1267,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="3d"
-        style="background: rgb(252, 232, 224); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #F8E7C9; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           3D Product Animation
         </p>
       </div>
@@ -1269,8 +1276,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="3d"
-        style="background: rgb(232, 229, 245); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #F8E7C9; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Material & Shader Creation
         </p>
       </div>
@@ -1278,8 +1285,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="3d"
-        style="background: rgb(243, 217, 232); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #B6CBDE; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Cinematic Lighting & Studio Setup
         </p>
       </div>
@@ -1287,8 +1294,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="3d"
-        style="background: rgb(253, 233, 228); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #DCE7EF; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           PBR Texturing & UV Mapping
         </p>
       </div>
@@ -1296,8 +1303,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="3d"
-        style="background: rgb(252, 232, 224); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #F8E7C9; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Camera Animation
         </p>
       </div>
@@ -1305,8 +1312,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="3d"
-        style="background: rgb(232, 229, 245); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #F8E7C9; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Motion Graphics & Visual Effects
         </p>
       </div>
@@ -1318,8 +1325,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="video"
-        style="background: rgb(252, 232, 224); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #F8E7C9; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Short-Form Video Editing
         </p>
       </div>
@@ -1327,8 +1334,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="video"
-        style="background: rgb(232, 229, 245); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #F8E7C9; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Reels & TikTok Editing
         </p>
       </div>
@@ -1336,8 +1343,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="video"
-        style="background: rgb(243, 217, 232); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #B6CBDE; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Product Video Ads
         </p>
       </div>
@@ -1345,8 +1352,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="video"
-        style="background: rgb(253, 233, 228); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #DCE7EF; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Motion Graphics
         </p>
       </div>
@@ -1354,8 +1361,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="video"
-        style="background: rgb(252, 232, 224); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #F8E7C9; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Text & Caption Animation
         </p>
       </div>
@@ -1363,8 +1370,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="video"
-        style="background: rgb(232, 229, 245); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #F8E7C9; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Video Ad Creatives
         </p>
       </div>
@@ -1372,8 +1379,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="video"
-        style="background: rgb(243, 217, 232); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #B6CBDE; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Cinematic Product Videos
         </p>
       </div>
@@ -1381,8 +1388,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="video"
-        style="background: rgb(253, 233, 228); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #DCE7EF; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           CapCut Video Editing
         </p>
       </div>
@@ -1394,8 +1401,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="tools"
-        style="background: rgb(252, 232, 224); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #F8E7C9; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Blender
         </p>
       </div>
@@ -1403,8 +1410,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="tools"
-        style="background: rgb(252, 232, 224); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #F8E7C9; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Canva
         </p>
       </div>
@@ -1412,8 +1419,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="tools"
-        style="background: rgb(232, 229, 245); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #F8E7C9; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Photoshop
         </p>
       </div>
@@ -1421,8 +1428,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="tools"
-        style="background: rgb(243, 217, 232); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #B6CBDE; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Illustrator
         </p>
       </div>
@@ -1430,8 +1437,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="tools"
-        style="background: rgb(253, 233, 228); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #DCE7EF; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Figma
         </p>
       </div>
@@ -1439,8 +1446,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="tools"
-        style="background: rgb(252, 232, 224); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #F8E7C9; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Adobe XD
         </p>
       </div>
@@ -1448,8 +1455,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="tools"
-        style="background: rgb(232, 229, 245); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #F8E7C9; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           InDesign
         </p>
       </div>
@@ -1457,8 +1464,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="tools"
-        style="background: rgb(243, 217, 232); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #B6CBDE; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           CapCut
         </p>
       </div>
@@ -1466,8 +1473,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="tools"
-        style="background: rgb(253, 233, 228); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #DCE7EF; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Procreate
         </p>
       </div>
@@ -1479,8 +1486,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="web"
-        style="background: rgb(252, 232, 224); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #F8E7C9; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           HTML/CSS
         </p>
       </div>
@@ -1488,8 +1495,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="web"
-        style="background: rgb(232, 229, 245); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #F8E7C9; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Responsive Design
         </p>
       </div>
@@ -1497,8 +1504,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="web"
-        style="background: rgb(243, 217, 232); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #B6CBDE; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           UI/UX Design
         </p>
       </div>
@@ -1506,8 +1513,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="web"
-        style="background: rgb(253, 233, 228); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #DCE7EF; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           JavaScript
         </p>
       </div>
@@ -1515,8 +1522,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="web"
-        style="background: rgb(252, 232, 224); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #F8E7C9; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Web Prototyping
         </p>
       </div>
@@ -1524,8 +1531,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="web"
-        style="background: rgb(232, 229, 245); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #F8E7C9; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Wireframing
         </p>
       </div>
@@ -1533,8 +1540,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="web"
-        style="background: rgb(243, 217, 232); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #B6CBDE; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           User Experience
         </p>
       </div>
@@ -1542,8 +1549,8 @@
 
       <div class="skill-pill px-8 py-4 rounded-full"
         data-category="web"
-        style="background: rgb(253, 233, 228); display:none;">
-        <p style="color: rgb(107, 83, 68); font-weight:500; font-size:18px;">
+        style="background: #DCE7EF; display:none;">
+        <p style="color: #4F444C; font-weight:500; font-size:18px;">
           Interactive Design
         </p>
       </div>
@@ -1562,7 +1569,7 @@
 <section
   id="projects"
   class="py-24 px-6"
-  style="background: rgb(255, 252, 250);"
+  style="background: #FFF9ED;"
 >
 
   <div class="max-w-6xl mx-auto">
@@ -1571,7 +1578,7 @@
     <h2
       class="text-center mb-4 reveal"
       style="
-        color: rgb(107, 83, 68);
+        color: #4F444C;
         font-weight: 700;
         font-size: 27px;
       "
@@ -1583,7 +1590,7 @@
     <p
       class="text-center mb-10 reveal"
       style="
-        color: rgb(93, 74, 64);
+        color: #4F444C;
         font-size: 17px;
       "
     >
@@ -1644,7 +1651,7 @@
 <section
   id="services"
   class="py-24 px-6 relative"
-  style="background: rgb(253, 243, 240);"
+  style="background: #DCE7EF;"
 >
 
   <div class="max-w-4xl mx-auto">
@@ -1652,7 +1659,7 @@
     <h2
       class="text-center mb-4 reveal"
       style="
-        color: rgb(107, 83, 68);
+        color: #4F444C;
         font-weight: 700;
         font-size: 27px;
       "
@@ -1664,7 +1671,7 @@
     <p
       class="text-center mb-16 reveal"
       style="
-        color: rgb(93, 74, 64);
+        color: #4F444C;
         font-weight: 400;
         font-size: 18px;
       "
@@ -1695,8 +1702,8 @@
     background:
       linear-gradient(
         135deg,
-        rgb(216, 168, 154),
-        rgb(201, 123, 138)
+        #4F444C,
+        #B6CBDE
       );
   "
 >
@@ -1717,7 +1724,7 @@
     <h2
       class="mb-4"
       style="
-        color: rgb(255, 251, 249);
+        color: #FFF9ED;
         font-weight: 700;
         font-size: 27px;
       "
@@ -1729,7 +1736,7 @@
     <p
       class="mb-8"
       style="
-        color: rgb(245, 230, 224);
+        color: #DCE7EF;
         font-weight: 400;
         font-size: 18px;
       "
@@ -1742,8 +1749,8 @@
       href="mailto:sakinahamid53@hotmail.com"
       class="inline-block px-10 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg"
       style="
-        background: rgb(255, 251, 249);
-        color: rgb(212, 138, 154);
+        background: #FFF9ED;
+        color: #B6CBDE;
       "
     >
       Get in Touch →
@@ -1762,13 +1769,13 @@
 ========================================================= -->
 
 <footer
-  class="relative z-10 py-6 text-center border-t border-gray-200/50"
+  class="relative z-10 py-6 text-center border-t border-[#4F444C]/15"
 >
 
   <p
     class="text-sm"
     style="
-      color: rgb(154, 128, 120);
+      color: rgba(115, 54, 42, 0.65);
       font-weight: 400;
       font-size: 18px;
     "
@@ -1803,7 +1810,7 @@
       <h2
         id="modalTitle"
         style="
-          color: rgb(61, 43, 34);
+          color: #4F444C;
           font-weight: 700;
           font-size: 24px;
           margin-bottom: 12px;
@@ -1815,7 +1822,7 @@
       <p
         id="modalDesc"
         style="
-          color: rgb(93, 74, 64);
+          color: #4F444C;
           font-weight: 400;
           font-size: 16px;
           line-height: 1.6;
@@ -1869,7 +1876,7 @@
       <h2
         id="videoModalTitle"
         style="
-          color: rgb(61, 43, 34);
+          color: #4F444C;
           font-weight: 700;
           font-size: 24px;
           margin-bottom: 12px;
@@ -1881,7 +1888,7 @@
       <p
         id="videoModalDesc"
         style="
-          color: rgb(93, 74, 64);
+          color: #4F444C;
           font-weight: 400;
           font-size: 16px;
           line-height: 1.6;
@@ -2299,7 +2306,7 @@
     if (!projects.length) {
       projectGrid.innerHTML = `
         <div class="md:col-span-3 text-center py-16">
-          <p style="color: rgb(107, 83, 68); font-size: 17px;">
+          <p style="color: #4F444C; font-size: 17px;">
             This collection is being curated.
           </p>
         </div>
@@ -2332,8 +2339,8 @@
               <div class="video-play-button" aria-label="Play video">▶</div>
             </div>
           </div>
-          <div class="p-6" style="background: rgb(253, 243, 240);">
-            <p style="color: rgb(93, 74, 64); font-size: 18px;">
+          <div class="p-6" style="background: #DCE7EF;">
+            <p style="color: #4F444C; font-size: 18px;">
               ${escapeHtml(project.label)}
             </p>
           </div>
@@ -2355,8 +2362,8 @@
               alt="${escapeHtml(project.title)}"
             >
           </div>
-          <div class="p-6" style="background: rgb(253, 243, 240);">
-            <p style="color: rgb(93, 74, 64); font-size: 18px;">
+          <div class="p-6" style="background: #DCE7EF;">
+            <p style="color: #4F444C; font-size: 18px;">
               ${escapeHtml(project.label)}
             </p>
           </div>
