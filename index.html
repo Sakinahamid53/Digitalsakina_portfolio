@@ -32,6 +32,7 @@
       --ivory: #F8E7C9;
       --powder-blue: #B6CBDE;
       --charcoal-plum: #4F444C;
+      --deep-plum: #4D424C;
       --soft-cream: #FFF9ED;
       --mist-blue: #DCE7EF;
       --dusty-blue: #8FAFC7;
@@ -139,7 +140,7 @@
 
     .project-card:hover {
       transform: rotate(-1deg) scale(1.03);
-      box-shadow: 0 25px 50px rgba(115, 54, 42, 0.2);
+      box-shadow: 0 25px 50px rgba(77, 66, 76, 0.20);
     }
 
     .project-card:nth-child(even):hover {
@@ -175,9 +176,9 @@
     }
 
     .filter-btn.active {
-      background: #B6CBDE;
+      background: #4D424C;
       color: white;
-      box-shadow: 0 8px 20px rgba(222, 131, 141, 0.3);
+      box-shadow: 0 8px 20px rgba(77, 66, 76, 0.25);
     }
 
 
@@ -201,9 +202,9 @@
     }
 
     .project-filter.active {
-      background: #B6CBDE;
+      background: #4D424C;
       color: white;
-      box-shadow: 0 8px 20px rgba(222, 131, 141, 0.3);
+      box-shadow: 0 8px 20px rgba(77, 66, 76, 0.25);
     }
 
 
@@ -219,7 +220,7 @@
 
     .skill-pill:hover {
       transform: translateY(-4px) scale(1.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 20px rgba(77, 66, 76, 0.10);
     }
 
 
@@ -282,7 +283,7 @@
     .service-card {
       background: #FFF9ED;
       border-radius: 20px;
-      box-shadow: 0 4px 16px rgba(115, 54, 42, 0.07);
+      box-shadow: 0 4px 16px rgba(77, 66, 76, 0.07);
       transition:
         box-shadow 0.3s ease,
         transform 0.3s ease;
@@ -290,15 +291,15 @@
     }
 
     .service-card:hover {
-      box-shadow: 0 10px 32px rgba(222, 131, 141, 0.22);
+      box-shadow: 0 10px 32px rgba(77, 66, 76, 0.18);
       transform: translateY(-3px);
     }
 
     .service-card.special-card {
       background: linear-gradient(
         135deg,
-        #B6CBDE,
-        #B6CBDE
+        #4D424C,
+        #625861
       );
     }
 
@@ -399,7 +400,7 @@
 
     .card-divider {
       border: none;
-      border-top: 1px solid rgba(115, 54, 42, 0.08);
+      border-top: 1px solid rgba(77, 66, 76, 0.08);
       margin-bottom: 12px;
     }
 
@@ -414,7 +415,7 @@
       padding: 6px 0;
       font-size: 13px;
       color: #4F444C;
-      border-bottom: 1px solid rgba(115, 54, 42, 0.06);
+      border-bottom: 1px solid rgba(77, 66, 76, 0.06);
       opacity: 0;
       transform: translateX(-6px);
       transition:
@@ -474,7 +475,7 @@
       height: 64px;
       border-radius: 50%;
       background: rgba(255,255,255,0.92);
-      color: #B6CBDE;
+      color: #4D424C;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -567,6 +568,7 @@
       align-items: center;
       justify-content: center;
       z-index: 10000;
+      color: #4D424C;
     }
 
     .modal-close:hover {
@@ -708,7 +710,7 @@
   </div>
 
   <div
-    class="blob-2 absolute top-[50%] right-[10%] w-96 h-96 rounded-full bg-gradient-to-br from-[#B6CBDE]/25 to-[#4F444C]/20 blur-3xl">
+    class="blob-2 absolute top-[50%] right-[10%] w-96 h-96 rounded-full bg-gradient-to-br from-[#B6CBDE]/25 to-[#4D424C]/20 blur-3xl">
   </div>
 
   <div
@@ -723,7 +725,7 @@
 ========================================================= -->
 
 <header
-  class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/70 border-b border-[#4F444C]/10"
+  class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/70 border-b border-[#4D424C]/10"
 >
 
   <nav
@@ -829,7 +831,7 @@
       <p
         class="uppercase tracking-[0.3em] mb-4 hero-text"
         style="
-          color: #B6CBDE;
+          color: #4D424C;
           font-weight: 500;
           font-size: 13px;
         "
@@ -867,7 +869,7 @@
         class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg w-fit hero-text hero-text-d3 cursor-pointer"
         onclick="smoothScroll(event)"
         style="
-          background: #B6CBDE;
+          background: #4D424C;
           color: white;
         "
       >
@@ -955,6 +957,11 @@
   </div>
 
 </section>
+
+
+<!-- =========================================================
+     SKILLS
+========================================================= -->
 
 <section
   id="skills"
@@ -1617,21 +1624,18 @@
         class="project-filter"
         data-project-filter="atelier"
       >
-        🖌️Atelier
+        🖌️ Atelier
       </button>
 
     </div>
 
 
-    <!-- =======================================================
-         PROJECT GRID
-    ======================================================== -->
+    <!-- PROJECT GRID -->
 
     <div
       id="projectGrid"
       class="grid md:grid-cols-3 gap-10"
     >
-      <!-- Projects are rendered from the portfolio manifest below. -->
     </div>
 
   </div>
@@ -1697,8 +1701,8 @@
     background:
       linear-gradient(
         135deg,
-        #4F444C,
-        #B6CBDE
+        #4D424C,
+        #625861
       );
   "
 >
@@ -1745,7 +1749,7 @@
       class="inline-block px-10 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg"
       style="
         background: #FFF9ED;
-        color: #B6CBDE;
+        color: #4D424C;
       "
     >
       Get in Touch →
@@ -1764,13 +1768,13 @@
 ========================================================= -->
 
 <footer
-  class="relative z-10 py-6 text-center border-t border-[#4F444C]/15"
+  class="relative z-10 py-6 text-center border-t border-[#4D424C]/15"
 >
 
   <p
     class="text-sm"
     style="
-      color: rgba(115, 54, 42, 0.65);
+      color: rgba(77, 66, 76, 0.65);
       font-weight: 400;
       font-size: 18px;
     "
@@ -2188,18 +2192,7 @@
 
   /* =========================================================
      PORTFOLIO MANIFEST + PROJECT RENDERING
-     ========================================================= */
-
-  /*
-     Keep the portfolio organised by folder:
-       Visual Crafts -> images/
-       Motionworks   -> videos/   + cover images
-       Atelier       -> atelier/
-
-     Static websites cannot automatically list a local folder, so this
-     manifest is the single source of truth. Add/remove an entry here
-     whenever you add a file to one of the folders.
-  */
+  ========================================================= */
 
   const portfolioProjects = {
 
@@ -2268,27 +2261,23 @@
 
     atelier: [
       /* Add files from atelier/ here as you build this collection. */
-      // Example:
-      // {
-      //   title: 'Project Name',
-      //   file: 'atelier/project-name.png',
-      //   label: 'Creative Exploration',
-      //   desc: 'Project description.'
-      // }
     ]
   };
 
 
-  const projectGrid = document.getElementById('projectGrid');
+  const projectGrid =
+    document.getElementById('projectGrid');
 
 
   function escapeHtml(value) {
+
     return String(value)
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#039;');
+
   }
 
 
@@ -2296,9 +2285,12 @@
 
     projectGrid.innerHTML = '';
 
-    const projects = portfolioProjects[filter] || [];
+    const projects =
+      portfolioProjects[filter] || [];
+
 
     if (!projects.length) {
+
       projectGrid.innerHTML = `
         <div class="md:col-span-3 text-center py-16">
           <p style="color: #4F444C; font-size: 17px;">
@@ -2306,70 +2298,149 @@
           </p>
         </div>
       `;
+
       return;
+
     }
+
 
     projects.forEach((project, index) => {
 
-      const card = document.createElement('div');
-      card.className = 'project-card rounded-3xl overflow-hidden shadow-xl reveal';
-      card.style.transitionDelay = `${index * 60}ms`;
+      const card =
+        document.createElement('div');
+
+
+      card.className =
+        'project-card rounded-3xl overflow-hidden shadow-xl reveal';
+
+
+      card.style.transitionDelay =
+        `${index * 60}ms`;
+
 
       if (filter === 'motion') {
 
-        card.dataset.title = project.title;
-        card.dataset.video = project.video;
-        card.dataset.desc = project.desc;
-        card.onclick = () => openVideoModal(card);
+        card.dataset.title =
+          project.title;
+
+        card.dataset.video =
+          project.video;
+
+        card.dataset.desc =
+          project.desc;
+
+        card.onclick =
+          () => openVideoModal(card);
+
 
         card.innerHTML = `
-          <div class="video-card-preview" style="aspect-ratio:9/16;">
+
+          <div
+            class="video-card-preview"
+            style="aspect-ratio:9/16;"
+          >
+
             <img
               class="video-cover"
               loading="lazy"
               src="${escapeHtml(project.cover)}"
               alt="${escapeHtml(project.title)} video cover"
             >
+
             <div class="video-play-overlay">
-              <div class="video-play-button" aria-label="Play video">▶</div>
+
+              <div
+                class="video-play-button"
+                aria-label="Play video"
+              >
+                ▶
+              </div>
+
             </div>
+
           </div>
-          <div class="p-6" style="background: #DCE7EF;">
-            <p style="color: #4F444C; font-size: 18px;">
+
+
+          <div
+            class="p-6"
+            style="background: #DCE7EF;"
+          >
+
+            <p
+              style="
+                color: #4F444C;
+                font-size: 18px;
+              "
+            >
               ${escapeHtml(project.label)}
             </p>
+
           </div>
+
         `;
 
       } else {
 
-        card.dataset.title = project.title;
-        card.dataset.img = project.file;
-        card.dataset.desc = project.desc;
-        card.onclick = () => openModal(card);
+        card.dataset.title =
+          project.title;
+
+        card.dataset.img =
+          project.file;
+
+        card.dataset.desc =
+          project.desc;
+
+        card.onclick =
+          () => openModal(card);
+
 
         card.innerHTML = `
-          <div class="overflow-hidden" style="aspect-ratio:1/1;">
+
+          <div
+            class="overflow-hidden"
+            style="aspect-ratio:1/1;"
+          >
+
             <img
               class="w-full h-full object-cover"
               loading="lazy"
               src="${escapeHtml(project.file)}"
               alt="${escapeHtml(project.title)}"
             >
+
           </div>
-          <div class="p-6" style="background: #DCE7EF;">
-            <p style="color: #4F444C; font-size: 18px;">
+
+
+          <div
+            class="p-6"
+            style="background: #DCE7EF;"
+          >
+
+            <p
+              style="
+                color: #4F444C;
+                font-size: 18px;
+              "
+            >
               ${escapeHtml(project.label)}
             </p>
+
           </div>
+
         `;
+
       }
+
 
       projectGrid.appendChild(card);
 
-      requestAnimationFrame(() => card.classList.add('visible'));
+
+      requestAnimationFrame(
+        () => card.classList.add('visible')
+      );
 
     });
+
   }
 
 
@@ -2381,22 +2452,32 @@
     .querySelectorAll('.project-filter')
     .forEach(btn => {
 
-      btn.addEventListener('click', () => {
+      btn.addEventListener(
+        'click',
+        () => {
 
-        document
-          .querySelectorAll('.project-filter')
-          .forEach(b => b.classList.remove('active'));
+          document
+            .querySelectorAll('.project-filter')
+            .forEach(b =>
+              b.classList.remove('active')
+            );
 
-        btn.classList.add('active');
 
-        renderProjects(btn.dataset.projectFilter);
+          btn.classList.add('active');
 
-      });
+
+          renderProjects(
+            btn.dataset.projectFilter
+          );
+
+        }
+      );
 
     });
 
 
   /* Visual Crafts is the default collection. */
+
   renderProjects('images');
 
 
