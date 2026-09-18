@@ -55,32 +55,142 @@
       font-family: 'Fraunces', serif;
     }
 
-      .contact-box {
-        background: linear-gradient(135deg, rgba(79, 68, 72, 0.96), rgba(79, 68, 72, 0.82));
-        border-radius: 30px;
-        padding: 2rem;
-        color: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 2rem;
-      }
+.contact-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(240px, 0.75fr);
+  gap: 3rem;
+  padding: clamp(2rem, 5vw, 4rem);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 70px rgba(39, 29, 35, 0.22);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
 
-      .contact-box h3 {
-        font-size: clamp(2rem, 4vw, 3.2rem);
-        line-height: 1.05;
-      }
+.contact-content {
+  max-width: 650px;
+}
 
-      .contact-box p {
-        margin: 0.8rem 0 0;
-        color: rgba(255,255,255,0.8);
-      }
+.contact-eyebrow,
+.contact-details-label {
+  display: block;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
 
-      footer {
-        padding: 28px 24px 48px;
-        text-align: center;
-        color: var(--plum-soft);
-      }
+.contact-content h2 {
+  margin: 0.85rem 0 1rem;
+  color: #FFF9ED;
+  font-size: clamp(2.5rem, 6vw, 4.8rem);
+  font-weight: 700;
+  line-height: 0.98;
+}
+
+.contact-content > p {
+  max-width: 580px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.contact-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.contact-tags span {
+  padding: 0.55rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.82rem;
+}
+
+.contact-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.95rem 1.4rem;
+  border-radius: 999px;
+  background: #FFF9ED;
+  color: #4F444C;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.contact-cta span {
+  font-size: 1.2rem;
+}
+
+.contact-note {
+  margin: 1rem 0 0 !important;
+  color: rgba(255, 255, 255, 0.58) !important;
+  font-size: 0.82rem !important;
+}
+
+.contact-details {
+  align-self: end;
+  padding: 1.4rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-details > a {
+  display: inline-block;
+  margin-top: 0.7rem;
+  color: #FFF9ED;
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.contact-details > a:hover {
+  text-decoration: underline;
+}
+
+.contact-detail-divider {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: 1.7rem 0;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.contact-details p {
+  margin: 0.7rem 0 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .contact-panel {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1.4rem;
+    border-radius: 24px;
+  }
+
+  .contact-details {
+    align-self: auto;
+    padding: 1.3rem 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: none;
+  }
+}
 
     /* =========================================================
        FLOATING BLOBS
@@ -1716,22 +1826,88 @@
      CONTACT
 ========================================================= -->
 
+<section
+  id="contact"
+  class="py-24 px-6 relative overflow-hidden"
+  style="
+    background:
+      radial-gradient(circle at 10% 20%, rgba(255,255,255,0.14), transparent 30%),
+      linear-gradient(135deg, #4F444C 0%, #625861 48%, #8FAFC7 100%);
+  "
+>
+  <div class="absolute -top-16 -right-10 w-48 h-48 border border-white/20 rounded-full blob-1"></div>
 
-        <section id="contact">
-          <div class="section-inner">
-            <div class="contact-box">
-              <div>
-                <div class="section-kicker" style="color: rgba(255,255,255,0.75);">Let’s create</div>
-                <h3>Bring your next idea to life.</h3>
-                <p>Available for branding, design direction, and digital creative collaborations.</p>
-              </div>
-              <a class="cta secondary" href="mailto:sakinahamid53@hotmail.com" style="background: rgba(255,255,255,0.92); color: var(--plum);">sakinahamid53@hotmail.com</a>
-            </div>
-          </div>
-        </section>
+  <div class="absolute top-1/2 -left-16 w-40 h-40 bg-white/10 rounded-full blur-2xl blob-2"></div>
 
-</main>
+  <div class="absolute bottom-8 right-12 w-20 h-20 border border-white/20 rotate-12 rounded-2xl blob-3"></div>
 
+  <div class="max-w-5xl mx-auto relative z-10 reveal">
+
+    <div class="contact-panel">
+
+      <div class="contact-content">
+
+        <span class="contact-eyebrow">
+          Let’s create something meaningful
+        </span>
+
+        <h2>
+          Have a project in mind?
+        </h2>
+
+        <p>
+          Whether you need a brand refresh, engaging digital content, motion,
+          product visuals, or complete creative direction, I’d love to hear
+          what you’re working on.
+        </p>
+
+        <div class="contact-tags" aria-label="Available services">
+          <span>Brand identity</span>
+          <span>Digital design</span>
+          <span>Content & motion</span>
+          <span>3D visualization</span>
+        </div>
+
+        <a
+          href="mailto:sakinahamid53@hotmail.com?subject=Project%20enquiry%20for%20Sakina"
+          class="contact-cta"
+        >
+          Start a conversation
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        <p class="contact-note">
+          I usually reply within 1–2 business days.
+        </p>
+
+      </div>
+
+      <div class="contact-details">
+
+        <span class="contact-details-label">
+          Get in touch
+        </span>
+
+        <a href="mailto:sakinahamid53@hotmail.com">
+          sakinahamid53@hotmail.com
+        </a>
+
+        <span class="contact-detail-divider"></span>
+
+        <span class="contact-details-label">
+          Best for
+        </span>
+
+        <p>
+          Freelance projects, creative collaborations, and ongoing design support.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
 <!-- =========================================================
      FOOTER
