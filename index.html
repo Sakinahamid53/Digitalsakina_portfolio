@@ -1,109 +1,122 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Sakina Kaderbhai - Digital Designer & Creative Specialist working across visual design, branding, digital content, motion, 3D visualization, web design, and interactive experiences." />
-  <meta name="keywords" content="digital designer, creative specialist, graphic design, branding, digital design, content creation, video editing, motion graphics, product advertising, 3D design, web design, interactive experiences, portfolio" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Sakina Kaderbhai - Digital Designer & Creative Specialist working across visual design, branding, digital content, motion, 3D visualization, web design, and interactive experiences."
+  >
+
+  <meta
+    name="keywords"
+    content="digital designer, creative specialist, graphic design, branding, digital design, content creation, video editing, motion graphics, product advertising, 3D design, web design, interactive design, SEO, digital marketing"
+  >
+
   <title>Sakina | Digital Designer & Creative Specialist</title>
-  <link rel="icon" href="images/favicon.png" />
+
+  <link rel="icon" href="images/favicon.png">
+
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@600;700;900&display=swap" rel="stylesheet" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@600;700;900&display=swap"
+    rel="stylesheet"
+  >
+
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
 
   <style>
     :root {
-      --ivory: #F4E4C5;
-      --powder-blue: #ADC4D8;
-      --charcoal-plum: #514750;
+      --ivory: #F8E7C9;
+      --powder-blue: #B6CBDE;
+      --charcoal-plum: #4F444C;
       --soft-cream: #FFF9ED;
-      --mist-blue: #E6EDF3;
-      --dusty-blue: #829FB8;
-      --warm-brown: #80695C;
-      --muted-mauve: #756A70;
-      --white: #ffffff;
-      --shadow-soft: rgba(81, 71, 80, 0.14);
+      --mist-blue: #DCE7EF;
+      --dusty-blue: #8FAFC7;
+      --muted-mauve: #766A73;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+
+
+    /* =========================================================
+       GLOBAL
+    ========================================================= */
 
     body {
       font-family: 'DM Sans', sans-serif;
-      background: linear-gradient(135deg, var(--soft-cream), var(--ivory));
-      color: var(--charcoal-plum);
       overflow-x: hidden;
     }
 
-    h1, h2, h3, h4 {
+    h1,
+    h2,
+    h3 {
       font-family: 'Fraunces', serif;
     }
 
-    .bg-ivory { background: var(--ivory); }
-    .bg-powder { background: var(--powder-blue); }
-    .bg-cream { background: var(--soft-cream); }
-    .bg-mist { background: var(--mist-blue); }
-    .text-plum { color: var(--charcoal-plum); }
-    .text-soft { color: var(--muted-mauve); }
-    .bg-plum { background: var(--charcoal-plum); }
-    .bg-warm { background: var(--warm-brown); }
 
-    .blob-1, .blob-2, .blob-3 {
-      position: absolute;
-      border-radius: 9999px;
-      filter: blur(60px);
-      opacity: 0.8;
-      pointer-events: none;
+    /* =========================================================
+       FLOATING BLOBS
+    ========================================================= */
+
+    @keyframes float1 {
+      0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+
+      33% {
+        transform: translate(30px, -20px) rotate(5deg);
+      }
+
+      66% {
+        transform: translate(-20px, 15px) rotate(-3deg);
+      }
+    }
+
+    @keyframes float2 {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(-40px, 30px) scale(1.1);
+      }
+    }
+
+    @keyframes float3 {
+      0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+
+      50% {
+        transform: translate(25px, -35px) rotate(8deg);
+      }
     }
 
     .blob-1 {
-      top: 10%;
-      left: 5%;
-      width: 18rem;
-      height: 18rem;
-      background: rgba(244, 228, 197, 0.7);
       animation: float1 12s ease-in-out infinite;
     }
 
     .blob-2 {
-      top: 52%;
-      right: 10%;
-      width: 24rem;
-      height: 24rem;
-      background: rgba(173, 196, 216, 0.4);
       animation: float2 15s ease-in-out infinite;
     }
 
     .blob-3 {
-      bottom: 8%;
-      left: 30%;
-      width: 16rem;
-      height: 16rem;
-      background: rgba(255, 249, 237, 0.65);
       animation: float3 10s ease-in-out infinite;
     }
 
-    @keyframes float1 {
-      0%, 100% { transform: translate(0,0) rotate(0deg); }
-      33% { transform: translate(30px,-20px) rotate(5deg); }
-      66% { transform: translate(-20px,15px) rotate(-3deg); }
-    }
 
-    @keyframes float2 {
-      0%, 100% { transform: translate(0,0) scale(1); }
-      50% { transform: translate(-40px,30px) scale(1.08); }
-    }
-
-    @keyframes float3 {
-      0%, 100% { transform: translate(0,0) rotate(0deg); }
-      50% { transform: translate(25px,-35px) rotate(8deg); }
-    }
+    /* =========================================================
+       REVEAL
+    ========================================================= */
 
     .reveal {
       opacity: 0;
       transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
     }
 
     .reveal.visible {
@@ -111,83 +124,333 @@
       transform: translateY(0);
     }
 
-    .filter-btn,
-    .project-filter {
-      padding: 0.6rem 1.2rem;
-      border-radius: 9999px;
-      border: 2px solid transparent;
-      background: var(--soft-cream);
-      color: var(--charcoal-plum);
-      font-weight: 600;
-      transition: all 0.25s ease;
+
+    /* =========================================================
+       PROJECT CARDS
+    ========================================================= */
+
+    .project-card {
+      transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        opacity 0.3s ease;
       cursor: pointer;
     }
 
-    .filter-btn:hover,
+    .project-card:hover {
+      transform: rotate(-1deg) scale(1.03);
+      box-shadow: 0 25px 50px rgba(115, 54, 42, 0.2);
+    }
+
+    .project-card:nth-child(even):hover {
+      transform: rotate(1deg) scale(1.03);
+    }
+
+    .project-card:nth-child(odd) {
+      transform: rotate(-1deg);
+    }
+
+    .project-card:nth-child(even) {
+      transform: rotate(1deg);
+    }
+
+
+    /* =========================================================
+       SKILL FILTER BUTTONS
+    ========================================================= */
+
+    .filter-btn {
+      padding: 8px 20px;
+      border-radius: 50px;
+      border: 2px solid transparent;
+      background: #FFF9ED;
+      color: #4F444C;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .filter-btn.active {
+      background: #B6CBDE;
+      color: white;
+      box-shadow: 0 8px 20px rgba(222, 131, 141, 0.3);
+    }
+
+
+    /* =========================================================
+       PROJECT FILTER BUTTONS
+    ========================================================= */
+
+    .project-filter {
+      padding: 9px 22px;
+      border-radius: 50px;
+      border: 2px solid transparent;
+      background: #FFF9ED;
+      color: #4F444C;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
     .project-filter:hover {
       transform: translateY(-2px);
     }
 
-    .filter-btn.active,
     .project-filter.active {
-      background: var(--powder-blue);
-      color: var(--charcoal-plum);
-      box-shadow: 0 10px 20px rgba(81, 71, 80, 0.12);
+      background: #B6CBDE;
+      color: white;
+      box-shadow: 0 8px 20px rgba(222, 131, 141, 0.3);
     }
 
+
+    /* =========================================================
+       SKILLS
+    ========================================================= */
+
     .skill-pill {
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      border-radius: 9999px;
-      padding: 0.8rem 1.6rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 0 rgba(0,0,0,0);
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
     }
 
     .skill-pill:hover {
-      transform: translateY(-4px) scale(1.03);
-      box-shadow: 0 12px 22px rgba(81, 71, 80, 0.08);
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
 
     .hero-text {
       animation: slideUp 1s ease forwards;
       opacity: 0;
     }
 
-    .hero-text-d1 { animation-delay: 0.2s; }
-    .hero-text-d2 { animation-delay: 0.4s; }
-    .hero-text-d3 { animation-delay: 0.6s; }
+    .hero-text-d1 {
+      animation-delay: 0.2s;
+    }
+
+    .hero-text-d2 {
+      animation-delay: 0.4s;
+    }
+
+    .hero-text-d3 {
+      animation-delay: 0.6s;
+    }
 
     @keyframes slideUp {
       from {
         opacity: 0;
         transform: translateY(30px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
 
-    .project-card {
-      transition: transform 0.35s ease, box-shadow 0.35s ease, opacity 0.3s ease;
-      cursor: pointer;
-      border-radius: 1.25rem;
-      overflow: hidden;
-      background: var(--soft-cream);
-      box-shadow: 0 10px 28px rgba(81, 71, 80, 0.08);
+
+    /* =========================================================
+       SERVICES
+    ========================================================= */
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
     }
 
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 28px 46px rgba(81, 71, 80, 0.15);
+    @media (max-width: 900px) {
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .service-card {
+      background: #FFF9ED;
+      border-radius: 20px;
+      box-shadow: 0 4px 16px rgba(115, 54, 42, 0.07);
+      transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+      align-self: start;
+    }
+
+    .service-card:hover {
+      box-shadow: 0 10px 32px rgba(222, 131, 141, 0.22);
+      transform: translateY(-3px);
+    }
+
+    .service-card.special-card {
+      background: linear-gradient(
+        135deg,
+        #B6CBDE,
+        #B6CBDE
+      );
+    }
+
+    .service-card.special-card .card-header {
+      color: white;
+    }
+
+    .service-card.special-card .card-icon {
+      background: rgba(255,255,255,0.22);
+    }
+
+    .service-card.special-card .chevron {
+      color: rgba(255,255,255,0.8);
+    }
+
+    .service-card.special-card .service-list li {
+      color: rgba(255,255,255,0.92);
+      border-bottom-color: rgba(255,255,255,0.15);
+    }
+
+    .service-card.special-card .service-list li::before {
+      background: rgba(255,255,255,0.3);
+      color: white;
+    }
+
+    .service-card.special-card .card-divider {
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 20px;
+      color: #4F444C;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      user-select: none;
+      gap: 8px;
+    }
+
+    .card-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: #F8E7C9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover .card-icon {
+      transform: scale(1.12) rotate(-5deg);
+    }
+
+    .chevron {
+      font-size: 11px;
+      color: #766A73;
+      transition:
+        transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      flex-shrink: 0;
+    }
+
+    .service-card.open .chevron {
+      transform: rotate(180deg);
+    }
+
+    .card-body {
+      max-height: 0;
+      overflow: hidden;
+      transition:
+        max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card-body-inner {
+      padding: 0 20px 16px;
+      opacity: 0;
+      transform: translateY(-6px);
+      transition:
+        opacity 0.3s ease 0.05s,
+        transform 0.3s ease 0.05s;
+    }
+
+    .service-card.open .card-body-inner {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card-divider {
+      border: none;
+      border-top: 1px solid rgba(115, 54, 42, 0.08);
+      margin-bottom: 12px;
+    }
+
+    .service-list {
+      list-style: none;
+    }
+
+    .service-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 0;
+      font-size: 13px;
+      color: #4F444C;
+      border-bottom: 1px solid rgba(115, 54, 42, 0.06);
+      opacity: 0;
+      transform: translateX(-6px);
+      transition:
+        opacity 0.22s ease,
+        transform 0.22s ease;
+    }
+
+    .service-card.open .service-list li {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .service-list li:last-child {
+      border-bottom: none;
+    }
+
+    .service-list li::before {
+      content: none;
+    }
+
+
+    /* =========================================================
+       PROJECT VIDEO
+    ========================================================= */
+
+    .project-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .video-card-preview {
       position: relative;
       overflow: hidden;
-      background: var(--mist-blue);
+      background: #DCE7EF;
     }
 
     .video-cover {
@@ -211,639 +474,2267 @@
       height: 64px;
       border-radius: 50%;
       background: rgba(255,255,255,0.92);
-      color: var(--charcoal-plum);
+      color: #B6CBDE;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 22px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
-      transition: transform 0.25s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
     }
 
     .project-card:hover .video-play-button {
-      transform: scale(1.1);
+      transform: scale(1.12);
     }
 
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
 
-    .service-card {
-      background: var(--soft-cream);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 16px rgba(81, 71, 80, 0.08);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 32px rgba(81, 71, 80, 0.12);
-    }
-
-    .service-card.special-card {
-      background: linear-gradient(135deg, var(--powder-blue), var(--dusty-blue));
-      color: #fff;
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.15rem 1.2rem;
-      font-weight: 700;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .card-left {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .card-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      background: var(--ivory);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.05rem;
-      color: var(--charcoal-plum);
-    }
-
-    .service-card.special-card .card-icon {
-      background: rgba(255,255,255,0.22);
-      color: #fff;
-    }
-
-    .card-divider {
-      border: 0;
-      border-top: 1px solid rgba(81, 71, 80, 0.08);
-      margin: 0 1.2rem 0.9rem;
-    }
-
-    .service-card.special-card .card-divider {
-      border-color: rgba(255,255,255,0.16);
-    }
-
-    .card-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1);
-    }
-
-    .card-body-inner {
-      padding: 0 1.2rem 1.1rem;
-      opacity: 0;
-      transform: translateY(-6px);
-      transition: opacity 0.25s ease, transform 0.25s ease;
-    }
-
-    .service-card.open .card-body-inner {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .service-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .service-list li {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid rgba(81, 71, 80, 0.08);
-      font-size: 0.8rem;
-      color: var(--charcoal-plum);
-      opacity: 0;
-      transform: translateX(-6px);
-      transition: opacity 0.2s ease, transform 0.2s ease;
-    }
-
-    .service-card.special-card .service-list li {
-      color: rgba(255,255,255,0.94);
-      border-bottom-color: rgba(255,255,255,0.15);
-    }
-
-    .service-card.open .service-list li {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .service-list li:last-child {
-      border-bottom: none;
-    }
-
-    .chevron {
-      font-size: 0.72rem;
-      transition: transform 0.3s ease;
-      opacity: 0.8;
-    }
-
-    .service-card.open .chevron {
-      transform: rotate(180deg);
-    }
+    /* =========================================================
+       MODAL
+    ========================================================= */
 
     .modal-overlay {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.62);
+      background: rgba(0,0,0,0.65);
       backdrop-filter: blur(8px);
       justify-content: center;
       align-items: center;
       z-index: 9999;
-      padding: 1.25rem;
+      padding: 20px;
       overflow-y: auto;
     }
 
     .modal-card {
-      background: var(--soft-cream);
-      width: min(100%, 720px);
+      background: #FFF9ED;
+      width: 100%;
+      max-width: 700px;
       border-radius: 24px;
+      overflow: visible;
       position: relative;
-      overflow: hidden;
       animation: pop 0.25s ease;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.18);
-    }
-
-    @keyframes pop {
-      from { opacity: 0; transform: scale(0.92); }
-      to { opacity: 1; transform: scale(1); }
+      display: flex;
+      flex-direction: column;
+      max-height: none;
+      margin: auto;
     }
 
     .modal-img {
       width: 100%;
-      object-fit: cover;
-      display: block;
+      height: auto;
       aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 24px 24px 0 0;
+    }
+
+    .modal-video-container {
+      width: 100%;
+      max-height: 75vh;
+      background: #111;
+      border-radius: 24px 24px 0 0;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .modal-video {
+      width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      display: block;
     }
 
     .modal-body {
-      padding: 1.5rem;
+      padding: 24px;
+      overflow-y: auto;
+      max-height: 300px;
     }
 
     .modal-close {
       position: absolute;
       top: 12px;
       right: 14px;
+      background: #FFF9ED;
+      border: none;
       width: 38px;
       height: 38px;
       border-radius: 50%;
-      border: none;
-      background: var(--soft-cream);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.18);
-      font-size: 1.2rem;
       cursor: pointer;
-      z-index: 20;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
     }
+
+    .modal-close:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes pop {
+      from {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+
+    /* =========================================================
+       WHATSAPP
+    ========================================================= */
 
     .whatsapp-float {
       position: fixed;
-      right: 22px;
       bottom: 22px;
+      right: 22px;
       background: #25D366;
       color: white;
-      display: flex;
-      align-items: center;
-      gap: 10px;
       padding: 12px 18px;
-      border-radius: 9999px;
+      border-radius: 50px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
       text-decoration: none;
-      font-weight: 700;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.22);
-      z-index: 9998;
+      font-weight: 600;
+      z-index: 9999;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      transition: all 0.3s ease;
       animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.06); }
+      font-size: 16px;
     }
 
     .whatsapp-icon {
       width: 24px;
       height: 24px;
-      display: inline-block;
-      color: white;
+      flex-shrink: 0;
     }
 
-    @media (max-width: 900px) {
-      .service-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.3);
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.07);
+      }
+
+      100% {
+        transform: scale(1);
       }
     }
+
+
+    /* =========================================================
+       GLASS
+    ========================================================= */
+
+    .glass-card {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.35);
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
 
     @media (max-width: 640px) {
+
       .whatsapp-float {
-        padding: 10px 15px;
-        font-size: 0.82rem;
+        padding: 12px 16px;
+        font-size: 14px;
       }
 
-      .service-grid {
-        grid-template-columns: 1fr;
+      .whatsapp-icon {
+        width: 20px;
+        height: 20px;
       }
 
-      .hero-title {
-        font-size: 2.8rem !important;
+      .modal-card {
+        max-width: 95vw;
+      }
+
+      .modal-body {
+        padding: 20px;
+        max-height: 250px;
       }
 
       .filter-btn,
       .project-filter {
-        font-size: 0.85rem;
-        padding: 0.55rem 0.9rem;
+        padding: 6px 16px;
+        font-size: 14px;
+      }
+
+      .video-play-button {
+        width: 54px;
+        height: 54px;
       }
     }
+
   </style>
 </head>
 
-<body>
-  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-    <div class="blob-1"></div>
-    <div class="blob-2"></div>
-    <div class="blob-3"></div>
+
+<body
+  style="
+    background:
+      linear-gradient(135deg, #FFF9ED, #F8E7C9);
+  "
+>
+
+
+<!-- =========================================================
+     FLOATING BACKGROUND BLOBS
+========================================================= -->
+
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+
+  <div
+    class="blob-1 absolute top-[10%] left-[5%] w-72 h-72 rounded-full bg-gradient-to-br from-[#F8E7C9]/50 to-[#B6CBDE]/30 blur-3xl">
   </div>
 
-  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/70 border-b border-[#514750]/10">
-    <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <span class="font-bold text-lg text-[#514750]">Sakina Kaderbhai</span>
-      <div class="hidden md:flex gap-8 text-[#514750]/75">
-        <a href="#about" class="hover:text-[#514750] transition">About</a>
-        <a href="#skills" class="hover:text-[#514750] transition">Skills</a>
-        <a href="#projects" class="hover:text-[#514750] transition">Projects</a>
-        <a href="#services" class="hover:text-[#514750] transition">Services</a>
-        <a href="#contact" class="hover:text-[#514750] transition">Contact</a>
-      </div>
-    </nav>
-  </header>
+  <div
+    class="blob-2 absolute top-[50%] right-[10%] w-96 h-96 rounded-full bg-gradient-to-br from-[#B6CBDE]/25 to-[#4F444C]/20 blur-3xl">
+  </div>
 
-  <main class="relative z-10">
-    <section class="w-full pt-32 pb-20 px-6 relative overflow-hidden" style="min-height: 100vh;">
-      <div class="absolute inset-0 z-0">
-        <img src="images/bgportfolio.png" alt="Minimalist creative workspace" class="w-full h-full object-cover" style="filter: saturate(0.75) sepia(0.1) contrast(0.96);" />
-        <div class="absolute inset-0 bg-gradient-to-r from-[#F4E4C5]/95 via-[#FFF9ED]/75 to-[#ADC4D8]/45"></div>
-      </div>
+  <div
+    class="blob-3 absolute bottom-[10%] left-[30%] w-64 h-64 rounded-full bg-gradient-to-br from-[#F8E7C9]/60 to-[#B6CBDE]/30 blur-3xl">
+  </div>
 
-      <div class="max-w-7xl mx-auto relative z-10 h-full flex items-center justify-center">
-        <div class="flex flex-col justify-center items-center text-center">
-          <p class="uppercase tracking-[0.3em] mb-4 hero-text text-[#829FB8] text-[13px] font-medium">
-            Digital Designer • Creative Specialist • Visual Storyteller
-          </p>
+</div>
 
-          <h1 class="hero-title hero-text hero-text-d1 leading-tight mb-6 text-[#514750] font-black" style="font-size: 64px;">
-            Digital Designer & <br />Creative Specialist
-          </h1>
 
-          <p class="hero-text hero-text-d2 max-w-2xl mb-8 text-[#514750] text-lg">
-            Crafting cohesive visual identities, digital experiences, content, motion, and product-led creative that help brands communicate with clarity, character, and distinction.
-          </p>
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
-          <a href="#projects" class="hero-text hero-text-d3 inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg w-fit" style="background: var(--powder-blue); color: var(--charcoal-plum);">
-            View My Work →
-          </a>
-        </div>
-      </div>
-    </section>
+<header
+  class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/70 border-b border-[#4F444C]/10"
+>
 
-    <section id="about" class="py-24 px-6 relative" style="background: var(--soft-cream);">
-      <div class="max-w-4xl mx-auto reveal">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div class="flex items-center justify-center">
-            <div class="relative w-full max-w-xs">
-              <div class="absolute -inset-4 rounded-full blur-2xl" style="background: linear-gradient(135deg, rgba(244,228,197,0.65), rgba(173,196,216,0.3));"></div>
-              <div class="relative aspect-square rounded-full overflow-hidden shadow-xl border-4 border-white/60">
-                <img src="" alt="Professional portrait of Sakina Kaderbhai" class="w-full h-full object-cover" />
-              </div>
-            </div>
-          </div>
+  <nav
+    class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"
+  >
 
-          <div class="flex flex-col justify-center">
-            <h2 class="mb-6 text-[#514750] text-[27px] font-bold">About Me</h2>
-            <p class="leading-relaxed text-[#514750] text-[20px] font-normal">
-              I’m a multidisciplinary digital designer and creative specialist working across visual design, branding, digital content, web design, motion, 3D product visualization, and interactive experiences. I bring together visual thinking, storytelling, and practical digital execution to create work that feels cohesive, considered, and purposefully crafted.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <span
+      class="font-bold text-lg"
+      style="color: #4F444C;"
+    >
+      Sakina Kaderbhai
+    </span>
 
-    <section id="skills" class="py-20 px-6 relative" style="background: var(--mist-blue);">
-      <div class="max-w-5xl mx-auto reveal">
-        <h2 class="text-center mb-12 text-[#514750] font-bold text-[27px]">My Expertise</h2>
+    <div class="hidden md:flex gap-8">
 
-        <div class="flex flex-wrap justify-center gap-3 mb-10">
-          <button class="filter-btn active" data-filter="design">🎨 Design</button>
-          <button class="filter-btn" data-filter="marketing">📱 Marketing</button>
-          <button class="filter-btn" data-filter="3d">🧊 3D</button>
-          <button class="filter-btn" data-filter="video">🎬 Video</button>
-          <button class="filter-btn" data-filter="tools">🧰 Tools</button>
-          <button class="filter-btn" data-filter="web">💻 Web</button>
-        </div>
+      <a
+        href="#about"
+        class="text-[#4F444C]/75 hover:text-[#4F444C] transition"
+        onclick="smoothScroll(event)"
+      >
+        About
+      </a>
 
-        <div class="flex flex-wrap justify-center gap-4">
-          <div class="skill-pill" data-category="design" style="background: #F4E4C5; color: #514750;">Product Advertising</div>
-          <div class="skill-pill" data-category="design" style="background: #F4E4C5; color: #514750;">Brand Identity</div>
-          <div class="skill-pill" data-category="design" style="background: #DDEAF5; color: #514750;">Typography</div>
-          <div class="skill-pill" data-category="design" style="background: #EEF5F9; color: #514750;">Social Media Design</div>
-          <div class="skill-pill" data-category="design" style="background: #F4E4C5; color: #514750;">Logo Design</div>
-          <div class="skill-pill" data-category="design" style="background: #DDEAF5; color: #514750;">Visual Hierarchy</div>
+      <a
+        href="#skills"
+        class="text-[#4F444C]/75 hover:text-[#4F444C] transition"
+        onclick="smoothScroll(event)"
+      >
+        Skills
+      </a>
 
-          <div class="skill-pill" data-category="marketing" style="background: #F4E4C5; display:none; color: #514750;">Content Strategy</div>
-          <div class="skill-pill" data-category="marketing" style="background: #F4E4C5; display:none; color: #514750;">Audience Engagement</div>
-          <div class="skill-pill" data-category="marketing" style="background: #DDEAF5; display:none; color: #514750;">Social Media Marketing</div>
-          <div class="skill-pill" data-category="marketing" style="background: #EEF5F9; display:none; color: #514750;">Campaign Planning</div>
-          <div class="skill-pill" data-category="marketing" style="background: #F4E4C5; display:none; color: #514750;">Brand Positioning</div>
-          <div class="skill-pill" data-category="marketing" style="background: #DDEAF5; display:none; color: #514750;">Copywriting</div>
+      <a
+        href="#projects"
+        class="text-[#4F444C]/75 hover:text-[#4F444C] transition"
+        onclick="smoothScroll(event)"
+      >
+        Projects
+      </a>
 
-          <div class="skill-pill" data-category="3d" style="background: #F4E4C5; display:none; color: #514750;">3D Product Modeling</div>
-          <div class="skill-pill" data-category="3d" style="background: #F4E4C5; display:none; color: #514750;">Product Visualization</div>
-          <div class="skill-pill" data-category="3d" style="background: #DDEAF5; display:none; color: #514750;">Photorealistic Rendering</div>
-          <div class="skill-pill" data-category="3d" style="background: #EEF5F9; display:none; color: #514750;">CGI Product Ads</div>
-          <div class="skill-pill" data-category="3d" style="background: #F4E4C5; display:none; color: #514750;">3D Animation</div>
-          <div class="skill-pill" data-category="3d" style="background: #DDEAF5; display:none; color: #514750;">Material & Shader Creation</div>
+      <a
+        href="#services"
+        class="text-[#4F444C]/75 hover:text-[#4F444C] transition"
+        onclick="smoothScroll(event)"
+      >
+        Services
+      </a>
 
-          <div class="skill-pill" data-category="video" style="background: #F4E4C5; display:none; color: #514750;">Short-form Video Editing</div>
-          <div class="skill-pill" data-category="video" style="background: #F4E4C5; display:none; color: #514750;">Reels & TikTok Editing</div>
-          <div class="skill-pill" data-category="video" style="background: #DDEAF5; display:none; color: #514750;">Product Video Ads</div>
-          <div class="skill-pill" data-category="video" style="background: #EEF5F9; display:none; color: #514750;">Motion Graphics</div>
-          <div class="skill-pill" data-category="video" style="background: #F4E4C5; display:none; color: #514750;">Text & Caption Animation</div>
-          <div class="skill-pill" data-category="video" style="background: #DDEAF5; display:none; color: #514750;">Cinematic Product Videos</div>
+      <a
+        href="#contact"
+        class="text-[#4F444C]/75 hover:text-[#4F444C] transition"
+        onclick="smoothScroll(event)"
+      >
+        Contact
+      </a>
 
-          <div class="skill-pill" data-category="tools" style="background: #F4E4C5; display:none; color: #514750;">Blender</div>
-          <div class="skill-pill" data-category="tools" style="background: #F4E4C5; display:none; color: #514750;">Canva</div>
-          <div class="skill-pill" data-category="tools" style="background: #DDEAF5; display:none; color: #514750;">Photoshop</div>
-          <div class="skill-pill" data-category="tools" style="background: #EEF5F9; display:none; color: #514750;">Illustrator</div>
-          <div class="skill-pill" data-category="tools" style="background: #F4E4C5; display:none; color: #514750;">Figma</div>
-          <div class="skill-pill" data-category="tools" style="background: #DDEAF5; display:none; color: #514750;">CapCut</div>
-
-          <div class="skill-pill" data-category="web" style="background: #F4E4C5; display:none; color: #514750;">HTML / CSS</div>
-          <div class="skill-pill" data-category="web" style="background: #F4E4C5; display:none; color: #514750;">Responsive Design</div>
-          <div class="skill-pill" data-category="web" style="background: #DDEAF5; display:none; color: #514750;">UI / UX Design</div>
-          <div class="skill-pill" data-category="web" style="background: #EEF5F9; display:none; color: #514750;">JavaScript</div>
-          <div class="skill-pill" data-category="web" style="background: #F4E4C5; display:none; color: #514750;">Web Prototyping</div>
-          <div class="skill-pill" data-category="web" style="background: #DDEAF5; display:none; color: #514750;">Interactive Design</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="py-24 px-6 relative" style="background: var(--soft-cream);">
-      <div class="max-w-6xl mx-auto reveal">
-        <h2 class="text-center mb-4 text-[#514750] font-bold text-[27px]">Featured Projects</h2>
-        <p class="text-center mb-10 text-[#514750] text-[17px]">A curated selection of visual design, motion, product storytelling, and digital creative work.</p>
-
-        <div class="flex flex-wrap justify-center gap-3 mb-12">
-          <button class="project-filter active" data-project-filter="images">Visual Crafts</button>
-          <button class="project-filter" data-project-filter="motion">Motionworks</button>
-          <button class="project-filter" data-project-filter="atelier">Atelier</button>
-        </div>
-
-        <div id="projectGrid" class="grid md:grid-cols-3 gap-6"></div>
-      </div>
-    </section>
-
-    <section id="services" class="py-24 px-6 relative" style="background: #E9F0F5;">
-      <div class="max-w-4xl mx-auto reveal">
-        <h2 class="text-center mb-4 text-[#514750] font-bold text-[27px]">My Services</h2>
-        <p class="text-center mb-10 text-[#514750] text-[18px] max-w-xl mx-auto">
-          End-to-end creative solutions spanning brand identity, digital design, content, motion, advertising, 3D visualization, and interactive experiences.
-        </p>
-
-        <div id="serviceGrid" class="service-grid"></div>
-      </div>
-    </section>
-
-    <section id="contact" class="py-24 px-6 relative" style="background: linear-gradient(135deg, #514750, #7C6A73);">
-      <div class="max-w-2xl mx-auto text-center reveal">
-        <h2 class="mb-4 text-[#FFF9ED] font-bold text-[27px]">Have a project in mind?</h2>
-        <p class="mb-8 text-[#E9F0F5] text-[18px]">
-          Available for freelance projects, creative collaborations, and digital design partnerships — from focused deliverables to end-to-end creative support.
-        </p>
-        <a href="mailto:sakinahamid53@hotmail.com" class="inline-flex items-center px-10 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg" style="background: var(--soft-cream); color: var(--charcoal-plum);">
-          Get in Touch →
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="relative z-10 py-6 text-center border-t border-[#514750]/15 bg-[#FFF9ED]">
-    <p class="text-sm text-[#514750]/70">© 2026 Sakina Kaderbhai. All rights reserved.</p>
-  </footer>
-
-  <div id="modal" class="modal-overlay" onclick="closeModalOutside(event)">
-    <div class="modal-card">
-      <button class="modal-close" onclick="closeModal()" aria-label="Close modal">✕</button>
-      <img id="modalImg" class="modal-img" alt="Project preview" />
-      <div class="modal-body">
-        <h3 id="modalTitle" class="mb-3 text-[#514750] text-[24px] font-bold"></h3>
-        <p id="modalDesc" class="text-[#514750] text-[16px] leading-relaxed"></p>
-      </div>
     </div>
+
+  </nav>
+
+</header>
+
+
+<main class="relative z-10">
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section
+  class="w-full pt-32 pb-20 px-6 relative overflow-hidden"
+  style="
+    min-height: 100vh;
+    background: rgba(255,255,255,0);
+  "
+>
+
+  <div class="absolute inset-0 z-0">
+
+    <img
+      class="w-full h-full object-cover"
+      loading="lazy"
+      style="filter: saturate(0.72) sepia(0.08);"
+      src="images/bgportfolio.png"
+      alt="Minimalist pink desk setup"
+    >
+
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-[#F8E7C9]/92 via-[#FFF9ED]/72 to-[#B6CBDE]/42">
+    </div>
+
   </div>
 
-  <a href="https://wa.me/255686210125/?text=Hi%20I%20found%20your%20portfolio%20and%20want%20to%20hire%20you" target="_blank" aria-label="Chat on WhatsApp" class="whatsapp-float">
-    <svg class="whatsapp-icon" viewBox="0 0 32 32" aria-hidden="true">
-      <path fill="currentColor" d="M19.11 17.7c-.27-.14-1.63-.8-1.88-.89-.25-.09-.43-.14-.61.14-.17.27-.68.88-.84 1.06-.15.17-.31.2-.58.07-.27-.14-1.13-.42-2.15-1.33-.8-.71-1.34-1.59-1.5-1.85-.16-.27-.02-.41.12-.54.13-.13.27-.31.41-.47.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.14.18 1.89 2.93 4.58 4.1.64.28 1.13.45 1.52.58.64.2 1.23.17 1.69.1.52-.08 1.63-.66 1.86-1.3.23-.64.23-1.19.16-1.3-.07-.11-.25-.18-.52-.32zM16 3C8.82 3 3 8.82 3 16c0 2.67.78 5.18 2.12 7.27L3 29l6.02-2.02A12.9 12.9 0 0 0 16 28.97C23.18 28.97 29 23.15 29 16S23.18 3 16 3zm0 2.08c6.03 0 10.92 4.89 10.92 10.92S22.03 26.92 16 26.92a11.18 11.18 0 0 1-5.52-1.47L9.4 26.1l.3-1.54A10.72 10.72 0 0 1 5.08 16C5.08 9.97 9.97 5.08 16 5.08z"/>
-    </svg>
-    <span>WhatsApp Me</span>
-  </a>
 
-  <script>
-    const observer = new IntersectionObserver((entries) => {
+  <div
+    class="max-w-7xl mx-auto relative z-10 h-full flex items-center justify-center"
+  >
+
+    <div
+      class="flex flex-col justify-center items-center text-center"
+    >
+
+      <p
+        class="uppercase tracking-[0.3em] mb-4 hero-text"
+        style="
+          color: #B6CBDE;
+          font-weight: 500;
+          font-size: 13px;
+        "
+      >
+        Digital Designer • Creative Specialist • Visual Storyteller
+      </p>
+
+
+      <h1
+        class="mb-6 hero-text hero-text-d1 leading-tight"
+        style="
+          color: #4F444C;
+          font-weight: 900;
+          font-size: 64px;
+        "
+      >
+        Digital Designer & <br>Creative Specialist
+      </h1>
+
+
+      <p
+        class="mb-8 hero-text hero-text-d2 max-w-2xl"
+        style="
+          color: #4F444C;
+          font-weight: 400;
+          font-size: 18px;
+        "
+      >
+        Crafting cohesive visual identities, digital experiences, content, motion, and product-led creative that help brands communicate with clarity, character, and distinction.
+      </p>
+
+
+      <a
+        href="#projects"
+        class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg w-fit hero-text hero-text-d3 cursor-pointer"
+        onclick="smoothScroll(event)"
+        style="
+          background: #B6CBDE;
+          color: white;
+        "
+      >
+        View My Work →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section
+  id="about"
+  class="py-24 px-6 relative"
+  style="background: #FFF9ED;"
+>
+
+  <div class="max-w-4xl mx-auto reveal">
+
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+    >
+
+      <div class="flex items-center justify-center lg:order-1">
+
+        <div class="relative w-full max-w-xs">
+
+          <div
+            class="absolute -inset-4 bg-gradient-to-br from-[#F8E7C9]/50 to-[#B6CBDE]/25 rounded-full blur-2xl">
+          </div>
+
+          <div
+            class="relative aspect-square rounded-full overflow-hidden shadow-xl border-4 border-white/60"
+          >
+
+            <img
+              class="w-full h-full object-cover"
+              loading="lazy"
+              src=""
+              alt="Professional portrait of Sakina Kaderbhai"
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="flex flex-col justify-center lg:order-2">
+
+        <h2
+          class="mb-6"
+          style="
+            color: #4F444C;
+            font-weight: 700;
+            font-size: 27px;
+          "
+        >
+          About Me
+        </h2>
+
+
+        <p
+          class="leading-relaxed"
+          style="
+            color: #4F444C;
+            font-weight: 400;
+            font-size: 20px;
+          "
+        >
+          I'm a multidisciplinary digital designer and creative specialist working across visual design, branding, digital content, web design, motion, 3D product visualization, and interactive experiences. I bring together visual thinking, storytelling, and practical digital execution to create work that feels cohesive, considered, and purposeful — from a brand's visual identity to the content and experiences that bring it to life.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section
+  id="skills"
+  class="py-20 px-6 relative"
+  style="background: #EAF1F6;"
+>
+
+  <div class="max-w-5xl mx-auto reveal">
+
+    <h2
+      class="text-center mb-12"
+      style="
+        color: #625861;
+        font-weight: 700;
+        font-size: 27px;
+      "
+    >
+      My Expertise
+    </h2>
+
+
+    <!-- SKILL FILTER -->
+
+    <div
+      class="flex flex-wrap justify-center gap-3 mb-10"
+    >
+
+      <button
+        class="filter-btn active"
+        data-filter="design"
+      >
+        🎨 Design
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="marketing"
+      >
+        📱 Marketing
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="3d"
+      >
+        🧊 3D Design
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="video"
+      >
+        🎬 Video Editing
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="tools"
+      >
+        🛠️ Tools
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="web"
+      >
+        🌐 Web
+      </button>
+
+    </div>
+
+
+    <div class="flex flex-wrap justify-center gap-4">
+
+
+      <!-- =====================================================
+           DESIGN
+      ===================================================== -->
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="design"
+        style="background: #FFF7E8;"
+      >
+        <p
+          style="
+            color: #625861;
+            font-weight: 500;
+            font-size: 18px;
+          "
+        >
+          Product Advertising
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="design"
+        style="background: #FFF7E8;"
+      >
+        <p style="color: #625861; font-weight: 500; font-size: 18px;">
+          Brand Identity
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="design"
+        style="background: #D8E6F1;"
+      >
+        <p style="color: #625861; font-weight: 500; font-size: 18px;">
+          Typography
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="design"
+        style="background: #EAF1F6;"
+      >
+        <p style="color: #625861; font-weight: 500; font-size: 18px;">
+          Social Media Design
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="design"
+        style="background: #FFF7E8;"
+      >
+        <p style="color: #625861; font-weight: 500; font-size: 18px;">
+          Logo Design
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="design"
+        style="background: #FFF7E8;"
+      >
+        <p style="color: #625861; font-weight: 500; font-size: 18px;">
+          Color Theory
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="design"
+        style="background: #D8E6F1;"
+      >
+        <p style="color: #625861; font-weight: 500; font-size: 18px;">
+          Layout & Composition
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="design"
+        style="background: #EAF1F6;"
+      >
+        <p style="color: #625861; font-weight: 500; font-size: 18px;">
+          Visual Hierarchy
+        </p>
+      </div>
+
+
+      <!-- =====================================================
+           MARKETING
+      ===================================================== -->
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="marketing"
+        style="background: #FFF7E8; display:none;"
+      >
+        <p style="color: #625861; font-weight: 500; font-size: 18px;">
+          Content Strategy
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="marketing"
+        style="background: #FFF7E8; display:none;"
+      >
+        <p style="color: #625861; font-weight: 500; font-size: 18px;">
+          Audience Engagement
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="marketing"
+        style="background: #D8E6F1; display:none;"
+      >
+        <p style="color: #625861; font-weight: 500; font-size: 18px;">
+          Social Media Marketing
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="marketing"
+        style="background: #EAF1F6; display:none;"
+      >
+        <p style="color: #625861; font-weight: 500; font-size: 18px;">
+          Campaign Planning
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="marketing"
+        style="background: #FFF7E8; display:none;"
+      >
+        <p style="color: #625861; font-weight: 500; font-size: 18px;">
+          Brand Positioning
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="marketing"
+        style="background: #FFF7E8; display:none;"
+      >
+        <p style="color: #625861; font-weight: 500; font-size: 18px;">
+          Market Research
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="marketing"
+        style="background: #D8E6F1; display:none;"
+      >
+        <p style="color: #625861; font-weight: 500; font-size: 18px;">
+          Copywriting
+        </p>
+      </div>
+
+
+      <div
+        class="skill-pill px-8 py-4 rounded-full"
+        data-category="marketing"
+        style="background: #EAF1F6; display:none;"
+      >
+        <p style="color: #625861; font-weight: 500; font-size: 18px;">
+          Analytics & Metrics
+        </p>
+      </div>
+
+
+      <!-- =====================================================
+           3D
+      ===================================================== -->
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="3d"
+        style="background: #FFF7E8; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          3D Product Modeling
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="3d"
+        style="background: #FFF7E8; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Product Visualization
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="3d"
+        style="background: #D8E6F1; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Photorealistic Rendering
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="3d"
+        style="background: #EAF1F6; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          CGI Product Advertising
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="3d"
+        style="background: #FFF7E8; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          3D Product Animation
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="3d"
+        style="background: #FFF7E8; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Material & Shader Creation
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="3d"
+        style="background: #D8E6F1; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Cinematic Lighting & Studio Setup
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="3d"
+        style="background: #EAF1F6; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          PBR Texturing & UV Mapping
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="3d"
+        style="background: #FFF7E8; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Camera Animation
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="3d"
+        style="background: #FFF7E8; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Motion Graphics & Visual Effects
+        </p>
+      </div>
+
+
+      <!-- =====================================================
+           VIDEO EDITING
+      ===================================================== -->
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="video"
+        style="background: #FFF7E8; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Short-Form Video Editing
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="video"
+        style="background: #FFF7E8; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Reels & TikTok Editing
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="video"
+        style="background: #D8E6F1; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Product Video Ads
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="video"
+        style="background: #EAF1F6; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Motion Graphics
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="video"
+        style="background: #FFF7E8; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Text & Caption Animation
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="video"
+        style="background: #FFF7E8; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Video Ad Creatives
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="video"
+        style="background: #D8E6F1; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Cinematic Product Videos
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="video"
+        style="background: #EAF1F6; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          CapCut Video Editing
+        </p>
+      </div>
+
+
+      <!-- =====================================================
+           TOOLS
+      ===================================================== -->
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="tools"
+        style="background: #FFF7E8; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Blender
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="tools"
+        style="background: #FFF7E8; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Canva
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="tools"
+        style="background: #FFF7E8; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Photoshop
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="tools"
+        style="background: #D8E6F1; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Illustrator
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="tools"
+        style="background: #EAF1F6; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Figma
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="tools"
+        style="background: #FFF7E8; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Adobe XD
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="tools"
+        style="background: #FFF7E8; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          InDesign
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="tools"
+        style="background: #D8E6F1; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          CapCut
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="tools"
+        style="background: #EAF1F6; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Procreate
+        </p>
+      </div>
+
+
+      <!-- =====================================================
+           WEB
+      ===================================================== -->
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="web"
+        style="background: #FFF7E8; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          HTML/CSS
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="web"
+        style="background: #FFF7E8; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Responsive Design
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="web"
+        style="background: #D8E6F1; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          UI/UX Design
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="web"
+        style="background: #EAF1F6; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          JavaScript
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="web"
+        style="background: #FFF7E8; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Web Prototyping
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="web"
+        style="background: #FFF7E8; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Wireframing
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="web"
+        style="background: #D8E6F1; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          User Experience
+        </p>
+      </div>
+
+
+      <div class="skill-pill px-8 py-4 rounded-full"
+        data-category="web"
+        style="background: #EAF1F6; display:none;">
+        <p style="color: #625861; font-weight:500; font-size:18px;">
+          Interactive Design
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section
+  id="projects"
+  class="py-24 px-6"
+  style="background: #FFF9ED;"
+>
+
+  <div class="max-w-6xl mx-auto">
+
+
+    <h2
+      class="text-center mb-4 reveal"
+      style="
+        color: #4F444C;
+        font-weight: 700;
+        font-size: 27px;
+      "
+    >
+      Featured Projects
+    </h2>
+
+
+    <p
+      class="text-center mb-10 reveal"
+      style="
+        color: #4F444C;
+        font-size: 17px;
+      "
+    >
+      A curated selection of visual design, motion, product storytelling, and digital creative work.
+    </p>
+
+
+    <!-- PROJECT FILTER -->
+
+    <div
+      class="flex flex-wrap justify-center gap-3 mb-14 reveal"
+    >
+
+      <button
+        class="project-filter active"
+        data-project-filter="images"
+      >
+       🧩 Visual Crafts
+      </button>
+
+      <button
+        class="project-filter"
+        data-project-filter="motion"
+      >
+        🎬 Motionworks
+      </button>
+      
+      <button
+        class="project-filter"
+        data-project-filter="atelier"
+      >
+        🖌️Atelier
+      </button>
+
+    </div>
+
+
+    <!-- =======================================================
+         PROJECT GRID
+    ======================================================== -->
+
+    <div
+      id="projectGrid"
+      class="grid md:grid-cols-3 gap-10"
+    >
+      <!-- Projects are rendered from the portfolio manifest below. -->
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section
+  id="services"
+  class="py-24 px-6 relative"
+  style="background: #DCE7EF;"
+>
+
+  <div class="max-w-4xl mx-auto">
+
+    <h2
+      class="text-center mb-4 reveal"
+      style="
+        color: #4F444C;
+        font-weight: 700;
+        font-size: 27px;
+      "
+    >
+      My Services
+    </h2>
+
+
+    <p
+      class="text-center mb-16 reveal"
+      style="
+        color: #4F444C;
+        font-weight: 400;
+        font-size: 18px;
+      "
+    >
+      End-to-end creative solutions spanning brand identity, digital design, content, motion, advertising, 3D visualization, interactive experiences, and business communications.
+    </p>
+
+
+    <div
+      class="service-grid reveal"
+      id="serviceGrid"
+    >
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section
+  id="contact"
+  class="py-24 px-6 relative overflow-hidden"
+  style="
+    background:
+      linear-gradient(
+        135deg,
+        #4F444C,
+        #B6CBDE
+      );
+  "
+>
+
+  <div
+    class="absolute -top-10 -right-10 w-40 h-40 border-4 border-white/20 rounded-full blob-1">
+  </div>
+
+  <div
+    class="absolute bottom-5 left-5 w-24 h-24 bg-white/10 rotate-12 rounded-2xl blob-3">
+  </div>
+
+
+  <div
+    class="max-w-2xl mx-auto text-center relative z-10 reveal"
+  >
+
+    <h2
+      class="mb-4"
+      style="
+        color: #FFF9ED;
+        font-weight: 700;
+        font-size: 27px;
+      "
+    >
+      Have a project in mind?
+    </h2>
+
+
+    <p
+      class="mb-8"
+      style="
+        color: #DCE7EF;
+        font-weight: 400;
+        font-size: 18px;
+      "
+    >
+      Available for freelance projects, creative collaborations, and digital design partnerships — from focused deliverables to end-to-end creative support.
+    </p>
+
+
+    <a
+      href="mailto:sakinahamid53@hotmail.com"
+      class="inline-block px-10 py-4 rounded-full font-medium transition hover:scale-105 hover:shadow-lg"
+      style="
+        background: #FFF9ED;
+        color: #B6CBDE;
+      "
+    >
+      Get in Touch →
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer
+  class="relative z-10 py-6 text-center border-t border-[#4F444C]/15"
+>
+
+  <p
+    class="text-sm"
+    style="
+      color: rgba(115, 54, 42, 0.65);
+      font-weight: 400;
+      font-size: 18px;
+    "
+  >
+    © 2026 Sakina Kaderbhai. All rights reserved.
+  </p>
+
+</footer>
+
+
+<!-- =========================================================
+     IMAGE MODAL
+========================================================= -->
+
+<div
+  id="modal"
+  class="modal-overlay"
+  onclick="closeModalOutside(event)"
+>
+
+  <div class="modal-card">
+
+    <img
+      id="modalImg"
+      class="modal-img"
+      alt="Project image"
+    >
+
+
+    <div class="modal-body">
+
+      <h2
+        id="modalTitle"
+        style="
+          color: #4F444C;
+          font-weight: 700;
+          font-size: 24px;
+          margin-bottom: 12px;
+        "
+      >
+      </h2>
+
+
+      <p
+        id="modalDesc"
+        style="
+          color: #4F444C;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 1.6;
+        "
+      >
+      </p>
+
+    </div>
+
+
+    <button
+      class="modal-close"
+      onclick="closeModal()"
+      aria-label="Close modal"
+    >
+      ✕
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     VIDEO MODAL
+========================================================= -->
+
+<div
+  id="videoModal"
+  class="modal-overlay"
+  onclick="closeVideoModalOutside(event)"
+>
+
+  <div class="modal-card">
+
+    <div class="modal-video-container">
+
+      <video
+        id="modalVideo"
+        class="modal-video"
+        controls
+        playsinline
+      >
+      </video>
+
+    </div>
+
+
+    <div class="modal-body">
+
+      <h2
+        id="videoModalTitle"
+        style="
+          color: #4F444C;
+          font-weight: 700;
+          font-size: 24px;
+          margin-bottom: 12px;
+        "
+      >
+      </h2>
+
+
+      <p
+        id="videoModalDesc"
+        style="
+          color: #4F444C;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 1.6;
+        "
+      >
+      </p>
+
+    </div>
+
+
+    <button
+      class="modal-close"
+      onclick="closeVideoModal()"
+      aria-label="Close video"
+    >
+      ✕
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     WHATSAPP
+========================================================= -->
+
+<a
+  href="https://wa.me/255686210125?text=Hi%20I%20found%20your%20portfolio%20and%20want%20to%20hire%20you"
+  class="whatsapp-float"
+  target="_blank"
+  aria-label="Chat on WhatsApp"
+>
+
+  <svg
+    class="whatsapp-icon"
+    viewBox="0 0 32 32"
+  >
+
+    <path
+      fill="white"
+      d="M16 3C9.37 3 4 8.37 4 15c0 2.61.85 5.02 2.29 6.97L4 29l7.28-2.25C13.1 27.54 14.52 28 16 28c6.63 0 12-5.37 12-12S22.63 3 16 3zm0 22c-1.35 0-2.65-.27-3.85-.8l-.28-.12-4.32 1.34.95-3.46-.24-.38C6.14 19.65 5.5 17.41 5.5 15c0-5.79 4.71-10.5 10.5-10.5S26.5 9.21 26.5 15 21.79 25 16 25z"
+    />
+
+    <path
+      fill="white"
+      d="M20.5 17.5c-.27 0-.55-.08-.82-.25-.5-.32-1.3-.7-2.7-1.5-1.4-.8-2.1-1.2-2.37-1.5-.27-.3-.27-.7 0-1.06.54-.72 1.08-1.44 1.08-1.44l.18-.27c.36-.54.18-1.08-.18-1.44-.36-.36-.9-.72-1.26-.9-.36-.18-.72-.09-1.08.09-.36.18-.72.72-.9 1.26-.18.54-.27 1.26-.09 1.98.18.72.9 1.62 1.62 2.34.72.72 1.62 1.44 2.34 1.62.72.18 1.44.09 1.98-.09.54-.18 1.08-.54 1.26-.9.18-.36.09-.72-.09-1.08-.18-.36-.54-.72-.9-.9-.27-.17-.55-.25-.82-.25z"
+    />
+
+  </svg>
+
+  <span>
+    WhatsApp Me
+  </span>
+
+</a>
+
+
+<script>
+
+  /* =========================================================
+     ICONS
+  ========================================================= */
+
+  lucide.createIcons();
+
+
+  /* =========================================================
+     REVEAL ON SCROLL
+  ========================================================= */
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+
       entries.forEach(entry => {
+
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
+
       });
-    }, { threshold: 0.15 });
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    },
+    {
+      threshold: 0.15
+    }
+  );
 
-    function smoothScroll(event) {
-      const href = event.currentTarget.getAttribute('href');
-      const target = document.querySelector(href);
-      if (target) {
-        event.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+
+  document
+    .querySelectorAll('.reveal')
+    .forEach(el => observer.observe(el));
+
+
+  /* =========================================================
+     SMOOTH SCROLL
+  ========================================================= */
+
+  function smoothScroll(event) {
+
+    event.preventDefault();
+
+    const target = document.querySelector(
+      event.currentTarget.getAttribute('href')
+    );
+
+    if (target) {
+
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+
     }
 
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', smoothScroll);
+  }
+
+
+  /* =========================================================
+     IMAGE MODAL
+  ========================================================= */
+
+  function openModal(el) {
+
+    document.getElementById('modal').style.display = 'flex';
+
+    document.getElementById('modalTitle').innerText =
+      el.dataset.title;
+
+    document.getElementById('modalImg').src =
+      el.dataset.img;
+
+    document.getElementById('modalDesc').innerText =
+      el.dataset.desc;
+
+    document.body.style.overflow = 'hidden';
+
+  }
+
+
+  function closeModal() {
+
+    document.getElementById('modal').style.display = 'none';
+
+    document.body.style.overflow = 'auto';
+
+  }
+
+
+  function closeModalOutside(e) {
+
+    if (e.target.id === 'modal') {
+      closeModal();
+    }
+
+  }
+
+
+  /* =========================================================
+     VIDEO MODAL
+  ========================================================= */
+
+  function openVideoModal(el) {
+
+    const modal =
+      document.getElementById('videoModal');
+
+    const video =
+      document.getElementById('modalVideo');
+
+    const title =
+      document.getElementById('videoModalTitle');
+
+    const desc =
+      document.getElementById('videoModalDesc');
+
+
+    title.innerText =
+      el.dataset.title;
+
+    desc.innerText =
+      el.dataset.desc;
+
+    video.src =
+      el.dataset.video;
+
+    modal.style.display =
+      'flex';
+
+    document.body.style.overflow =
+      'hidden';
+
+    video.currentTime = 0;
+
+    video.play().catch(() => {});
+
+  }
+
+
+  function closeVideoModal() {
+
+    const modal =
+      document.getElementById('videoModal');
+
+    const video =
+      document.getElementById('modalVideo');
+
+    video.pause();
+
+    video.removeAttribute('src');
+
+    video.load();
+
+    modal.style.display =
+      'none';
+
+    document.body.style.overflow =
+      'auto';
+
+  }
+
+
+  function closeVideoModalOutside(e) {
+
+    if (e.target.id === 'videoModal') {
+      closeVideoModal();
+    }
+
+  }
+
+
+  /* =========================================================
+     ESCAPE KEY
+  ========================================================= */
+
+  document.addEventListener(
+    'keydown',
+    e => {
+
+      if (e.key === 'Escape') {
+
+        closeModal();
+        closeVideoModal();
+
+      }
+
+    }
+  );
+
+
+  /* =========================================================
+     SKILL FILTER
+  ========================================================= */
+
+  document
+    .querySelectorAll('.filter-btn')
+    .forEach(btn => {
+
+      btn.addEventListener(
+        'click',
+        () => {
+
+          document
+            .querySelectorAll('.filter-btn')
+            .forEach(b =>
+              b.classList.remove('active')
+            );
+
+
+          btn.classList.add('active');
+
+
+          const filter =
+            btn.dataset.filter;
+
+
+          document
+            .querySelectorAll('.skill-pill')
+            .forEach(skill => {
+
+              if (
+                skill.dataset.category === filter
+              ) {
+
+                skill.style.display =
+                  'inline-flex';
+
+              } else {
+
+                skill.style.display =
+                  'none';
+
+              }
+
+            });
+
+        }
+      );
+
     });
 
-    document.querySelectorAll('.filter-btn').forEach(button => {
-      button.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
 
-        const filter = button.dataset.filter;
-        document.querySelectorAll('.skill-pill').forEach(skill => {
-          if (skill.dataset.category === filter) {
-            skill.style.display = 'inline-flex';
-          } else {
-            skill.style.display = 'none';
-          }
-        });
-      });
-    });
+  /* =========================================================
+     PORTFOLIO MANIFEST + PROJECT RENDERING
+     ========================================================= */
 
-    const projectData = {
-      images: [
-        { title: 'Skin1004 Madagascar Centella', file: 'images/skin1004.png', label: 'Product Advertising • Skincare', desc: 'A soothing skincare product visual focused on hydration, texture, and clean beauty storytelling.' },
-        { title: 'JUMISO Bean Essence', file: 'images/jumiso.png', label: 'Product Advertising • Beauty', desc: 'A brightening skincare visual highlighting natural ingredients and product clarity.' },
-        { title: 'Mixsoon Bean Essence', file: 'images/mixsoon.png', label: 'Product Advertising • Skincare', desc: 'A calm, minimal product visual designed around hydration and glow-led composition.' },
-        { title: 'COSRX Vitamin C 13 Serum', file: 'images/vitamin.png', label: 'Product Advertising • Beauty', desc: 'A product-focused advertising visual highlighting radiance, texture, and skin-brightening benefits.' },
-        { title: 'AXIS Daisy Purifying Treatment Toner', file: 'images/axis.png', label: 'Product Advertising • Skincare', desc: 'A luxe product visual for a toner line with soft, botanical cues and refined beauty style.' },
-        { title: 'COSRX Advanced Snail 96', file: 'images/cosrx.png', label: 'Product Advertising • Skincare', desc: 'A product-first design emphasizing moisture recovery and gentle skin care.' }
-      ],
-      motion: [
-        { title: 'Caught in the Scent', file: 'videos/web.png', label: 'Fragrance • Product Film', desc: 'A cinematic fragrance reel built around visual mood, scent story, and stop-motion energy.' },
-        { title: 'Shelfy Stories', file: 'videos/shelf.jpg', label: 'Skincare • Social Reel', desc: 'A social-first skincare reel blending product storytelling, motion typography, and transitional visuals.' },
-        { title: 'The Third Necessity', file: 'videos/perfume.png', label: 'Concept Reel', desc: 'A cinematic product concept that turns a simple fragrance reveal into a memorable visual narrative.' }
-      ],
-      atelier: [
-        { title: 'Atelier Series 01', file: 'images/atelier1.jpg', label: 'Editorial Visual', desc: 'A clean editorial composition focused on texture, placement, and refined styling.' },
-        { title: 'Atelier Series 02', file: 'images/atelier2.jpg', label: 'Brand Storytelling', desc: 'An art-directed concept image balancing contrast, atmosphere, and luxury minimalism.' },
-        { title: 'Atelier Series 03', file: 'images/atelier3.jpg', label: 'Creative Exploration', desc: 'A visual exploration blending object styling and editorial composition for a premium brand narrative.' }
-      ]
-    };
+  /*
+     Keep the portfolio organised by folder:
+       Visual Crafts -> images/
+       Motionworks   -> videos/   + cover images
+       Atelier       -> atelier/
 
-    const projectGrid = document.getElementById('projectGrid');
+     Static websites cannot automatically list a local folder, so this
+     manifest is the single source of truth. Add/remove an entry here
+     whenever you add a file to one of the folders.
+  */
 
-    function renderProjects(filter = 'images') {
-      projectGrid.innerHTML = '';
-      const items = projectData[filter] || projectData.images;
+  const portfolioProjects = {
 
-      items.forEach((item) => {
-        const card = document.createElement('div');
-        card.className = 'project-card reveal';
-        card.dataset.title = item.title;
-        card.dataset.img = item.file;
-        card.dataset.desc = item.desc;
+    images: [
+      {
+        title: 'Skin1004 Madagascar Centella',
+        file: 'images/skin1004.png',
+        label: 'Product Advertising • Skincare',
+        desc: 'Skin1004 Madagascar Centella sun serum with Hyalu-Cica Water-Fit technology and zero white cast, presented through a clean, product-focused advertising visual.'
+      },
+      {
+        title: 'JUMISO — Niacinamide 20 Serum',
+        file: 'images/jumiso.png',
+        label: 'Product Advertising • Beauty',
+        desc: 'A brightening serum visual highlighting Niacinamide, Tranexamic Acid, and Glutathione through focused product storytelling.'
+      },
+      {
+        title: 'Mixsoon Bean Essence',
+        file: 'images/mixsoon.png',
+        label: 'Product Advertising • Skincare',
+        desc: 'A clean product-focused visual for Mixsoon Bean Essence, built around hydration, exfoliation, and natural skin radiance.'
+      },
+      {
+        title: 'COSRX Vitamin C 13 Serum',
+        file: 'images/vitamin.png',
+        label: 'Product Advertising • Beauty',
+        desc: 'A product advertising visual for COSRX Vitamin C 13 Serum, focusing on brightening, dark-spot care, and a refined skincare aesthetic.'
+      },
+      {
+        title: 'The AXIS-Y Daily Purifying Treatment Toner',
+        file: 'images/axis.png',
+        label: 'Product Advertising • Skincare',
+        desc: 'A skincare advertising visual highlighting centella asiatica, tea tree, sugar cane, and lotus ingredients.'
+      },
+      {
+        title: 'COSRX Advanced Snail 96',
+        file: 'images/cosrx.png',
+        label: 'Product Advertising • Skincare',
+        desc: 'A product-focused visual highlighting hydration, glow, and skin-barrier care.'
+      }
+    ],
 
-        const isVideo = filter === 'motion';
+    motion: [
+      {
+        title: 'Caught in the Scent',
+        video: 'vidoes/202609051215(7).mp4',
+        cover: 'vidoes/web.png',
+        label: 'Fragrance • Product Film',
+        desc: 'A cinematic fragrance reel built around the idea of being irresistibly drawn in. The web represents the invisible pull of Hamidi Intense, turning a simple product shot into a visual story.\n\nWhat I Created\nA creative product marketing reel combining fragrance storytelling, cinematic composition, visual effects, and social-media-focused motion design to create an intriguing first impression.'
+      },
+      {
+        title: 'Shelf Stories',
+        video: 'vidoes/0916.mp4',
+        cover: 'vidoes/shelf.jpg',
+        label: 'Skincare • Social Reel',
+        desc: 'A visual skincare journey built around the idea that every shelf tells a different story. Shelf Stories brings together multiple skincare brands and their identities through seamless shelf transitions, creating a curated world of beauty and self-care.\n\nWhat I Created\nA cinematic social-media skincare reel combining brand storytelling, product styling, animated typography, smooth transitions, and visual composition.'
+      },
+      {
+        title: 'The Third Necessity',
+        video: 'vidoes/oud perfume.mp4',
+        cover: 'vidoes/perfume.png',
+        label: 'Fragrance • Concept Reel',
+        desc: 'A playful fragrance concept built around the idea that oxygen, water, and an irresistible scent belong on the list. The rotating “An Irresistible Scent” typography reinforces the idea while adding movement and personality to the product reveal.\n\nWhat I Created\nA cinematic social-media fragrance reel combining humor, product styling, animated typography, motion, and storytelling to turn a simple perfume showcase into a memorable visual concept.'
+      }
+    ],
 
-        card.innerHTML = isVideo ? `
-          <div class="video-card-preview" style="aspect-ratio: 9/12;">
-            <img src="${item.file}" alt="${item.title}" class="video-cover" loading="lazy" />
+    atelier: [
+      /* Add files from atelier/ here as you build this collection. */
+      // Example:
+      // {
+      //   title: 'Project Name',
+      //   file: 'atelier/project-name.png',
+      //   label: 'Creative Exploration',
+      //   desc: 'Project description.'
+      // }
+    ]
+  };
+
+
+  const projectGrid = document.getElementById('projectGrid');
+
+
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+
+  function renderProjects(filter = 'images') {
+
+    projectGrid.innerHTML = '';
+
+    const projects = portfolioProjects[filter] || [];
+
+    if (!projects.length) {
+      projectGrid.innerHTML = `
+        <div class="md:col-span-3 text-center py-16">
+          <p style="color: #4F444C; font-size: 17px;">
+            This collection is being curated.
+          </p>
+        </div>
+      `;
+      return;
+    }
+
+    projects.forEach((project, index) => {
+
+      const card = document.createElement('div');
+      card.className = 'project-card rounded-3xl overflow-hidden shadow-xl reveal';
+      card.style.transitionDelay = `${index * 60}ms`;
+
+      if (filter === 'motion') {
+
+        card.dataset.title = project.title;
+        card.dataset.video = project.video;
+        card.dataset.desc = project.desc;
+        card.onclick = () => openVideoModal(card);
+
+        card.innerHTML = `
+          <div class="video-card-preview" style="aspect-ratio:9/16;">
+            <img
+              class="video-cover"
+              loading="lazy"
+              src="${escapeHtml(project.cover)}"
+              alt="${escapeHtml(project.title)} video cover"
+            >
             <div class="video-play-overlay">
-              <div class="video-play-button">▶</div>
+              <div class="video-play-button" aria-label="Play video">▶</div>
             </div>
           </div>
-          <div class="p-5 bg-[#FFF9ED]">
-            <p class="text-[#514750] font-bold text-lg mb-2">${item.title}</p>
-            <p class="text-[#514750]/75 text-sm">${item.label}</p>
-          </div>
-        ` : `
-          <div style="aspect-ratio: 1/1; background: #fff; overflow: hidden;">
-            <img src="${item.file}" alt="${item.title}" class="w-full h-full object-cover" loading="lazy" />
-          </div>
-          <div class="p-5 bg-[#FFF9ED]">
-            <p class="text-[#514750] font-bold text-lg mb-2">${item.title}</p>
-            <p class="text-[#514750]/75 text-sm">${item.label}</p>
+          <div class="p-6" style="background: #DCE7EF;">
+            <p style="color: #4F444C; font-size: 18px;">
+              ${escapeHtml(project.label)}
+            </p>
           </div>
         `;
 
-        card.addEventListener('click', () => openModal(card));
-        projectGrid.appendChild(card);
-      });
+      } else {
 
-      document.querySelectorAll('.project-card').forEach(el => observer.observe(el));
-    }
+        card.dataset.title = project.title;
+        card.dataset.img = project.file;
+        card.dataset.desc = project.desc;
+        card.onclick = () => openModal(card);
 
-    document.querySelectorAll('.project-filter').forEach(button => {
-      button.addEventListener('click', () => {
-        document.querySelectorAll('.project-filter').forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        renderProjects(button.dataset.projectFilter);
-      });
-    });
-
-    const serviceData = [
-      { icon: '✦', title: 'Graphic Design & Branding', items: ['Brand Identity Design', 'Brand Style Guides', 'Rebranding Projects', 'Packaging & Label Design', 'Marketing Materials'] },
-      { icon: '◌', title: 'Social Media & Content', items: ['Social Media Posts & Stories', 'Carousel Posts', 'Campaign Planning', 'Content Calendars', 'Digital Content Graphics'] },
-      { icon: '▶', title: 'Video Editing & Motion', items: ['Short-form Video Editing', 'Product Video Ads', 'UGC Editing', 'Motion Graphics', 'Cinematic Product Videos'], special: true },
-      { icon: '◈', title: 'Advertising & Marketing', items: ['Product Advertisements', 'Promotional Campaign Graphics', 'Event Marketing', 'Digital Ads', 'Launch Campaign Creatives'] },
-      { icon: '◎', title: 'Web & Digital Design', items: ['Landing Page Design', 'Portfolio Websites', 'UI Mockups', 'Website Graphics', 'Digital Asset Design'] },
-      { icon: '◍', title: '3D Product Design & Animation', items: ['3D Product Modeling', 'Photorealistic Rendering', 'CGI Advertisement Images', 'Material & Lighting Design', 'Camera Animation'] }
-    ];
-
-    const serviceGrid = document.getElementById('serviceGrid');
-
-    serviceData.forEach((service, idx) => {
-      const card = document.createElement('div');
-      card.className = `service-card ${service.special ? 'special-card open' : ''}`;
-
-      card.innerHTML = `
-        <div class="card-header">
-          <div class="card-left">
-            <div class="card-icon">${service.icon}</div>
-            <span>${service.title}</span>
+        card.innerHTML = `
+          <div class="overflow-hidden" style="aspect-ratio:1/1;">
+            <img
+              class="w-full h-full object-cover"
+              loading="lazy"
+              src="${escapeHtml(project.file)}"
+              alt="${escapeHtml(project.title)}"
+            >
           </div>
-          <span class="chevron">⌄</span>
-        </div>
-        <div class="card-body" style="max-height: ${service.special ? '240px' : '0px'};">
-          <div class="card-divider"></div>
-          <div class="card-body-inner">
-            <ul class="service-list">
-              ${service.items.map(item => `<li><span>•</span> <span>${item}</span></li>`).join('')}
-            </ul>
+          <div class="p-6" style="background: #DCE7EF;">
+            <p style="color: #4F444C; font-size: 18px;">
+              ${escapeHtml(project.label)}
+            </p>
           </div>
-        </div>
-      `;
-
-      card.querySelector('.card-header').addEventListener('click', () => {
-        card.classList.toggle('open');
-        const body = card.querySelector('.card-body');
-        if (card.classList.contains('open')) {
-          body.style.maxHeight = body.scrollHeight + 'px';
-        } else {
-          body.style.maxHeight = '0px';
-        }
-      });
-
-      if (service.special) {
-        card.querySelector('.card-body').style.maxHeight = card.querySelector('.card-body').scrollHeight + 'px';
+        `;
       }
 
-      serviceGrid.appendChild(card);
+      projectGrid.appendChild(card);
+
+      requestAnimationFrame(() => card.classList.add('visible'));
+
+    });
+  }
+
+
+  /* =========================================================
+     PROJECT FILTER
+  ========================================================= */
+
+  document
+    .querySelectorAll('.project-filter')
+    .forEach(btn => {
+
+      btn.addEventListener('click', () => {
+
+        document
+          .querySelectorAll('.project-filter')
+          .forEach(b => b.classList.remove('active'));
+
+        btn.classList.add('active');
+
+        renderProjects(btn.dataset.projectFilter);
+
+      });
+
     });
 
-    function openModal(card) {
-      const modal = document.getElementById('modal');
-      const img = document.getElementById('modalImg');
-      const title = document.getElementById('modalTitle');
-      const desc = document.getElementById('modalDesc');
 
-      title.textContent = card.dataset.title;
-      desc.textContent = card.dataset.desc;
-      img.src = card.dataset.img;
-      modal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
+  /* Visual Crafts is the default collection. */
+  renderProjects('images');
+
+
+  /* =========================================================
+     SERVICES
+  ========================================================= */
+
+  const servicesData = [
+
+    {
+      icon: '🎨',
+      title: 'Graphic Design & Branding',
+
+      items: [
+        'Brand Identity Design',
+        'Brand Style Guides',
+        'Rebranding Projects',
+        'Business Cards & Stationery',
+        'Packaging & Label Design',
+        'Marketing Materials',
+        'Corporate Branding Assets'
+      ]
+    },
+
+
+    {
+      icon: '📱',
+      title: 'Social Media & Content',
+
+      items: [
+        'Social Media Posts & Stories',
+        'Carousel Posts',
+        'Social Media Campaigns',
+        'Content Creation & Planning',
+        'Instagram Highlight Covers',
+        'YouTube Thumbnails',
+        'Social Media Templates',
+        'Digital Content Graphics'
+      ]
+    },
+
+
+    {
+      icon: '🎬',
+      title: 'Video Editing & Motion',
+
+      items: [
+        'Short-Form Video Editing',
+        'Product Video Ads',
+        'Social Media Advertisements',
+        'UGC Video Editing',
+        'Motion Graphics',
+        'Text & Caption Animation',
+        'Product Promo Videos',
+        'Cinematic Product Videos',
+        'Transitions & Effects',
+        'Music & Sound Sync'
+      ]
+    },
+
+
+    {
+      icon: '📢',
+      title: 'Advertising & Marketing',
+
+      items: [
+        'Product Advertisements',
+        'Promotional Campaign Graphics',
+        'Event Marketing Materials',
+        'Email Marketing Designs',
+        'Digital Ads & Banners',
+        'Sales & Launch Campaign Creatives',
+        'E-commerce Marketing Assets'
+      ]
+    },
+
+
+    {
+      icon: '🛍️',
+      title: 'Product & E-commerce',
+
+      items: [
+        'Product Mockups',
+        'Product Listing Images',
+        'Beauty & Skincare Creatives',
+        'Amazon & Online Store Graphics',
+        'Product Launch Visuals',
+        'Before & After Graphics',
+        'Product Catalog Design'
+      ]
+    },
+
+
+    {
+      icon: '💻',
+      title: 'Web & Digital Design',
+
+      items: [
+        'Landing Page Design',
+        'Portfolio Websites',
+        'Canva Website Design',
+        'Website Graphics & Banners',
+        'UI Mockups',
+        'Digital Asset Design',
+        'Website Content Visuals'
+      ]
+    },
+
+
+    {
+      icon: '🎮',
+      title: 'Interactive & Educational',
+
+      items: [
+        'Interactive Games',
+        'Educational Learning Games',
+        'Baby Shower & Party Games',
+        'Bridal Shower Games',
+        'Interactive Presentations',
+        'Quizzes & Assessments',
+        'Learning Activities & Worksheets'
+      ]
+    },
+
+
+    {
+      icon: '📄',
+      title: 'Print & Publication',
+
+      items: [
+        'Flyers & Posters',
+        'Brochures & Booklets',
+        'Menus',
+        'Invitations',
+        'Certificates',
+        'Workbooks & Planners',
+        'Magazines & Catalogs'
+      ]
+    },
+
+
+    {
+      icon: '🧊',
+      title: '3D Product Design & Animation',
+
+      items: [
+        '3D Product Modeling',
+        'Photorealistic Product Rendering',
+        '3D Product Animation',
+        'CGI Advertising Images',
+        'Realistic Texturing & Materials',
+        'Lighting & Studio Rendering',
+        'Camera Animation & Product Cinematics'
+      ]
+    },
+
+
+    {
+      icon: '📊',
+      title: 'Business & Professional',
+
+      items: [
+        'Presentation Design',
+        'Pitch Decks',
+        'Company Profiles',
+        'Resume/CV Design',
+        'Portfolio Design',
+        'Proposal Design',
+        'Reports & Business Documents'
+      ]
+    },
+
+
+    {
+      icon: '✨',
+      title: 'Custom Creative Solutions',
+
+      items: [
+        'Canva Templates',
+        'Digital Products',
+        'Printable Designs',
+        'Custom Client Requests',
+        'Creative Consultation',
+        'Design Support for Small Businesses & Startups'
+      ],
+
+      special: true
+
     }
 
-    function closeModal() {
-      document.getElementById('modal').style.display = 'none';
-      document.body.style.overflow = 'auto';
+  ];
+
+
+  const grid =
+    document.getElementById('serviceGrid');
+
+
+  servicesData.forEach(
+    s => {
+
+      const card =
+        document.createElement('div');
+
+
+      card.className =
+        'service-card' +
+        (s.special ? ' special-card' : '');
+
+
+      card.innerHTML = `
+
+        <div class="card-header">
+
+          <div class="card-left">
+
+            <div class="card-icon">
+              ${s.icon}
+            </div>
+
+            <span>
+              ${s.title}
+            </span>
+
+          </div>
+
+          <span class="chevron">
+            ▼
+          </span>
+
+        </div>
+
+
+        <div class="card-body">
+
+          <div class="card-body-inner">
+
+            <hr class="card-divider">
+
+
+            <ul class="service-list">
+
+              ${s.items
+                .map(
+                  item =>
+                    `<li>${item}</li>`
+                )
+                .join('')
+              }
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      `;
+
+
+      card
+        .querySelector('.card-header')
+        .addEventListener(
+          'click',
+          () => {
+
+            const isOpen =
+              card.classList.contains('open');
+
+
+            document
+              .querySelectorAll(
+                '.service-card.open'
+              )
+              .forEach(c => {
+
+                c.classList.remove(
+                  'open'
+                );
+
+                c.querySelector(
+                  '.card-body'
+                ).style.maxHeight =
+                  '0';
+
+              });
+
+
+            if (!isOpen) {
+
+              card.classList.add(
+                'open'
+              );
+
+
+              const body =
+                card.querySelector(
+                  '.card-body'
+                );
+
+
+              const inner =
+                card.querySelector(
+                  '.card-body-inner'
+                );
+
+
+              body.style.maxHeight =
+                inner.scrollHeight +
+                32 +
+                'px';
+
+
+              card
+                .querySelectorAll(
+                  '.service-list li'
+                )
+                .forEach(
+                  (li, i) => {
+
+                    li.style.transitionDelay =
+                      (i * 35) +
+                      'ms';
+
+                  }
+                );
+
+            }
+
+          }
+        );
+
+
+      grid.appendChild(card);
+
     }
+  );
 
-    function closeModalOutside(event) {
-      if (event.target.id === 'modal') closeModal();
-    }
 
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') closeModal();
-    });
+</script>
 
-    renderProjects();
-  </script>
 </body>
 </html>
